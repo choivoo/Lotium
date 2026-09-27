@@ -8,9 +8,10 @@
 - [x] PHASE 3: 비주얼 아트 디렉션 → `00_brief/03_visual_direction/`
 - [x] PHASE 4: 전신 디자인 3안 + 병합 → `03_concepts/proposals/`
 - [x] PHASE 5: 최종 디자인 사양 + 프롬프트 → `00_brief/05_final_design/`, `02_prompts/`
-- [x] PHASE 6~8: PSD 구조 / 134레이어 / 14표정 / 토글·단축키·방송 세트 → `08_live2d_notes/`
-- [x] PHASE 9~13: 파이프라인 / 작업 순서 / 폴더 구조 / 체크리스트 → `11_pipeline/`, `10_checklists/`
-- [ ] 다음: 레퍼런스 수집 및 이미지 생성 (`11_pipeline/work_order.md` 7단계~)
+- [x] 설계 문서(원 요청 6~8): PSD 구조 / 134레이어 / 14표정 / 토글·단축키·방송 세트 → `08_live2d_notes/`
+- [x] 설계 문서(원 요청 9~13): 파이프라인 / 작업 순서 / 폴더 구조 / 체크리스트 → `11_pipeline/`, `10_checklists/`
+- [~] PHASE 6: Visual Master — 문서·프롬프트·QA·Color Master 완료, **캐릭터 이미지 생성 BLOCKED (이미지 도구 없음)** → `03_concepts/PHASE6_STATUS.md`
+- [ ] PHASE 7: Live2D 파츠 / PSD — BLOCKED (Master 이미지 필요). 조립 스크립트 준비됨: `11_pipeline/tools/assemble_psd.py`
 
 ## 폴더
 | 폴더 | 용도 |
