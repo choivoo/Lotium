@@ -1,0 +1,159 @@
+# 120 전후 레이어 예시표 (총 134)
+
+> 원본 데이터: `layer_list.csv`. 번호가 작을수록 PSD 상단(앞). 레이어명 = `NNN_LayerName`.
+
+| No | 레이어명 | 폴더 | 범주 | 설명 | 리깅 |
+|---|---|---|---|---|---|
+| 001 | 001_Base_Guide | 00_GUIDE | 가이드 | 등신/중심선 가이드 | 출력 제외 |
+| 002 | 002_Color_Guide | 00_GUIDE | 가이드 | 팔레트 스와치 | 출력 제외 |
+| 003 | 003_FX_Emote_Heart | 01_FX_FRONT | 토글/표정 | 하트 이모트 | 토글 |
+| 004 | 004_FX_Emote_Question | 01_FX_FRONT | 토글/표정 | 물음표 이모트 | 토글 |
+| 005 | 005_FX_Emote_Sweat | 01_FX_FRONT | 토글/표정 | 큰 땀 이모트 | 토글 |
+| 006 | 006_FX_Emote_Anger | 01_FX_FRONT | 토글/표정 | 분노 마크(회로형) | 토글 |
+| 007 | 007_FX_Sparkle_Front | 01_FX_FRONT | 전기 이펙트 | 방송 반짝 파티클 | 토글 |
+| 008 | 008_FX_Glitch_Overlay | 01_FX_FRONT | 전기 이펙트 | RGB 분리 노이즈 오버레이 | 토글 |
+| 009 | 009_FX_Glitch_Block | 01_FX_FRONT | 전기 이펙트 | 픽셀 블록 조각 | 토글/깜빡임 |
+| 010 | 010_UI_Panel_L_Battery | 01_FX_FRONT | UI 패널 | 배터리 바 패널 | 토글 |
+| 011 | 011_UI_Panel_L_Battery_Low | 01_FX_FRONT | UI 패널 | 배터리 부족(적색) | 토글 |
+| 012 | 012_UI_Panel_R_Signal | 01_FX_FRONT | UI 패널 | 신호 막대 패널 | 토글 |
+| 013 | 013_UI_Mobile_Frame | 01_FX_FRONT | 토글(모바일) | 스마트폰 프레임 UI | 모바일폼 |
+| 014 | 014_UI_Game_HUD | 01_FX_FRONT | 토글(게임) | 콤보/배터리 HUD | 게임폼 |
+| 015 | 015_OC_Warning_Panel | 02_OVERCLOCK | 오버클럭 | 경고 홀로 패널 | OC |
+| 016 | 016_OC_Spark_Front | 02_OVERCLOCK | 오버클럭 | 전면 스파크 | OC |
+| 017 | 017_OC_Hair_Lift | 02_OVERCLOCK | 오버클럭 | 들린 앞머리 대체 | OC 대체 |
+| 018 | 018_OC_Hair_Spark | 02_OVERCLOCK | 오버클럭 | 머리끝 스파크 | OC |
+| 019 | 019_OC_Eye_Ring_L | 02_OVERCLOCK | 오버클럭 | 왼눈 이중 시안 링 | OC 대체 |
+| 020 | 020_OC_Eye_Ring_R | 02_OVERCLOCK | 오버클럭 | 오른눈 이중 시안 링 | OC 대체 |
+| 021 | 021_OC_Core_Burst | 02_OVERCLOCK | 오버클럭 | 코어 백열 폭발광 | OC |
+| 022 | 022_OC_Body_Rimlight | 02_OVERCLOCK | 오버클럭 | 전신 시안 림라이트 | OC |
+| 023 | 023_OC_Cable_Float | 02_OVERCLOCK | 오버클럭 | 부유 케이블 대체 | OC 대체 |
+| 024 | 024_Hair_Front_Ahoge | 03_HAIR_FRONT | 머리/물리 | 정수리 ahoge | 물리 독립 |
+| 025 | 025_Hair_Front_L | 03_HAIR_FRONT | 머리 | 앞머리 좌 그룹 | 물리 1차 |
+| 026 | 026_Hair_Front_C | 03_HAIR_FRONT | 머리 | 앞머리 중앙 그룹 | 물리 1차 |
+| 027 | 027_Hair_Front_R | 03_HAIR_FRONT | 머리 | 앞머리 우 그룹 | 물리 1차 |
+| 028 | 028_Hair_Front_Center_Strand | 03_HAIR_FRONT | 추가 머리카락 | 눈 사이 가닥 | 물리 1차 |
+| 029 | 029_Hair_Front_Highlight | 03_HAIR_FRONT | 하이라이트 | 회로형 앤젤링 | 머리 추종 |
+| 030 | 030_Hair_Temple_L | 03_HAIR_FRONT | 추가 머리카락 | 관자놀이 잔머리 좌 | 물리 |
+| 031 | 031_Hair_Temple_R | 03_HAIR_FRONT | 추가 머리카락 | 관자놀이 잔머리 우 | 물리 |
+| 032 | 032_Headset_Band | 04_HEADSET | 헤드셋 | 헤드밴드 | 토글 |
+| 033 | 033_Headset_Cup_L | 04_HEADSET | 헤드셋 | 왼쪽 이어컵 | 토글 |
+| 034 | 034_Headset_Cup_R | 04_HEADSET | 헤드셋 | 오른쪽 이어컵 | 토글 |
+| 035 | 035_Headset_Cup_Glow | 04_HEADSET | 헤드셋 | 이어컵 시안 링 발광 | 발광 강도 |
+| 036 | 036_Headset_Mic | 04_HEADSET | 헤드셋 | 붐 마이크 | 약한 흔들림 |
+| 037 | 037_Earpiece_Mobile | 04_HEADSET | 토글(모바일) | 이어피스 | 모바일폼 |
+| 038 | 038_Visor_Game | 04_HEADSET | 토글(게임) | HUD 바이저 | 게임폼 개폐 |
+| 039 | 039_Brow_L | 05_FACE/Brow | 눈썹 | 왼 눈썹 | 표정 변형 |
+| 040 | 040_Brow_R | 05_FACE/Brow | 눈썹 | 오른 눈썹 | 표정 변형 |
+| 041 | 041_Eye_L_Lash_Upper | 05_FACE/Eye_L | 눈 | 왼 윗라인+속눈썹 | 개폐 |
+| 042 | 042_Eye_L_Line_Lower | 05_FACE/Eye_L | 눈 | 왼 아랫라인 | 개폐 |
+| 043 | 043_Eye_L_Highlight | 05_FACE/Eye_L | 하이라이트 | 왼 하이라이트 3종 | 동공 추종 |
+| 044 | 044_Eye_L_Pupil | 05_FACE/Eye_L | 눈동자 | 왼 동공+시안 링 | EyeBall |
+| 045 | 045_Eye_L_Iris | 05_FACE/Eye_L | 눈동자 | 왼 홍채 | EyeBall |
+| 046 | 046_Eye_L_White | 05_FACE/Eye_L | 눈 | 왼 흰자 | 클리핑 마스크 |
+| 047 | 047_Eye_L_Closed_Smile | 05_FACE/Eye_L | 표정 | 왼 웃는 감은눈 ^ | 표정 |
+| 048 | 048_Eye_R_Lash_Upper | 05_FACE/Eye_R | 눈 | 오른 윗라인+속눈썹 | 개폐 |
+| 049 | 049_Eye_R_Line_Lower | 05_FACE/Eye_R | 눈 | 오른 아랫라인 | 개폐 |
+| 050 | 050_Eye_R_Highlight | 05_FACE/Eye_R | 하이라이트 | 오른 하이라이트 3종 | 동공 추종 |
+| 051 | 051_Eye_R_Pupil | 05_FACE/Eye_R | 눈동자 | 오른 동공+시안 링 | EyeBall |
+| 052 | 052_Eye_R_Iris | 05_FACE/Eye_R | 눈동자 | 오른 홍채 | EyeBall |
+| 053 | 053_Eye_R_White | 05_FACE/Eye_R | 눈 | 오른 흰자 | 클리핑 마스크 |
+| 054 | 054_Eye_R_Closed_Smile | 05_FACE/Eye_R | 표정 | 오른 웃는 감은눈 ^ | 표정 |
+| 055 | 055_Eye_Star_Sparkle | 05_FACE/Eye_FX | 표정(눈반짝) | 별 반짝 동공 대체 | 토글 |
+| 056 | 056_Eye_Flat_Deadpan | 05_FACE/Eye_FX | 표정(어이없음) | 일자 눈 | 표정 |
+| 057 | 057_Eye_Swirl_Dizzy | 05_FACE/Eye_FX | 표정(당황) | 소용돌이 눈 | 표정 |
+| 058 | 058_Eye_Tear_L | 05_FACE/Eye_FX | 표정(울먹) | 왼 눈물 고임 | 표정 |
+| 059 | 059_Eye_Tear_R | 05_FACE/Eye_FX | 표정(울먹) | 오른 눈물 고임 | 표정 |
+| 060 | 060_Tear_Stream | 05_FACE/Eye_FX | 표정(울음) | 흐르는 눈물 | 표정 |
+| 061 | 061_Eye_Glitch_Pixel | 05_FACE/Eye_FX | 표정(glitch) | 픽셀 깨진 눈 | 표정 |
+| 062 | 062_Mouth_Line_Upper | 05_FACE/Mouth | 입 | 윗입술선 | MouthForm |
+| 063 | 063_Mouth_Line_Lower | 05_FACE/Mouth | 입 | 아랫입술선 | MouthOpen |
+| 064 | 064_Mouth_Teeth_Upper | 05_FACE/Mouth | 치아/혀 | 윗니 | 클리핑 |
+| 065 | 065_Mouth_Tongue | 05_FACE/Mouth | 치아/혀 | 혀 | 클리핑 |
+| 066 | 066_Mouth_Inside | 05_FACE/Mouth | 입 | 입 안 | 마스크 |
+| 067 | 067_Mouth_Pout | 05_FACE/Mouth | 표정(삐짐) | 삐죽 입 | 표정 대체 |
+| 068 | 068_Mouth_Cat_Grin | 05_FACE/Mouth | 표정(장난기) | 장난 입(송곳니 없음) | 표정 대체 |
+| 069 | 069_Mouth_Wavy | 05_FACE/Mouth | 표정(당황) | 물결 입 | 표정 대체 |
+| 070 | 070_Face_Blush | 05_FACE/Face_Extra | 블러시 | 기본 볼터치 | 불투명도 |
+| 071 | 071_Face_Blush_Strong | 05_FACE/Face_Extra | 블러시 | 진한 볼+해칭 | 표정 |
+| 072 | 072_Face_Shadow_Dark | 05_FACE/Face_Extra | 얼굴 그림자 | 이마 어둠(분노/폭주) | 표정 |
+| 073 | 073_Face_Sweat | 05_FACE/Face_Extra | 표정 | 작은 땀방울 | 표정 |
+| 074 | 074_Face_Cheek_Puff | 05_FACE/Face_Extra | 표정(삐짐) | 부푼 볼 | 표정 |
+| 075 | 075_Face_Mark_Circuit | 05_FACE/Face_Extra | 토글 | 왼눈 아래 시안 점 2 | 토글 |
+| 076 | 076_Nose | 05_FACE/Face_Base | 코 | 코 하이라이트+음영 | 각도 추종 |
+| 077 | 077_Face_Shadow_Hair | 05_FACE/Face_Base | 얼굴 그림자 | 앞머리 그림자 | 머리 추종 |
+| 078 | 078_Face_Base | 05_FACE/Face_Base | 얼굴 베이스 | 얼굴 피부(이마 복원) | AngleXY |
+| 079 | 079_Hair_Side_L_Front | 06_HAIR_SIDE | 머리 | 옆머리 좌 앞층 | 물리 2차 |
+| 080 | 080_Hair_Side_L_Back | 06_HAIR_SIDE | 머리 | 옆머리 좌 뒷층 | 물리 2차 |
+| 081 | 081_Hair_Side_R_Front | 06_HAIR_SIDE | 머리 | 옆머리 우 앞층 | 물리 2차 |
+| 082 | 082_Hair_Side_R_Back | 06_HAIR_SIDE | 머리 | 옆머리 우 뒷층(시안 이너) | 물리 2차 |
+| 083 | 083_Ear_L | 07_EARS | 얼굴 베이스 | 왼 귀+이어커프 | AngleX |
+| 084 | 084_Ear_R | 07_EARS | 얼굴 베이스 | 오른 귀 | AngleX |
+| 085 | 085_Hand_R | 08_ARM_R_FRONT | 손 | 오른손(장갑) | 팔 추종 |
+| 086 | 086_Hand_R_Glove_LED | 08_ARM_R_FRONT | 토글 | 손등 LED 발광 | 토글 |
+| 087 | 087_Sleeve_R_Cuff | 08_ARM_R_FRONT | 소매 | 오른 소매끝+시안 라인 | 물리 |
+| 088 | 088_Sleeve_R_Inner | 08_ARM_R_FRONT | 소매 | 오른 소매 안쪽면 | 팔 추종 |
+| 089 | 089_Arm_R_Forearm | 08_ARM_R_FRONT | 팔 | 오른 전완(재킷) | 팔 |
+| 090 | 090_Arm_R_Upper | 08_ARM_R_FRONT | 팔 | 오른 상완+패치 | 팔 |
+| 091 | 091_Core_Glow | 09_BODY_FRONT | 코어 | 코어 Glow(Add) | 호흡 맥동 |
+| 092 | 092_Core_Gauge_Ring | 09_BODY_FRONT | 코어 | 게이지 링 | 회전 |
+| 093 | 093_Core_Face | 09_BODY_FRONT | 코어 | 발광면 | 맥동 |
+| 094 | 094_Core_Case | 09_BODY_FRONT | 코어 | 검정 케이스 | 몸 추종 |
+| 095 | 095_Drawstring_L | 09_BODY_FRONT | 물리 파츠 | 후드끈 좌 | 물리 |
+| 096 | 096_Drawstring_R | 09_BODY_FRONT | 물리 파츠 | 후드끈 우 | 물리 |
+| 097 | 097_Jacket_Zipper_Glow | 09_BODY_FRONT | 의상 전면 | 지퍼 옆 시안 라인 | 발광 강도 |
+| 098 | 098_Jacket_Front_L | 09_BODY_FRONT | 의상 전면 | 재킷 앞판 좌 | BodyAngle |
+| 099 | 099_Jacket_Front_R | 09_BODY_FRONT | 의상 전면 | 재킷 앞판 우 | BodyAngle |
+| 100 | 100_Jacket_Collar | 09_BODY_FRONT | 의상 전면 | 하이넥 칼라+오렌지 라이닝 | 목 추종 |
+| 101 | 101_Jacket_Strap | 10_BODY | 의상 | 허리 오렌지 스트랩 | 몸 |
+| 102 | 102_Jacket_Hem_Front | 10_BODY | 물리 파츠 | 앞 밑단 | 물리 |
+| 103 | 103_Inner_Circuit_Glow | 10_BODY | 의상 | 이너 시안 회로선 | 발광 강도 |
+| 104 | 104_Inner_Body | 10_BODY | 몸통 | 이너(전체 복원) | 호흡 |
+| 105 | 105_Neck_Choker | 10_BODY | 목 | 케이블 초커 | 목 |
+| 106 | 106_Neck | 10_BODY | 목 | 목(칼라 아래 복원) | AngleXYZ |
+| 107 | 107_Pants_L | 10_BODY | 하의 | 왼 다리 팬츠+스트랩 | 몸 |
+| 108 | 108_Pants_R | 10_BODY | 하의 | 오른 다리 팬츠 | 몸 |
+| 109 | 109_Leg_Thigh_Base | 10_BODY | 다리 | 밑단 아래 허벅지 복원 | 몸 |
+| 110 | 110_Shoe_L | 10_BODY | 신발 | 왼 신발 | 고정 |
+| 111 | 111_Shoe_R | 10_BODY | 신발 | 오른 신발+LED 탭 | 고정 |
+| 112 | 112_Hand_L | 11_ARM_L | 손 | 왼손 | 팔 추종 |
+| 113 | 113_Sleeve_L_Cuff | 11_ARM_L | 소매 | 왼 소매끝 | 물리 |
+| 114 | 114_Arm_L_Forearm | 11_ARM_L | 팔 | 왼 전완 | 팔 |
+| 115 | 115_Arm_L_Upper | 11_ARM_L | 팔 | 왼 상완 | 팔 |
+| 116 | 116_Hood_Folded | 12_BACK | 의상 후면 | 접힌 후드 | 물리/토글 |
+| 117 | 117_Hood_Up | 12_BACK | 토글 | 머리에 쓴 후드(03 위로 이동 가능) | 토글 |
+| 118 | 118_Jacket_Back_Hem | 12_BACK | 의상 후면 | 재킷 뒷판+긴 밑단 | 물리 |
+| 119 | 119_Cable_Tail_Seg1 | 12_BACK | 케이블/전기띠 | 케이블 근위부+포트 | 물리 |
+| 120 | 120_Cable_Tail_Seg2 | 12_BACK | 케이블/전기띠 | 케이블 중간 | 물리 |
+| 121 | 121_Cable_Tail_Plug | 12_BACK | 케이블/전기띠 | 케이블 끝 플러그 | 물리 |
+| 122 | 122_Cable_Electric_Ribbon | 12_BACK | 전기 이펙트 | 나선 전기띠 | 흐름/강도 |
+| 123 | 123_Hair_Back_Upper | 13_HAIR_BACK | 머리 | 뒷머리 위층 | 물리 3차 |
+| 124 | 124_Hair_Back_Lower | 13_HAIR_BACK | 머리 | 뒷머리 아래층 | 물리 3차 |
+| 125 | 125_Hair_Back_Hood | 13_HAIR_BACK | 토글 | 후드 착용시 눌린 뒷머리 | 토글 |
+| 126 | 126_Ring_Spirit_Seg1 | 14_FX_BACK | 드론/정령 링 | 링 호 1 | 회전 |
+| 127 | 127_Ring_Spirit_Seg2 | 14_FX_BACK | 드론/정령 링 | 링 호 2 | 회전 |
+| 128 | 128_Ring_Spirit_Seg3 | 14_FX_BACK | 드론/정령 링 | 링 호 3 | 회전 |
+| 129 | 129_OC_Ring_Outer | 14_FX_BACK | 오버클럭 | 2중 외곽 링 | OC |
+| 130 | 130_FX_Aura_Glow_Back | 14_FX_BACK | 전기 이펙트 | 등 뒤 은은한 글로우(약/중/강) | 불투명도 |
+| 131 | 131_Drone_Body | 15_DRONE | 드론 | 핍 몸체 | 부유 |
+| 132 | 132_Drone_Antenna | 15_DRONE | 드론 | 귀형 안테나 | 물리 |
+| 133 | 133_Drone_Eye | 15_DRONE | 드론 | LED 눈(표정 연동) | 표정 |
+| 134 | 134_Drone_Trail_OC | 15_DRONE | 오버클럭 | 발광 트레일 | OC |
+
+## 폴더별 수량
+
+- 00_GUIDE: 2
+- 01_FX_FRONT: 12
+- 02_OVERCLOCK: 9
+- 03_HAIR_FRONT: 8
+- 04_HEADSET: 7
+- 05_FACE: 40
+- 06_HAIR_SIDE: 4
+- 07_EARS: 2
+- 08_ARM_R_FRONT: 6
+- 09_BODY_FRONT: 10
+- 10_BODY: 11
+- 11_ARM_L: 4
+- 12_BACK: 7
+- 13_HAIR_BACK: 3
+- 14_FX_BACK: 5
+- 15_DRONE: 4
