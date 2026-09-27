@@ -5,7 +5,7 @@
 
 규칙: 공개적으로 합법 열람 가능한 이미지만, 한 장당 1요소만 참고, 트레이싱·img2img 금지, 포켓몬 공식 이미지 금지(`forbidden_comparison.md`).
 
-| ID | 폴더 | 찾을 것 | USE | DO NOT USE | 출처/라이선스 | 상태 |
+| ID | 폴더 | 찾을 것 | USE (what to use) | DO NOT USE | 출처/라이선스 | 상태 |
 |---|---|---|---|---|---|---|
 | REF_mood_001 | mood | 밝은 테크 스튜디오·네온 약한 방송 무드 | 조명 톤, 분위기 | 인물, 로고 | | TODO |
 | REF_mood_002 | mood | 청량한 전기·데이터 시각화 아트 | 에너지 흐름 느낌 | 구도 복제 | | TODO |
@@ -24,3 +24,15 @@
 | REF_ui_001 | ui | 미니멀 HUD·배터리/신호 아이콘 | 홀로 UI 레이아웃 | 실제 앱/게임 UI | | TODO |
 | REF_accessories_001 | accessories | 슬림 헤드셋 제품 | 밴드·이어컵 비례 | 브랜드 형태 | | TODO |
 | REF_accessories_002 | accessories | 소형 드론·로봇 컴패니언 | 캡슐 바디 비례 | 특정 캐릭터 | | TODO |
+
+## Originality note (전 레퍼런스 공통)
+- 외부 레퍼런스는 **이미지 생성 입력으로 쓰지 않았다.** Codex 생성 시 첨부(-i)한 이미지는 오직 이 프로젝트가 생성한 자체 마스터뿐이다.
+- 외부 이미지 수집 수단(웹 검색/다운로드)은 이 환경에 없어 위 TODO는 텍스트 기준으로만 유지한다. 디자인은 `00_brief/05_final_design` 스펙 텍스트에서 직접 생성했다.
+- 사용자가 제공한 공식 로토무 이미지는 `forbidden_comparison.md`의 금지 특징 도출에만 사용했고 저장·입력하지 않았다.
+
+## 내부 레퍼런스 (자체 생성, 생성 입력 허용)
+| ID | 파일 | USE | DO NOT USE |
+|---|---|---|---|
+| INT_001 | `03_concepts/masters/face/LTM_FACE_MASTER_v001.png` | 얼굴·헤어 정체성 | 배경 |
+| INT_002 | `03_concepts/masters/fullbody/LTM_FULLBODY_MASTER_v001.png` | 전신 비율·의상·소품 | 포즈 외 각도 |
+| INT_003 | `03_concepts/masters/palette/LTM_COLOR_MASTER_v001.png` | 색 값 | — |

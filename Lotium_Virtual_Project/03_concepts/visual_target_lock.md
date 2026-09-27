@@ -26,3 +26,7 @@ Source of Truth: `00_brief/05_final_design/*`. 모든 생성 이미지는 아래
 - 재킷 색 반전(검정 재킷), 갑옷·기계 부품 과다, 망토, 무기
 - 원형/구형 코어, 몬스터볼 형태, 드론 2기 이상, 몸에 붙은 번개 돌기
 - 로토무 얼굴·눈·입·몸 실루엣·폼 요소 (`01_reference/forbidden_comparison.md`)
+
+## Revision log
+- r2 (PHASE 6 실행 시작): 스펙 변경 없음. 이미지 생성 도구 확보(Codex CLI 내장 image_generation, ChatGPT 로그인) — 모든 생성물은 이 표로 QA.
+- 일관성 규칙: Face Master 확정 후 모든 생성 호출에 `-i LTM_FACE_MASTER` / `LTM_FULLBODY_MASTER`를 레퍼런스로 첨부한다.
