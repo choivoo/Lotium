@@ -54,7 +54,7 @@ def main():
     cmd = ["codex", "exec", "--skip-git-repo-check", "-s", "workspace-write", "--add-dir", str(out.parent)]
     for r in refs:
         cmd += ["-i", r]
-    cmd.append(instruction)
+    cmd += ["--", instruction]
     with tempfile.TemporaryDirectory() as tmp:
         res = subprocess.run(cmd, cwd=tmp, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=900)
     ok = out.exists()

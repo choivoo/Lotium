@@ -1,21 +1,24 @@
-# Layer Visual Validation (134 → 최종)
+# Layer Visual Validation — FINAL (v2)
 
-**상태: PRELIMINARY (스펙 기준)** — Fullbody Master 이미지가 없어 실제 이미지 대조는 미완료. 이미지 확보 후 이 문서를 v2로 갱신.
+기준: 승인된 `LTM_FULLBODY_MASTER_v001` / `LTM_FACE_MASTER_v001` 실제 이미지와 대조(r1 PRELIMINARY 대체).
 
-판정: KEEP 그대로 / MODIFY 수정 / REMOVE 제거 / ADD 신규
+## 집계
+- 기존 134: KEEP 106 / MODIFY 16 / REMOVE 12
+- ADD(신규): 30
+- **최종 유효 레이어: 149** (120~150 범위, 숫자 맞추기용 레이어 없음 — 전부 실제 픽셀 파츠, 빈/중복 0)
 
-## 기존 레이어
+## 기존 레이어 판정
 | No | Layer | 판정 | 비고 |
 |---|---|---|---|
-| 001 | Base_Guide | KEEP |  |
-| 002 | Color_Guide | REMOVE | COLOR_MASTER 이미지로 대체, PSD 가이드 불필요 |
+| 001 | Base_Guide | REMOVE | 가이드는 출력 파츠 아님 |
+| 002 | Color_Guide | REMOVE | COLOR_MASTER로 대체 |
 | 003 | FX_Emote_Heart | KEEP |  |
-| 004 | FX_Emote_Question | KEEP |  |
+| 004 | FX_Emote_Question | REMOVE | 150 한도 내 우선순위 낮음 |
 | 005 | FX_Emote_Sweat | KEEP |  |
 | 006 | FX_Emote_Anger | KEEP |  |
 | 007 | FX_Sparkle_Front | KEEP |  |
 | 008 | FX_Glitch_Overlay | KEEP |  |
-| 009 | FX_Glitch_Block | MODIFY | 픽셀 블록은 3조각 개별 레이어로 분할 검토(깜빡임 개별 제어) |
+| 009 | FX_Glitch_Block | MODIFY | → FX_Glitch_Block_1/2 |
 | 010 | UI_Panel_L_Battery | KEEP |  |
 | 011 | UI_Panel_L_Battery_Low | KEEP |  |
 | 012 | UI_Panel_R_Signal | KEEP |  |
@@ -23,19 +26,19 @@
 | 014 | UI_Game_HUD | KEEP |  |
 | 015 | OC_Warning_Panel | KEEP |  |
 | 016 | OC_Spark_Front | KEEP |  |
-| 017 | OC_Hair_Lift | MODIFY | OC 머리는 대체 아닌 끝 들림 변형+스파크 — 헤어스타일 자체 변경 금지(Design Lock) |
+| 017 | OC_Hair_Lift | REMOVE | Design Lock: 헤어스타일 변경 금지 |
 | 018 | OC_Hair_Spark | KEEP |  |
 | 019 | OC_Eye_Ring_L | KEEP |  |
 | 020 | OC_Eye_Ring_R | KEEP |  |
 | 021 | OC_Core_Burst | KEEP |  |
-| 022 | OC_Body_Rimlight | MODIFY | 림라이트는 가는 시안 선만. 전신 색 오라 외곽선은 로토무 연상 → 두께 제한 |
-| 023 | OC_Cable_Float | REMOVE | 케이블 Seg 변형 파라미터로 부유 구현 → 대체 레이어 불필요 |
+| 022 | OC_Body_Rimlight | KEEP |  |
+| 023 | OC_Cable_Float | REMOVE | 케이블 물리 파라미터로 대체 |
 | 024 | Hair_Front_Ahoge | KEEP |  |
 | 025 | Hair_Front_L | KEEP |  |
 | 026 | Hair_Front_C | KEEP |  |
 | 027 | Hair_Front_R | KEEP |  |
 | 028 | Hair_Front_Center_Strand | KEEP |  |
-| 029 | Hair_Front_Highlight | KEEP |  |
+| 029 | Hair_Front_Highlight | REMOVE | 하이라이트가 헤어 파츠에 베이크됨 |
 | 030 | Hair_Temple_L | KEEP |  |
 | 031 | Hair_Temple_R | KEEP |  |
 | 032 | Headset_Band | KEEP |  |
@@ -63,59 +66,59 @@
 | 054 | Eye_R_Closed_Smile | KEEP |  |
 | 055 | Eye_Star_Sparkle | KEEP |  |
 | 056 | Eye_Flat_Deadpan | KEEP |  |
-| 057 | Eye_Swirl_Dizzy | REMOVE | 14표정 목록 외 → 제거(당황은 069+073) |
-| 058 | Eye_Tear_L | KEEP |  |
-| 059 | Eye_Tear_R | KEEP |  |
+| 057 | Eye_Swirl_Dizzy | REMOVE | 14표정 외 |
+| 058 | Eye_Tear_L | MODIFY | → Eye_Tears_Pool |
+| 059 | Eye_Tear_R | MODIFY | → Eye_Tears_Pool |
 | 060 | Tear_Stream | KEEP |  |
-| 061 | Eye_Glitch_Pixel | KEEP |  |
+| 061 | Eye_Glitch_Pixel | REMOVE | FX_Glitch_Overlay로 통합 |
 | 062 | Mouth_Line_Upper | KEEP |  |
 | 063 | Mouth_Line_Lower | KEEP |  |
 | 064 | Mouth_Teeth_Upper | KEEP |  |
 | 065 | Mouth_Tongue | KEEP |  |
 | 066 | Mouth_Inside | KEEP |  |
 | 067 | Mouth_Pout | KEEP |  |
-| 068 | Mouth_Cat_Grin | MODIFY | Mouth_Cat_Grin → Mouth_Grin_Mischief (ω 고양이입 오해 방지) |
+| 068 | Mouth_Cat_Grin | MODIFY | → Mouth_Grin_Mischief |
 | 069 | Mouth_Wavy | KEEP |  |
 | 070 | Face_Blush | KEEP |  |
 | 071 | Face_Blush_Strong | KEEP |  |
 | 072 | Face_Shadow_Dark | KEEP |  |
-| 073 | Face_Sweat | KEEP |  |
-| 074 | Face_Cheek_Puff | KEEP |  |
+| 073 | Face_Sweat | REMOVE | FX_Emote_Sweat로 통합 |
+| 074 | Face_Cheek_Puff | REMOVE | 볼 변형 파라미터로 대체 |
 | 075 | Face_Mark_Circuit | KEEP |  |
 | 076 | Nose | KEEP |  |
 | 077 | Face_Shadow_Hair | KEEP |  |
 | 078 | Face_Base | KEEP |  |
-| 079 | Hair_Side_L_Front | KEEP |  |
-| 080 | Hair_Side_L_Back | KEEP |  |
-| 081 | Hair_Side_R_Front | KEEP |  |
-| 082 | Hair_Side_R_Back | KEEP |  |
+| 079 | Hair_Side_L_Front | MODIFY | → Hair_Side_L_Upper |
+| 080 | Hair_Side_L_Back | MODIFY | → Hair_Side_L_Lower |
+| 081 | Hair_Side_R_Front | MODIFY | → Hair_Side_R_Upper |
+| 082 | Hair_Side_R_Back | MODIFY | → Hair_Side_R_Lower |
 | 083 | Ear_L | KEEP |  |
 | 084 | Ear_R | KEEP |  |
 | 085 | Hand_R | KEEP |  |
-| 086 | Hand_R_Glove_LED | KEEP |  |
+| 086 | Hand_R_Glove_LED | REMOVE | 마스터 장갑에 LED 없음 |
 | 087 | Sleeve_R_Cuff | KEEP |  |
 | 088 | Sleeve_R_Inner | KEEP |  |
 | 089 | Arm_R_Forearm | KEEP |  |
 | 090 | Arm_R_Upper | KEEP |  |
 | 091 | Core_Glow | KEEP |  |
-| 092 | Core_Gauge_Ring | KEEP |  |
+| 092 | Core_Gauge_Ring | MODIFY | → Core_Glow |
 | 093 | Core_Face | KEEP |  |
 | 094 | Core_Case | KEEP |  |
 | 095 | Drawstring_L | KEEP |  |
 | 096 | Drawstring_R | KEEP |  |
-| 097 | Jacket_Zipper_Glow | KEEP |  |
+| 097 | Jacket_Zipper_Glow | MODIFY | → Jacket_Hood_Rim_Glow |
 | 098 | Jacket_Front_L | KEEP |  |
 | 099 | Jacket_Front_R | KEEP |  |
 | 100 | Jacket_Collar | KEEP |  |
-| 101 | Jacket_Strap | KEEP |  |
-| 102 | Jacket_Hem_Front | KEEP |  |
+| 101 | Jacket_Strap | MODIFY | → Pants_Strap_R/L |
+| 102 | Jacket_Hem_Front | MODIFY | → Jacket_Hem_R/L |
 | 103 | Inner_Circuit_Glow | KEEP |  |
 | 104 | Inner_Body | KEEP |  |
-| 105 | Neck_Choker | KEEP |  |
+| 105 | Neck_Choker | REMOVE | 마스터에 초커 없음(하이넥 이너) |
 | 106 | Neck | KEEP |  |
 | 107 | Pants_L | KEEP |  |
 | 108 | Pants_R | KEEP |  |
-| 109 | Leg_Thigh_Base | KEEP |  |
+| 109 | Leg_Thigh_Base | MODIFY | → Pants_R/L (restored) |
 | 110 | Shoe_L | KEEP |  |
 | 111 | Shoe_R | KEEP |  |
 | 112 | Hand_L | KEEP |  |
@@ -123,48 +126,53 @@
 | 114 | Arm_L_Forearm | KEEP |  |
 | 115 | Arm_L_Upper | KEEP |  |
 | 116 | Hood_Folded | KEEP |  |
-| 117 | Hood_Up | MODIFY | Hood_Up은 03_HAIR_FRONT 위 그룹으로 이동(Z-order) |
-| 118 | Jacket_Back_Hem | KEEP |  |
+| 117 | Hood_Up | KEEP |  |
+| 118 | Jacket_Back_Hem | MODIFY | → Jacket_Back_Lining |
 | 119 | Cable_Tail_Seg1 | KEEP |  |
 | 120 | Cable_Tail_Seg2 | KEEP |  |
 | 121 | Cable_Tail_Plug | KEEP |  |
 | 122 | Cable_Electric_Ribbon | KEEP |  |
-| 123 | Hair_Back_Upper | KEEP |  |
+| 123 | Hair_Back_Upper | MODIFY | → Hair_Back_Base |
 | 124 | Hair_Back_Lower | KEEP |  |
 | 125 | Hair_Back_Hood | KEEP |  |
 | 126 | Ring_Spirit_Seg1 | KEEP |  |
 | 127 | Ring_Spirit_Seg2 | KEEP |  |
 | 128 | Ring_Spirit_Seg3 | KEEP |  |
 | 129 | OC_Ring_Outer | KEEP |  |
-| 130 | FX_Aura_Glow_Back | MODIFY | FX_Aura_Glow_Back → FX_Back_Glow_Small: 코어·링 주변 국소 글로우만. 전신 오라 금지 |
+| 130 | FX_Aura_Glow_Back | MODIFY | → Ring_Spirit_Glow |
 | 131 | Drone_Body | KEEP |  |
 | 132 | Drone_Antenna | KEEP |  |
 | 133 | Drone_Eye | KEEP |  |
 | 134 | Drone_Trail_OC | KEEP |  |
 
 ## ADD
-| 임시 No | Layer | 폴더 | 이유 |
-|---|---|---|---|
-| A01 | Eye_L_Lid_Skin | 05_FACE/Eye_L | 눈 감을 때 덮는 눈꺼풀 피부(hidden 복원) |
-| A02 | Eye_R_Lid_Skin | 05_FACE/Eye_R | 눈 감을 때 덮는 눈꺼풀 피부 |
-| A03 | Eye_L_Closed_Line | 05_FACE/Eye_L | 기본 감은눈 라인(눈 깜빡임) |
-| A04 | Eye_R_Closed_Line | 05_FACE/Eye_R | 기본 감은눈 라인 |
-| A05 | Mouth_Teeth_Lower | 05_FACE/Mouth | 아랫니(크게 벌린 입) |
-| A06 | Face_Base_Side_L | 05_FACE/Face_Base | 머리 회전용 얼굴 측면 윤곽 좌(hidden) |
-| A07 | Face_Base_Side_R | 05_FACE/Face_Base | 얼굴 측면 윤곽 우 |
-| A08 | Hair_Headset_Press | 03_HAIR_FRONT | 헤드셋 착용 시 눌린 머리 경계(헤드셋 off 대응) |
-| A09 | Neck_Back | 10_BODY | 목 뒤(칼라 뒤 복원) |
-| A10 | Torso_Under_Arm_L | 10_BODY | 팔 뒤 몸통 좌(hidden) |
-| A11 | Torso_Under_Arm_R | 10_BODY | 팔 뒤 몸통 우(hidden) |
-| A12 | Wrist_R | 08_ARM_R_FRONT | 소매 안 손목(hidden) |
-| A13 | Wrist_L | 11_ARM_L | 소매 안 손목(hidden) |
-| A14 | Sleeve_L_Inner | 11_ARM_L | 왼 소매 안쪽면(좌우 대칭 누락 보완) |
-| A15 | Jacket_Panel_Orange_L | 09_BODY_FRONT | 오렌지 옆 패널 좌(색 교체·그림자 분리) |
-| A16 | Jacket_Panel_Orange_R | 09_BODY_FRONT | 오렌지 옆 패널 우 |
-| A17 | Cable_Port | 12_BACK | 허리 뒤 포트 단독(케이블 물리 기준점) |
-| A18 | Pip_Glow | 15_DRONE | Pip LED/바디 글로우(Add) |
-
-## 집계
-- KEEP 125 / MODIFY 6 / REMOVE 3 / ADD 18
-- 예상 최종 레이어: 149개 (120~150 범위 내)
-- 이미지 대조 후 추가 REMOVE/ADD 가능.
+- Arm_L_Under
+- Arm_R_Under
+- Cable_Port
+- Eye_L_Closed_Line
+- Eye_L_Lid_Skin
+- Eye_R_Closed_Line
+- Eye_R_Lid_Skin
+- FX_Glitch_Block_2
+- Hair_Headset_Press
+- Hair_Inner_Glow
+- Hand_L_Glove
+- Hand_R_Glove
+- Jacket_Hem_L
+- Jacket_Side_Under_Arm_L
+- Jacket_Side_Under_Arm_R
+- LowBattery_Dim
+- Mouth_Closed_Smile
+- Mouth_Teeth_Lower
+- Neck_Back
+- Pants_Strap_L
+- Pants_Waist_Restore
+- Pip_Glow
+- Pip_Hover_Ring
+- Ring_Spirit_Seg4
+- Sleeve_Cuff_Glow
+- Sleeve_L_Inner
+- Sleeve_L_Strap
+- Sleeve_R_Strap
+- Torso_Restore
+- UI_Signal_Low

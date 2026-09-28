@@ -57,3 +57,22 @@
 | 노래 방송 | 링, 눈 반짝(후렴) | 헤드셋(마이크 가림 방지), UI | 중 | F2 F12 |
 | 방송 종료 | 배터리 부족, 후드 | UI 패널, OC | 약 | Shift+F2 → F2 |
 | 이벤트/기념 | OC, 눈 반짝, 이모트 하트 | — | 강 | F8 F12 F3 |
+
+## 4. PSD 레이어 매핑 (PHASE 7 최종, `layer_manifest_final.csv` 기준)
+| 토글 | 파라미터 | 실제 레이어 |
+|---|---|---|
+| 헤드셋 on/off | Tgl_Headset | Headset_Band, Headset_Cup_R/L, Headset_Cup_Glow (+off 시 Hair_Headset_Press 표시) |
+| 마이크 on/off | Tgl_Mic | Headset_Mic |
+| 후드 on/off | Tgl_Hood | Hood_Up, Hair_Back_Hood ↔ Hood_Folded, Hair_Back_Base |
+| 전기광 약/중/강 | Glow_Level | Ring_Spirit_Glow, Inner_Circuit_Glow, Core_Glow, Jacket_Hood_Rim_Glow, Sleeve_Cuff_Glow, Headset_Cup_Glow, Hair_Inner_Glow, Pip_Glow, Cable_Electric_Ribbon (불투명도) |
+| 오버클럭 | Tgl_Overclock | OC_Ring_Outer, Drone_Trail_OC, OC_Warning_Panel, OC_Spark_Front, OC_Hair_Spark, OC_Eye_Ring_R/L, OC_Core_Burst, OC_Body_Rimlight |
+| 눈 반짝 | Tgl_EyeStar | Eye_Star_Sparkle, FX_Sparkle_Front |
+| UI 패널 | Tgl_UI | UI_Panel_L_Battery, UI_Panel_R_Signal |
+| 배터리 부족 | Tgl_LowBattery | UI_Panel_L_Battery_Low, UI_Signal_Low, LowBattery_Dim |
+| 모바일폼 | Tgl_Mobile | UI_Mobile_Frame, Earpiece_Mobile (+헤드셋 off) |
+| 게임폼 | Tgl_Game | Visor_Game, UI_Game_HUD |
+| glitch | Tgl_Glitch | FX_Glitch_Overlay, FX_Glitch_Block_1/2 |
+| Pip / 링 | Tgl_Drone / Tgl_Ring | Drone_*, Pip_* / Ring_Spirit_* |
+| 장갑 | Tgl_Glove | Hand_R_Glove, Hand_L_Glove |
+| 얼굴 회로점 | Tgl_FaceMark | Face_Mark_Circuit |
+| 이모트 | Tgl_Emote | FX_Emote_Heart / Sweat / Anger |

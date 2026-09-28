@@ -1,28 +1,38 @@
-# Face Master Spec
+# Face Master Spec — LOCKED
 
-상태: **TARGET (이미지 미확보)** — `LTM_FACE_MASTER_v001.png` 생성 후 실측값으로 갱신하고 상태를 LOCKED로 변경.
+상태: **LOCKED** · 기준 이미지 `LTM_FACE_MASTER_v001.png` (1254×1254, Codex image_generation, 레퍼런스: LTM_CONCEPT_B_v001)
+측정: 원본 픽셀 좌표(수동 격자 측정, ±5px). 비율은 눈높이 얼굴 폭(FW = 415px) 기준 %.
 
-측정 기준: 얼굴 폭(광대 외곽) = 100.
+| 요소 | 실측 (px) | FW 대비 | 목표값(r1 스펙) | 판정 |
+|---|---|---|---|---|
+| face contour | 눈높이 x 425–840, 부드러운 V, 턱끝 둥글게 | 100 | V라인 둥근 턱 | PASS |
+| jaw | 턱선 y≈790에서 폭 ≈230 → 턱끝 (632, 840) | 55 | 둥근 턱끝 | PASS |
+| cheek volume | 눈 아래 볼 외곽 약간 볼록 | — | 약간 통통 | PASS |
+| eye width | 좌 175 / 우 155 (정면 원근 미세 차) | 42 / 37 | 23 | **MASTER 우선** (애니 VTuber 표준 큰 눈) |
+| eye height | ≈100 | 24 | — | 기록 |
+| eye distance (안쪽 눈꼬리) | ≈95 | 23 | 23 | PASS |
+| iris size | 지름 ≈70, 위 눈꺼풀에 살짝 가림 | 17 | 눈 높이 85% | PASS |
+| eyebrow thickness | ≈6, 앞머리에 대부분 가려짐 | 1.4 | 2.2 | PASS(가늘게) |
+| eyebrow angle | 거의 수평, 바깥 끝 약간 하강 | — | 수평 −5° | PASS |
+| nose position | 코끝 y≈680 (눈선 550에서 +130), 점+그림자 | — | 점+짧은 선 | PASS |
+| mouth width | 140 (열린 미소) | 34 | 14 (닫힘 기준) | 기록: 기본 파츠는 닫힌 미소 폭 ≈80(19%)으로 제작 |
+| default mouth shape | 윗니 살짝 보이는 열린 미소 | — | 작은 열린 미소 | PASS |
+| hairline | y≈400 추정(앞머리로 전부 가림) | — | 눈썹 위 | 기록 |
+| front bangs | 중앙 가르마 경향 + 눈 사이 가닥 1, 눈썹 아래까지 | — | 7:3 좌가르마 | **MASTER 우선** |
+| side hair relationship | 옆머리가 볼 외곽 덮고 턱선 아래까지, 끝 앰버 그라데이션 | — | 턱선 | PASS |
+| 시그니처 | 왼눈(캐릭터 기준) 아래 시안 점 2, 오른쪽 옆머리 시안 브리지 | — | 동일 | PASS |
 
-| 요소 | 목표값 | 실측 | 판정 |
-|---|---|---|---|
-| face contour | 부드러운 V, 폭:높이 = 100:115 | | |
-| jaw | 턱끝 폭 18, 둥글게 | | |
-| cheek volume | 볼 외곽이 눈 아래에서 +3 부풀음 | | |
-| eye width | 23 (각 눈) | | |
-| eye height | 17 (개안 시) | | |
-| eye distance | 안쪽 눈꼬리 간격 23 | | |
-| iris size | 눈 높이의 85% (위 눈꺼풀에 살짝 가림) | | |
-| eyebrow thickness | 2.2 | | |
-| eyebrow angle | 수평, 끝만 -5° | | |
-| nose position | 눈 아래 선에서 높이 20 아래, 점+짧은 선 | | |
-| mouth width | 기본 14 | | |
-| default mouth shape | 작은 열린 미소, 윗니 없음(기본) | | |
-| hairline | 눈썹 위 높이 22, 앞머리로 대부분 가림 | | |
-| front bangs | 7:3 좌가르마, 좌·중·우 그룹 + 눈 사이 가닥 1, 눈썹 바로 아래 | | |
-| side hair relationship | 옆머리가 볼 외곽을 약 4 덮고 턱선에서 끝남 | | |
+## 확정 규칙
+- 스펙과 다른 항목(큰 눈, 가르마)은 **마스터 이미지가 우선**한다(Design Lock 원칙: 이미지 확정 후 이미지가 Source of Truth).
+- Face QA Sheet(`LTM_FACE_QA_SHEET_v001.png`) 결과는 아래에 기록.
 
-## 얼굴 선택 기준 (Concept A/B/C 중)
-1. `visual_target_lock` 얼굴 항목 PASS 수 최다
-2. 동수면 중성성(3번)과 친근함 우선
-3. 선택 이유를 이 문서 하단에 기록
+## Face QA Sheet 결과 (`LTM_FACE_QA_SHEET_v001.png`)
+| 검사 | 결과 |
+|---|---|
+| eye distance | 유지 (PASS) |
+| jaw width | 유지 (PASS) |
+| hairline | 유지 (PASS) |
+| bang placement | 눈 사이 가닥·좌측 시안 스트릭 유지 (PASS) |
+| nose height | 유지 (PASS) |
+| mouth position | 유지 (PASS) |
+판정: 6패널 동일 인물 — FACE LOCK 확정.

@@ -1,0 +1,4 @@
+Expression reference sheet of exactly the same face as the attached face master (Lotium): same hair, same headset, same collar, same straight front angle and lighting in every cell. Grid of 16 head-and-shoulders portraits (4 columns x 4 rows), in this order:
+neutral, soft smile, big smile with open mouth, laugh with closed happy eyes, mischievous grin with one eye winking, surprised with small pupils, embarrassed with strong blush and sweat drop, annoyed flat half-closed eyes, angry furrowed brows, sad downturned brows, crying with tears, sparkle star eyes, glitch with RGB split and pixel blocks on one side of the face, overclock with double cyan eye rings and sparks, sleepy, panic swirl-free wide eyes.
+Plain white background, no text labels.
+Avoid: different face between cells, Rotom, Pokemon, text.

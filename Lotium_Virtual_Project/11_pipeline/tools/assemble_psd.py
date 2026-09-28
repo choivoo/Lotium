@@ -11,7 +11,8 @@ Manifest format:
   "layers": [
     {"id": "045", "name": "045_Eye_Iris_L", "group": "05_FACE/Eye_L",
      "file": "08_parts/eyes/045_Eye_Iris_L.png", "x": 0, "y": 0, "z": 45,
-     "toggle": false, "physics": false, "param": "ParamEyeBallX", "hidden_restored": false}
+     "toggle": false, "physics": false, "param": "ParamEyeBallX", "hidden_restored": false,
+     "visible": true, "blend": "normal"}
   ]
 }
 Paths in "file" are relative to the manifest's directory.
@@ -31,6 +32,7 @@ from pathlib import Path
 from PIL import Image
 from psd_tools import PSDImage
 from psd_tools.api.layers import Group, PixelLayer
+from psd_tools.constants import BlendMode
 
 
 def load(manifest_path):
@@ -74,8 +76,12 @@ def build(data, images, out):
 
     # psd-tools appends bottom-to-top, so add the back-most layers first.
     for layer in sorted(data["layers"], key=lambda l: -l["z"]):
-        PixelLayer.frompil(images[layer["name"]], group_for(layer.get("group", "")),
-                           layer["name"], layer["y"], layer["x"])
+        pl = PixelLayer.frompil(images[layer["name"]], group_for(layer.get("group", "")),
+                                layer["name"], layer["y"], layer["x"])
+        if not layer.get("visible", True):
+            pl.visible = False
+        if layer.get("blend") == "add":
+            pl.blend_mode = BlendMode.LINEAR_DODGE
     psd.save(out)
 
 
