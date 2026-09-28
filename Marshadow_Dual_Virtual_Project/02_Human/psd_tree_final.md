@@ -1,0 +1,188 @@
+# PSD tree — Marshadow_Human_Live2D_Master_v001.psd
+
+Canvas 3072×4608, RGBA 8-bit. Listed top → bottom (as in Photoshop).
+
+- 📁 **17_OVERDRIVE** (2)
+  - `MSH_166` Overdrive_Flame_Front  _(hidden, add, toggle=mode:od)_
+  - `MSH_165` OverdriveLocalGlow  _(hidden, add, toggle=mode:od)_
+- 📁 **16_EXPRESSIONS** (8)
+  - `MSH_164` Mark_Sparkle  _(hidden, toggle=fx:sparkle)_
+  - `MSH_163` Mark_Gloom  _(hidden, multiply, toggle=fx:gloom)_
+  - `MSH_162` Mark_Shock  _(hidden, toggle=fx:shock)_
+  - `MSH_161` Mark_Confused  _(hidden, toggle=fx:confused)_
+  - `MSH_160` Mark_Zzz  _(hidden, toggle=fx:sleep)_
+  - `MSH_159` Mark_Anger  _(hidden, toggle=fx:anger)_
+  - `MSH_158` Mark_Sweat  _(hidden, toggle=fx:sweat)_
+  - `MSH_157` Mark_Embarrass  _(hidden, toggle=fx:embarrass)_
+- 📁 **15_FRONT_FX** (8)
+  - `MSH_156` Glitch02  _(hidden, screen, toggle=mode:od|fx:glitch)_
+  - `MSH_155` Glitch01  _(hidden, screen, toggle=mode:od|fx:glitch)_
+  - `MSH_154` SeamGlow  _(hidden, add, toggle=mode:shadow)_
+  - `MSH_153` CharmCore_Glow  _(hidden, add, toggle=mode:combat)_
+  - `MSH_152` Particles02  _(hidden, add, toggle=mode:od)_
+  - `MSH_151` Particles01  _(hidden, add, toggle=mode:combat)_
+  - `MSH_150` CombatEyeGlowR  _(hidden, add, toggle=mode:combat|fx:eyeglow)_
+  - `MSH_149` CombatEyeGlowL  _(hidden, add, toggle=mode:combat|fx:eyeglow)_
+- 📁 **14_SHADOW** (8)
+  - `MSH_148` Mist_Front  _(hidden, toggle=mode:od|fx:mist)_
+  - `MSH_147` CombatAuraLocal  _(hidden, add, toggle=mode:combat)_
+  - `MSH_146` Fragments02  _(hidden, toggle=mode:od)_
+  - `MSH_145` Fragments01  _(hidden, toggle=mode:od)_
+  - `MSH_144` ShadowFingerR  _(hidden, toggle=mode:combat|fx:shadowhands)_
+  - `MSH_143` ShadowHandR  _(hidden, toggle=mode:combat|fx:shadowhands)_
+  - `MSH_142` ShadowFingerL  _(hidden, toggle=mode:combat|fx:shadowhands)_
+  - `MSH_141` ShadowHandL  _(hidden, toggle=mode:combat|fx:shadowhands)_
+- 📁 **13_HOOD_UP** (3)
+  - `MSH_140` HoodUp_Peak_R  _(hidden, toggle=hood:up)_
+  - `MSH_139` HoodUp_Peak_L  _(hidden, toggle=hood:up)_
+  - `MSH_138` HoodUp_Front  _(hidden, toggle=hood:up)_
+- 📁 **12_FRONT_HAIR** (13)
+  - `MSH_137` HairGlow_Tip03  _(hidden, add, toggle=mode:od)_
+  - `MSH_136` HairGlow_Tip02  _(hidden, add, toggle=mode:od)_
+  - `MSH_135` HairGlow_Tip01  _(hidden, add, toggle=mode:od)_
+  - `MSH_134` Hair_Highlight  _(screen)_
+  - `MSH_133` Hair_Strand_Physics
+  - `MSH_132` Hair_Accent_Smoke
+  - `MSH_131` Hair_FrontCenter
+  - `MSH_130` Hair_FrontR2
+  - `MSH_129` Hair_FrontR1
+  - `MSH_128` Hair_FrontL2
+  - `MSH_127` Hair_FrontL1
+  - `MSH_126` Hair_SideR
+  - `MSH_125` Hair_SideL
+- 📁 **11_MOUTH** (14)
+  - `MSH_124` Mouth_Fang  _(hidden, toggle=mouth:fang)_
+  - `MSH_123` Mouth_O  _(hidden, toggle=mouth:o)_
+  - `MSH_122` Mouth_Flat  _(hidden, toggle=mouth:flat)_
+  - `MSH_121` Mouth_Wavy  _(hidden, toggle=mouth:wavy)_
+  - `MSH_120` Mouth_Smirk  _(hidden, toggle=mouth:smirk)_
+  - `MSH_119` Mouth_Frown  _(hidden, toggle=mouth:frown)_
+  - `MSH_118` Mouth_Smile  _(hidden, toggle=mouth:smile)_
+  - `MSH_117` Mouth_Shadow  _(hidden, multiply, toggle=mouth:open)_
+  - `MSH_116` Mouth_LowerLip  _(hidden, toggle=mouth:open)_
+  - `MSH_115` Mouth_UpperLip  _(hidden, toggle=mouth:open)_
+  - `MSH_114` Mouth_Tongue  _(hidden, toggle=mouth:open)_
+  - `MSH_113` Mouth_Teeth  _(hidden, toggle=mouth:open)_
+  - `MSH_112` Mouth_Inner  _(hidden, toggle=mouth:open)_
+  - `MSH_111` Mouth_Line  _(toggle=mouth:neutral)_
+- 📁 **10_BROWS** (8)
+  - `MSH_110` Brow_Up_R  _(hidden, toggle=brow:up)_
+  - `MSH_109` Brow_Up_L  _(hidden, toggle=brow:up)_
+  - `MSH_108` Brow_Sad_R  _(hidden, toggle=brow:sad)_
+  - `MSH_107` Brow_Sad_L  _(hidden, toggle=brow:sad)_
+  - `MSH_106` Brow_Angry_R  _(hidden, toggle=brow:angry)_
+  - `MSH_105` Brow_Angry_L  _(hidden, toggle=brow:angry)_
+  - `MSH_104` Brow_R  _(toggle=brow:neutral)_
+  - `MSH_103` Brow_L  _(toggle=brow:neutral)_
+- 📁 **09_EYES** (34)
+  - `MSH_102` EyeR_Tear  _(hidden, toggle=fx:tear)_
+  - `MSH_101` EyeR_HalfLid  _(hidden, toggle=eye:half)_
+  - `MSH_100` EyeR_Smile  _(hidden, toggle=eye:smile)_
+  - `MSH_099` EyeR_Close  _(hidden, toggle=eye:closed)_
+  - `MSH_098` EyeR_LowerLid
+  - `MSH_097` EyeR_UpperLid
+  - `MSH_096` EyeR_LowerLash
+  - `MSH_095` EyeR_UpperLash
+  - `MSH_094` EyeR_Highlight02
+  - `MSH_093` EyeR_Highlight01
+  - `MSH_092` EyeR_OverdriveRing  _(hidden, toggle=mode:od)_
+  - `MSH_091` EyeR_ShadowRing  _(hidden, toggle=mode:shadow)_
+  - `MSH_090` EyeR_Pupil
+  - `MSH_089` EyeR_Iris_Spectral  _(hidden, toggle=mode:shadow)_
+  - `MSH_088` EyeR_Iris
+  - `MSH_087` EyeR_Sclera_Dark  _(hidden, toggle=mode:od)_
+  - `MSH_086` EyeR_Sclera
+  - `MSH_085` EyeL_Tear  _(hidden, toggle=fx:tear)_
+  - `MSH_084` EyeL_HalfLid  _(hidden, toggle=eye:half)_
+  - `MSH_083` EyeL_Smile  _(hidden, toggle=eye:smile)_
+  - `MSH_082` EyeL_Close  _(hidden, toggle=eye:closed)_
+  - `MSH_081` EyeL_LowerLid
+  - `MSH_080` EyeL_UpperLid
+  - `MSH_079` EyeL_LowerLash
+  - `MSH_078` EyeL_UpperLash
+  - `MSH_077` EyeL_Highlight02
+  - `MSH_076` EyeL_Highlight01
+  - `MSH_075` EyeL_OverdriveRing  _(hidden, toggle=mode:od)_
+  - `MSH_074` EyeL_ShadowRing  _(hidden, toggle=mode:shadow)_
+  - `MSH_073` EyeL_Pupil
+  - `MSH_072` EyeL_Iris_Spectral  _(hidden, toggle=mode:shadow)_
+  - `MSH_071` EyeL_Iris
+  - `MSH_070` EyeL_Sclera_Dark  _(hidden, toggle=mode:od)_
+  - `MSH_069` EyeL_Sclera
+- 📁 **08_FACE** (7)
+  - `MSH_068` Blush_R  _(hidden, toggle=fx:blush)_
+  - `MSH_067` Blush_L  _(hidden, toggle=fx:blush)_
+  - `MSH_066` Nose
+  - `MSH_065` Face_Shadow  _(multiply)_
+  - `MSH_064` Face_Base
+  - `MSH_063` Ear_R
+  - `MSH_062` Ear_L
+- 📁 **07_ARMS** (12)
+  - `MSH_061` FistR  _(hidden, toggle=mode:combat|pose:fist)_
+  - `MSH_060` GloveR
+  - `MSH_059` HandR
+  - `MSH_058` CuffR
+  - `MSH_057` SleeveLowerR
+  - `MSH_056` SleeveUpperR
+  - `MSH_055` FistL  _(hidden, toggle=mode:combat|pose:fist)_
+  - `MSH_054` GloveL
+  - `MSH_053` HandL
+  - `MSH_052` CuffL
+  - `MSH_051` SleeveLowerL
+  - `MSH_050` SleeveUpperL
+- 📁 **06_CLOTHES** (20)
+  - `MSH_049` CollarR
+  - `MSH_048` JacketSeamR
+  - `MSH_047` JacketR
+  - `MSH_046` CollarL
+  - `MSH_045` JacketSeamL
+  - `MSH_044` JacketL
+  - `MSH_043` Charm
+  - `MSH_042` Strap_Hanging
+  - `MSH_041` Strap_Thigh
+  - `MSH_040` Belt
+  - `MSH_039` Waist
+  - `MSH_038` InnerCollar
+  - `MSH_037` Inner
+  - `MSH_036` PantsPocketR
+  - `MSH_035` PantsR
+  - `MSH_034` PantsPocketL
+  - `MSH_033` PantsL
+  - `MSH_032` ShoeR
+  - `MSH_031` ShoeL
+  - `MSH_030` JacketBack
+- 📁 **05_BODY** (9)
+  - `MSH_029` Forearm_R
+  - `MSH_028` UpperArm_R
+  - `MSH_027` Shoulder_R
+  - `MSH_026` Forearm_L
+  - `MSH_025` UpperArm_L
+  - `MSH_024` Shoulder_L
+  - `MSH_023` Torso
+  - `MSH_022` NeckShadow  _(multiply)_
+  - `MSH_021` Neck
+- 📁 **04_HOOD_BACK** (2)
+  - `MSH_020` HoodUp_Back  _(hidden, toggle=hood:up)_
+  - `MSH_019` HoodDown  _(toggle=hood:down)_
+- 📁 **03_BACK_HAIR** (3)
+  - `MSH_018` Hair_BackR
+  - `MSH_017` Hair_BackL
+  - `MSH_016` Hair_BackMain
+- 📁 **02_SHADOW_POOL** (5)
+  - `MSH_015` ShadowRear  _(hidden, toggle=mode:shadow)_
+  - `MSH_014` ShadowRight  _(hidden, toggle=mode:shadow)_
+  - `MSH_013` ShadowLeft  _(hidden, toggle=mode:shadow)_
+  - `MSH_012` ShadowPool_Large  _(hidden, toggle=mode:shadow)_
+  - `MSH_011` ShadowPool
+- 📁 **01_BACK_FX** (9)
+  - `MSH_010` ShadowArm_Rear_R  _(hidden, toggle=mode:combat|fx:shadowhands)_
+  - `MSH_009` ShadowArm_Rear_L  _(hidden, toggle=mode:combat|fx:shadowhands)_
+  - `MSH_008` Mist_Back  _(hidden, toggle=mode:od|fx:mist)_
+  - `MSH_007` Overdrive_Flame_Back  _(hidden, add, toggle=mode:od)_
+  - `MSH_006` Wisp02  _(hidden, toggle=mode:shadow|fx:halo)_
+  - `MSH_005` Wisp01  _(hidden, toggle=mode:shadow|fx:halo)_
+  - `MSH_004` Halo_Fragments  _(hidden, toggle=mode:od|fx:halo)_
+  - `MSH_003` Halo_Crescent_Glow  _(hidden, add, toggle=mode:shadow|fx:halo)_
+  - `MSH_002` Halo_Crescent_Main  _(hidden, toggle=mode:shadow|fx:halo)_
+- 📁 **00_GUIDE** (1)
+  - `MSH_001` Guide_Centerline_Pivots  _(hidden)_

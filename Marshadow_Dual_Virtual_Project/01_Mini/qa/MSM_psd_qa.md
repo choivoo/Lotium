@@ -18,7 +18,7 @@
 | reopened PSD composite == Fullbody Master | PASS | mean abs diff 0.007/255, p99.9 1.0 |
 | restored parts have real hidden area | PASS | [] |
 | hidden-area restoration count | PASS | 21 restored parts |
-| face/body sharpness parity (native-res parts, no upscale) | PASS | body/face edge energy 1.00 |
+| face/body sharpness parity (native-res parts, no upscale) | PASS | body/face edge crispness 1.49 |
 | anti-alias edges (no white halo) | PASS | [] |
 
 - Layers: 109  · Groups: 13  · Hidden by default: 62

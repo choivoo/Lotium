@@ -31,10 +31,11 @@ def assemble(recs, cfg, path):
 
 
 def _grad_energy(im, box):
-    a = np.asarray(im.crop(box).convert('L'), np.float32)
-    gx = np.abs(np.diff(a, axis=1)).mean()
-    gy = np.abs(np.diff(a, axis=0)).mean()
-    return float(gx + gy)
+    """edge crispness: 99.5th percentile of gradient magnitude (independent of how busy the region is)"""
+    a = np.asarray(im.convert('RGBA').crop(box), np.float32)
+    lum = (a[..., :3].mean(axis=2) * a[..., 3] / 255 + 236 * (1 - a[..., 3] / 255))
+    g = np.hypot(np.diff(lum, axis=1)[:-1], np.diff(lum, axis=0)[:, :-1])
+    return float(np.percentile(g[g > 2], 99.5)) if (g > 2).any() else 0.0
 
 
 def verify(recs, cfg, path, default_comp, root):
@@ -139,7 +140,7 @@ def verify(recs, cfg, path, default_comp, root):
     fe = _grad_energy(default_comp, cfg['face_box'])
     be = _grad_energy(default_comp, cfg['body_box'])
     ratio = be / max(fe, 1e-6)
-    check('face/body sharpness parity (native-res parts, no upscale)', ratio > 0.35, f'body/face edge energy {ratio:.2f}', level='WARN')
+    check('face/body sharpness parity (native-res parts, no upscale)', ratio > 0.8, f'body/face edge crispness {ratio:.2f}', level='WARN')
     # alpha edge quality: premultiplied halo check (bright fringe on dark parts)
     halo = []
     for r in recs:

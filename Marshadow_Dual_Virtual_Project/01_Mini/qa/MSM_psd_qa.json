@@ -73,7 +73,7 @@
   {
    "check": "face/body sharpness parity (native-res parts, no upscale)",
    "result": "PASS",
-   "detail": "body/face edge energy 1.00"
+   "detail": "body/face edge crispness 1.49"
   },
   {
    "check": "anti-alias edges (no white halo)",

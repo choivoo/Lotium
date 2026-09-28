@@ -1,0 +1,167 @@
+ID,Name,Group,PNG File,X,Y,Width,Height,Z-order,Blend mode,Default visibility,Toggle,Physics,Live2D parameter,Hidden restoration,Note
+MSH_001,Guide_Centerline_Pivots,00_GUIDE,parts/00_GUIDE/MSH_001_Guide_Centerline_Pivots.png,898,245,1275,4209,1,normal,OFF,,,,,"rig guide: centre line, pivots, head/body ratios"
+MSH_002,Halo_Crescent_Main,01_BACK_FX,parts/01_BACK_FX/MSH_002_Halo_Crescent_Main.png,1062,224,950,923,2,normal,OFF,mode:shadow|fx:halo,halo float,Param_Halo / Param_AngleX(0.3),,SIGNATURE broken-crescent halo (solid)
+MSH_003,Halo_Crescent_Glow,01_BACK_FX,parts/01_BACK_FX/MSH_003_Halo_Crescent_Glow.png,1013,171,1052,1020,3,add,OFF,mode:shadow|fx:halo,,Param_HaloGlow,,
+MSH_004,Halo_Fragments,01_BACK_FX,parts/01_BACK_FX/MSH_004_Halo_Fragments.png,1081,207,1018,266,4,normal,OFF,mode:od|fx:halo,drift,Param_Overdrive,,broken pieces flying off the crescent (overdrive)
+MSH_005,Wisp01,01_BACK_FX,parts/01_BACK_FX/MSH_005_Wisp01.png,781,1060,303,686,5,normal,OFF,mode:shadow|fx:halo,wisp float / trail,Param_Wisp1,,floating shadow wisp
+MSH_006,Wisp02,01_BACK_FX,parts/01_BACK_FX/MSH_006_Wisp02.png,2015,978,274,598,6,normal,OFF,mode:shadow|fx:halo,wisp float / trail,Param_Wisp2,,floating shadow wisp
+MSH_007,Overdrive_Flame_Back,01_BACK_FX,parts/01_BACK_FX/MSH_007_Overdrive_Flame_Back.png,971,488,1134,1684,7,add,OFF,mode:od,flame flicker,Param_Overdrive,,green shadow flame behind body (local)
+MSH_008,Mist_Back,01_BACK_FX,parts/01_BACK_FX/MSH_008_Mist_Back.png,614,3486,1733,957,8,normal,OFF,mode:od|fx:mist,mist drift,Param_Mist,,
+MSH_009,ShadowArm_Rear_L,01_BACK_FX,parts/01_BACK_FX/MSH_009_ShadowArm_Rear_L.png,629,2566,747,1817,9,normal,OFF,mode:combat|fx:shadowhands,arm sway (slow),Param_ShadowArmL,arm root continues under pool / body,shadow arm rising from pool
+MSH_010,ShadowArm_Rear_R,01_BACK_FX,parts/01_BACK_FX/MSH_010_ShadowArm_Rear_R.png,1696,2566,747,1817,10,normal,OFF,mode:combat|fx:shadowhands,arm sway (slow),Param_ShadowArmR,arm root continues under pool / body,shadow arm rising from pool
+MSH_011,ShadowPool,02_SHADOW_POOL,parts/02_SHADOW_POOL/MSH_011_ShadowPool.png,1096,4254,880,159,11,normal,ON,,,Param_ShadowPool,,small calm living shadow (normal)
+MSH_012,ShadowPool_Large,02_SHADOW_POOL,parts/02_SHADOW_POOL/MSH_012_ShadowPool_Large.png,745,4219,1582,250,12,normal,OFF,mode:shadow,,Param_ShadowPool,,enlarged pool (shadow mode)
+MSH_013,ShadowLeft,02_SHADOW_POOL,parts/02_SHADOW_POOL/MSH_013_ShadowLeft.png,1011,3837,198,523,13,normal,OFF,mode:shadow,tendril wave,Param_ShadowTendrilL,,
+MSH_014,ShadowRight,02_SHADOW_POOL,parts/02_SHADOW_POOL/MSH_014_ShadowRight.png,1863,3837,198,523,14,normal,OFF,mode:shadow,tendril wave,Param_ShadowTendrilR,,
+MSH_015,ShadowRear,02_SHADOW_POOL,parts/02_SHADOW_POOL/MSH_015_ShadowRear.png,1051,203,1156,4148,15,normal,OFF,mode:shadow,lag follow (mimicry),Param_ShadowRearX/Y,,living shadow standing behind the body
+MSH_016,Hair_BackMain,03_BACK_HAIR,parts/03_BACK_HAIR/MSH_016_Hair_BackMain.png,1179,353,714,804,16,normal,ON,,back hair sway,Param_HairBack,full back-of-head mass behind face / hood,
+MSH_017,Hair_BackL,03_BACK_HAIR,parts/03_BACK_HAIR/MSH_017_Hair_BackL.png,1170,884,157,449,17,normal,ON,,hair tip swing,Param_HairBackL,root under back main,
+MSH_018,Hair_BackR,03_BACK_HAIR,parts/03_BACK_HAIR/MSH_018_Hair_BackR.png,1745,884,157,450,18,normal,ON,,hair tip swing,Param_HairBackR,root under back main,
+MSH_019,HoodDown,04_HOOD_BACK,parts/04_HOOD_BACK/MSH_019_HoodDown.png,1261,1003,550,290,19,normal,ON,hood:down,hood bounce,Param_Hood,full fold behind neck/hair,hood resting on shoulders
+MSH_020,HoodUp_Back,04_HOOD_BACK,parts/04_HOOD_BACK/MSH_020_HoodUp_Back.png,1069,244,934,1073,20,normal,OFF,hood:up,,Param_Hood,,inside of raised hood (behind head)
+MSH_021,Neck,05_BODY,parts/05_BODY/MSH_021_Neck.png,1463,895,146,260,21,normal,ON,,,Param_AngleX/Y (neck deform),"neck under hair, jaw and collar",
+MSH_022,NeckShadow,05_BODY,parts/05_BODY/MSH_022_NeckShadow.png,1470,925,132,147,22,multiply,ON,,,Param_AngleY,,jaw cast shadow
+MSH_023,Torso,05_BODY,parts/05_BODY/MSH_023_Torso.png,1288,1076,496,1066,23,normal,ON,,,"Param_BodyAngleX/Y, Param_Breath",whole torso under jacket + arms,
+MSH_024,Shoulder_L,05_BODY,parts/05_BODY/MSH_024_Shoulder_L.png,1200,1157,201,233,24,normal,ON,,,Param_ShoulderL,shoulder joint under sleeve cap,
+MSH_025,UpperArm_L,05_BODY,parts/05_BODY/MSH_025_UpperArm_L.png,1106,1223,226,585,25,normal,ON,,,Param_ArmLA,upper arm inside sleeve,
+MSH_026,Forearm_L,05_BODY,parts/05_BODY/MSH_026_Forearm_L.png,1024,1813,184,544,26,normal,ON,,,Param_ArmLB,forearm inside sleeve + wrist under cuff,
+MSH_027,Shoulder_R,05_BODY,parts/05_BODY/MSH_027_Shoulder_R.png,1672,1157,200,233,27,normal,ON,,,Param_ShoulderR,shoulder joint under sleeve cap,
+MSH_028,UpperArm_R,05_BODY,parts/05_BODY/MSH_028_UpperArm_R.png,1740,1223,226,585,28,normal,ON,,,Param_ArmRA,upper arm inside sleeve,
+MSH_029,Forearm_R,05_BODY,parts/05_BODY/MSH_029_Forearm_R.png,1864,1813,184,544,29,normal,ON,,,Param_ArmRB,forearm inside sleeve + wrist under cuff,
+MSH_030,JacketBack,06_CLOTHES,parts/06_CLOTHES/MSH_030_JacketBack.png,1160,1162,753,1021,30,normal,ON,,,Param_BodyAngleX,inside/back of jacket behind torso,jacket lining + back panel
+MSH_031,ShoeL,06_CLOTHES,parts/06_CLOTHES/MSH_031_ShoeL.png,1306,3942,239,412,31,normal,ON,,,Param_LegL,ankle under pants hem,
+MSH_032,ShoeR,06_CLOTHES,parts/06_CLOTHES/MSH_032_ShoeR.png,1528,3942,239,413,32,normal,ON,,,Param_LegR,ankle under pants hem,
+MSH_033,PantsL,06_CLOTHES,parts/06_CLOTHES/MSH_033_PantsL.png,1333,2012,230,2026,33,normal,ON,,,Param_LegL,hip overlap + upper leg under jacket/belt,
+MSH_034,PantsPocketL,06_CLOTHES,parts/06_CLOTHES/MSH_034_PantsPocketL.png,1325,2528,128,257,34,normal,ON,,,Param_LegL,,cargo pocket
+MSH_035,PantsR,06_CLOTHES,parts/06_CLOTHES/MSH_035_PantsR.png,1510,2012,228,2026,35,normal,ON,,,Param_LegR,hip overlap + upper leg under jacket/belt,
+MSH_036,PantsPocketR,06_CLOTHES,parts/06_CLOTHES/MSH_036_PantsPocketR.png,1619,2528,128,258,36,normal,ON,,,Param_LegR,,cargo pocket
+MSH_037,Inner,06_CLOTHES,parts/06_CLOTHES/MSH_037_Inner.png,1309,1109,455,967,37,normal,ON,,,Param_Breath,full shirt behind jacket panels,very dark gray high-neck inner
+MSH_038,InnerCollar,06_CLOTHES,parts/06_CLOTHES/MSH_038_InnerCollar.png,1444,1024,184,157,38,normal,ON,,,Param_AngleX (0.3),collar back behind neck,high neck
+MSH_039,Waist,06_CLOTHES,parts/06_CLOTHES/MSH_039_Waist.png,1335,2010,403,110,39,normal,ON,,,Param_BodyAngleX,,pants waistband
+MSH_040,Belt,06_CLOTHES,parts/06_CLOTHES/MSH_040_Belt.png,1330,2024,413,94,40,normal,ON,,,Param_BodyAngleX,,shadow belt with crescent buckle
+MSH_041,Strap_Thigh,06_CLOTHES,parts/06_CLOTHES/MSH_041_Strap_Thigh.png,1332,2359,216,69,41,normal,ON,,strap swing,Param_Strap1,,thin thigh strap (L)
+MSH_042,Strap_Hanging,06_CLOTHES,parts/06_CLOTHES/MSH_042_Strap_Hanging.png,1669,2089,54,336,42,normal,ON,,strap pendulum,Param_Strap2,,hanging belt strap (R)
+MSH_043,Charm,06_CLOTHES,parts/06_CLOTHES/MSH_043_Charm.png,1347,2091,101,233,43,normal,ON,,charm pendulum,Param_Charm,,spectral crescent charm on belt
+MSH_044,JacketL,06_CLOTHES,parts/06_CLOTHES/MSH_044_JacketL.png,1159,1105,369,1123,44,normal,ON,,,Param_BodyAngleX/Y,panel continues under collar + sleeve,oversized short hooded jacket panel
+MSH_045,JacketSeamL,06_CLOTHES,parts/06_CLOTHES/MSH_045_JacketSeamL.png,1209,1169,301,914,45,normal,ON,,,Param_Seam (glow in SHADOW),,soft spectral-green seam line
+MSH_046,CollarL,06_CLOTHES,parts/06_CLOTHES/MSH_046_CollarL.png,1366,1053,134,176,46,normal,ON,,collar flap,Param_AngleX (0.2),,
+MSH_047,JacketR,06_CLOTHES,parts/06_CLOTHES/MSH_047_JacketR.png,1544,1105,369,1123,47,normal,ON,,,Param_BodyAngleX/Y,panel continues under collar + sleeve,oversized short hooded jacket panel
+MSH_048,JacketSeamR,06_CLOTHES,parts/06_CLOTHES/MSH_048_JacketSeamR.png,1563,1169,300,914,48,normal,ON,,,Param_Seam (glow in SHADOW),,soft spectral-green seam line
+MSH_049,CollarR,06_CLOTHES,parts/06_CLOTHES/MSH_049_CollarR.png,1572,1053,135,176,49,normal,ON,,collar flap,Param_AngleX (0.2),,
+MSH_050,SleeveUpperL,07_ARMS,parts/07_ARMS/MSH_050_SleeveUpperL.png,1052,1171,338,674,50,normal,ON,,sleeve swing,Param_ArmLA,cap continues under collar,
+MSH_051,SleeveLowerL,07_ARMS,parts/07_ARMS/MSH_051_SleeveLowerL.png,993,1751,277,515,51,normal,ON,,sleeve swing 2,Param_ArmLB,elbow overlap under upper sleeve,
+MSH_052,CuffL,07_ARMS,parts/07_ARMS/MSH_052_CuffL.png,999,2201,180,112,52,normal,ON,,,Param_ArmLB,,rib cuff with green line
+MSH_053,HandL,07_ARMS,parts/07_ARMS/MSH_053_HandL.png,1011,2289,138,272,53,normal,ON,,,Param_HandL,palm root under cuff,
+MSH_054,GloveL,07_ARMS,parts/07_ARMS/MSH_054_GloveL.png,1004,2291,151,179,54,normal,ON,,,Param_HandL,,fingerless spectral glove
+MSH_055,FistL,07_ARMS,parts/07_ARMS/MSH_055_FistL.png,986,2309,181,185,55,normal,OFF,mode:combat|pose:fist,,Param_HandLFist,,clenched gloved fist swap (combat)
+MSH_056,SleeveUpperR,07_ARMS,parts/07_ARMS/MSH_056_SleeveUpperR.png,1682,1171,338,674,56,normal,ON,,sleeve swing,Param_ArmRA,cap continues under collar,
+MSH_057,SleeveLowerR,07_ARMS,parts/07_ARMS/MSH_057_SleeveLowerR.png,1802,1751,277,515,57,normal,ON,,sleeve swing 2,Param_ArmRB,elbow overlap under upper sleeve,
+MSH_058,CuffR,07_ARMS,parts/07_ARMS/MSH_058_CuffR.png,1893,2201,180,112,58,normal,ON,,,Param_ArmRB,,rib cuff with green line
+MSH_059,HandR,07_ARMS,parts/07_ARMS/MSH_059_HandR.png,1923,2289,138,272,59,normal,ON,,,Param_HandR,palm root under cuff,
+MSH_060,GloveR,07_ARMS,parts/07_ARMS/MSH_060_GloveR.png,1918,2291,151,179,60,normal,ON,,,Param_HandR,,fingerless spectral glove
+MSH_061,FistR,07_ARMS,parts/07_ARMS/MSH_061_FistR.png,1906,2309,181,185,61,normal,OFF,mode:combat|pose:fist,,Param_HandRFist,,clenched gloved fist swap (combat)
+MSH_062,Ear_L,08_FACE,parts/08_FACE/MSH_062_Ear_L.png,1257,733,66,156,62,normal,ON,,,Param_AngleX,ear root under side hair,
+MSH_063,Ear_R,08_FACE,parts/08_FACE/MSH_063_Ear_R.png,1749,733,66,156,63,normal,ON,,,Param_AngleX,ear root under side hair,
+MSH_064,Face_Base,08_FACE,parts/08_FACE/MSH_064_Face_Base.png,1295,465,483,560,64,normal,ON,,,Param_AngleX/Y/Z,forehead + temples under bangs,
+MSH_065,Face_Shadow,08_FACE,parts/08_FACE/MSH_065_Face_Shadow.png,1298,524,476,233,65,multiply,ON,,,Param_AngleY,,hair cast shadow on forehead/cheeks
+MSH_066,Nose,08_FACE,parts/08_FACE/MSH_066_Nose.png,1539,875,20,34,66,normal,ON,,,Param_AngleX,,
+MSH_067,Blush_L,08_FACE,parts/08_FACE/MSH_067_Blush_L.png,1339,849,152,92,67,normal,OFF,fx:blush,,Param_Cheek,,
+MSH_068,Blush_R,08_FACE,parts/08_FACE/MSH_068_Blush_R.png,1581,849,152,92,68,normal,OFF,fx:blush,,Param_Cheek,,
+MSH_069,EyeL_Sclera,09_EYES,parts/09_EYES/MSH_069_EyeL_Sclera.png,1372,750,139,99,69,normal,ON,,,Param_EyeOpenL,full sclera under lids/lashes,
+MSH_070,EyeL_Sclera_Dark,09_EYES,parts/09_EYES/MSH_070_EyeL_Sclera_Dark.png,1372,750,139,99,70,normal,OFF,mode:od,,Param_Overdrive,,subtle black-sclera treatment (overdrive)
+MSH_071,EyeL_Iris,09_EYES,parts/09_EYES/MSH_071_EyeL_Iris.png,1398,750,96,99,71,normal,ON,,,Param_EyeBallX/Y,full iris circle under lids,
+MSH_072,EyeL_Iris_Spectral,09_EYES,parts/09_EYES/MSH_072_EyeL_Iris_Spectral.png,1398,750,96,99,72,normal,OFF,mode:shadow,,Param_ShadowEyes,,iris shifts to spectral teal-green
+MSH_073,EyeL_Pupil,09_EYES,parts/09_EYES/MSH_073_EyeL_Pupil.png,1428,778,36,52,73,normal,ON,,,Param_EyeBallX/Y,,
+MSH_074,EyeL_ShadowRing,09_EYES,parts/09_EYES/MSH_074_EyeL_ShadowRing.png,1411,757,70,86,74,normal,OFF,mode:shadow,,Param_ShadowEyes,,spectral green inner ring
+MSH_075,EyeL_OverdriveRing,09_EYES,parts/09_EYES/MSH_075_EyeL_OverdriveRing.png,1399,750,94,97,75,normal,OFF,mode:od,,Param_Overdrive,,second (outer) spectral ring
+MSH_076,EyeL_Highlight01,09_EYES,parts/09_EYES/MSH_076_EyeL_Highlight01.png,1418,766,28,24,76,normal,ON,,,Param_EyeBallX/Y (0.4),,
+MSH_077,EyeL_Highlight02,09_EYES,parts/09_EYES/MSH_077_EyeL_Highlight02.png,1454,816,16,16,77,normal,ON,,,Param_EyeBallX/Y (0.4),,
+MSH_078,EyeL_UpperLash,09_EYES,parts/09_EYES/MSH_078_EyeL_UpperLash.png,1339,734,189,81,78,normal,ON,,,Param_EyeOpenL,,
+MSH_079,EyeL_LowerLash,09_EYES,parts/09_EYES/MSH_079_EyeL_LowerLash.png,1398,834,89,21,79,normal,ON,,,Param_EyeOpenL,,
+MSH_080,EyeL_UpperLid,09_EYES,parts/09_EYES/MSH_080_EyeL_UpperLid.png,1388,724,111,23,80,normal,ON,,,Param_EyeOpenL,,lid crease (deform for blink)
+MSH_081,EyeL_LowerLid,09_EYES,parts/09_EYES/MSH_081_EyeL_LowerLid.png,1386,840,111,38,81,normal,ON,,,Param_EyeSmileL,,lower lid skin (smile squint)
+MSH_082,EyeL_Close,09_EYES,parts/09_EYES/MSH_082_EyeL_Close.png,1347,801,174,38,82,normal,OFF,eye:closed,,Param_EyeOpenL=0,,
+MSH_083,EyeL_Smile,09_EYES,parts/09_EYES/MSH_083_EyeL_Smile.png,1365,783,152,54,83,normal,OFF,eye:smile,,Param_EyeSmileL,,
+MSH_084,EyeL_HalfLid,09_EYES,parts/09_EYES/MSH_084_EyeL_HalfLid.png,1354,715,172,94,84,normal,OFF,eye:half,,Param_EyeOpenL=0.5,,skin lid covering top half (deadpan/sleepy/annoyed)
+MSH_085,EyeL_Tear,09_EYES,parts/09_EYES/MSH_085_EyeL_Tear.png,1382,842,103,162,85,normal,OFF,fx:tear,tear drip,Param_Tear,,
+MSH_086,EyeR_Sclera,09_EYES,parts/09_EYES/MSH_086_EyeR_Sclera.png,1562,750,139,99,86,normal,ON,,,Param_EyeOpenR,full sclera under lids/lashes,
+MSH_087,EyeR_Sclera_Dark,09_EYES,parts/09_EYES/MSH_087_EyeR_Sclera_Dark.png,1562,750,139,99,87,normal,OFF,mode:od,,Param_Overdrive,,subtle black-sclera treatment (overdrive)
+MSH_088,EyeR_Iris,09_EYES,parts/09_EYES/MSH_088_EyeR_Iris.png,1578,750,96,99,88,normal,ON,,,Param_EyeBallX/Y,full iris circle under lids,
+MSH_089,EyeR_Iris_Spectral,09_EYES,parts/09_EYES/MSH_089_EyeR_Iris_Spectral.png,1578,750,96,99,89,normal,OFF,mode:shadow,,Param_ShadowEyes,,iris shifts to spectral teal-green
+MSH_090,EyeR_Pupil,09_EYES,parts/09_EYES/MSH_090_EyeR_Pupil.png,1608,778,36,52,90,normal,ON,,,Param_EyeBallX/Y,,
+MSH_091,EyeR_ShadowRing,09_EYES,parts/09_EYES/MSH_091_EyeR_ShadowRing.png,1591,757,70,86,91,normal,OFF,mode:shadow,,Param_ShadowEyes,,spectral green inner ring
+MSH_092,EyeR_OverdriveRing,09_EYES,parts/09_EYES/MSH_092_EyeR_OverdriveRing.png,1579,750,94,97,92,normal,OFF,mode:od,,Param_Overdrive,,second (outer) spectral ring
+MSH_093,EyeR_Highlight01,09_EYES,parts/09_EYES/MSH_093_EyeR_Highlight01.png,1597,766,30,24,93,normal,ON,,,Param_EyeBallX/Y (0.4),,
+MSH_094,EyeR_Highlight02,09_EYES,parts/09_EYES/MSH_094_EyeR_Highlight02.png,1634,817,16,14,94,normal,ON,,,Param_EyeBallX/Y (0.4),,
+MSH_095,EyeR_UpperLash,09_EYES,parts/09_EYES/MSH_095_EyeR_UpperLash.png,1544,734,189,81,95,normal,ON,,,Param_EyeOpenR,,
+MSH_096,EyeR_LowerLash,09_EYES,parts/09_EYES/MSH_096_EyeR_LowerLash.png,1586,834,89,20,96,normal,ON,,,Param_EyeOpenR,,
+MSH_097,EyeR_UpperLid,09_EYES,parts/09_EYES/MSH_097_EyeR_UpperLid.png,1574,724,111,23,97,normal,ON,,,Param_EyeOpenR,,lid crease (deform for blink)
+MSH_098,EyeR_LowerLid,09_EYES,parts/09_EYES/MSH_098_EyeR_LowerLid.png,1576,840,111,38,98,normal,ON,,,Param_EyeSmileR,,lower lid skin (smile squint)
+MSH_099,EyeR_Close,09_EYES,parts/09_EYES/MSH_099_EyeR_Close.png,1551,801,175,38,99,normal,OFF,eye:closed,,Param_EyeOpenR=0,,
+MSH_100,EyeR_Smile,09_EYES,parts/09_EYES/MSH_100_EyeR_Smile.png,1555,783,152,54,100,normal,OFF,eye:smile,,Param_EyeSmileR,,
+MSH_101,EyeR_HalfLid,09_EYES,parts/09_EYES/MSH_101_EyeR_HalfLid.png,1546,715,172,94,101,normal,OFF,eye:half,,Param_EyeOpenR=0.5,,skin lid covering top half (deadpan/sleepy/annoyed)
+MSH_102,EyeR_Tear,09_EYES,parts/09_EYES/MSH_102_EyeR_Tear.png,1588,842,102,162,102,normal,OFF,fx:tear,tear drip,Param_Tear,,
+MSH_103,Brow_L,10_BROWS,parts/10_BROWS/MSH_103_Brow_L.png,1369,681,128,36,103,normal,ON,brow:neutral,,Param_BrowLY/Angle,,
+MSH_104,Brow_R,10_BROWS,parts/10_BROWS/MSH_104_Brow_R.png,1575,681,128,36,104,normal,ON,brow:neutral,,Param_BrowRY/Angle,,
+MSH_105,Brow_Angry_L,10_BROWS,parts/10_BROWS/MSH_105_Brow_Angry_L.png,1376,673,128,58,105,normal,OFF,brow:angry,,Param_BrowForm=-1,,
+MSH_106,Brow_Angry_R,10_BROWS,parts/10_BROWS/MSH_106_Brow_Angry_R.png,1568,673,128,58,106,normal,OFF,brow:angry,,Param_BrowForm=-1,,
+MSH_107,Brow_Sad_L,10_BROWS,parts/10_BROWS/MSH_107_Brow_Sad_L.png,1373,675,125,58,107,normal,OFF,brow:sad,,Param_BrowForm=+1,,
+MSH_108,Brow_Sad_R,10_BROWS,parts/10_BROWS/MSH_108_Brow_Sad_R.png,1574,675,125,58,108,normal,OFF,brow:sad,,Param_BrowForm=+1,,
+MSH_109,Brow_Up_L,10_BROWS,parts/10_BROWS/MSH_109_Brow_Up_L.png,1369,643,128,40,109,normal,OFF,brow:up,,Param_BrowY=+1,,
+MSH_110,Brow_Up_R,10_BROWS,parts/10_BROWS/MSH_110_Brow_Up_R.png,1575,643,128,40,110,normal,OFF,brow:up,,Param_BrowY=+1,,
+MSH_111,Mouth_Line,11_MOUTH,parts/11_MOUTH/MSH_111_Mouth_Line.png,1507,944,60,15,111,normal,ON,mouth:neutral,,Param_MouthForm / MouthOpenY=0,,
+MSH_112,Mouth_Inner,11_MOUTH,parts/11_MOUTH/MSH_112_Mouth_Inner.png,1496,938,80,48,112,normal,OFF,mouth:open,,Param_MouthOpenY,,
+MSH_113,Mouth_Teeth,11_MOUTH,parts/11_MOUTH/MSH_113_Mouth_Teeth.png,1496,938,80,18,113,normal,OFF,mouth:open,,Param_MouthOpenY,,
+MSH_114,Mouth_Tongue,11_MOUTH,parts/11_MOUTH/MSH_114_Mouth_Tongue.png,1511,964,50,22,114,normal,OFF,mouth:open,,Param_MouthOpenY/Form,,
+MSH_115,Mouth_UpperLip,11_MOUTH,parts/11_MOUTH/MSH_115_Mouth_UpperLip.png,1495,937,82,14,115,normal,OFF,mouth:open,,Param_MouthForm,,
+MSH_116,Mouth_LowerLip,11_MOUTH,parts/11_MOUTH/MSH_116_Mouth_LowerLip.png,1496,939,81,49,116,normal,OFF,mouth:open,,Param_MouthOpenY,,
+MSH_117,Mouth_Shadow,11_MOUTH,parts/11_MOUTH/MSH_117_Mouth_Shadow.png,1496,985,80,30,117,multiply,OFF,mouth:open,,Param_MouthOpenY,,
+MSH_118,Mouth_Smile,11_MOUTH,parts/11_MOUTH/MSH_118_Mouth_Smile.png,1501,937,70,26,118,normal,OFF,mouth:smile,,Param_MouthForm,,
+MSH_119,Mouth_Frown,11_MOUTH,parts/11_MOUTH/MSH_119_Mouth_Frown.png,1505,941,62,22,119,normal,OFF,mouth:frown,,Param_MouthForm,,
+MSH_120,Mouth_Smirk,11_MOUTH,parts/11_MOUTH/MSH_120_Mouth_Smirk.png,1503,933,72,26,120,normal,OFF,mouth:smirk,,Param_MouthForm,,
+MSH_121,Mouth_Wavy,11_MOUTH,parts/11_MOUTH/MSH_121_Mouth_Wavy.png,1495,941,82,19,121,normal,OFF,mouth:wavy,,Param_MouthForm,,
+MSH_122,Mouth_Flat,11_MOUTH,parts/11_MOUTH/MSH_122_Mouth_Flat.png,1503,947,66,10,122,normal,OFF,mouth:flat,,Param_MouthForm,,
+MSH_123,Mouth_O,11_MOUTH,parts/11_MOUTH/MSH_123_Mouth_O.png,1516,934,40,48,123,normal,OFF,mouth:o,,Param_MouthOpenY,,
+MSH_124,Mouth_Fang,11_MOUTH,parts/11_MOUTH/MSH_124_Mouth_Fang.png,1548,947,17,16,124,normal,OFF,mouth:fang,,Param_MouthForm,,
+MSH_125,Hair_SideL,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_125_Hair_SideL.png,1243,519,168,599,125,normal,ON,,side lock sway,Param_HairSideL,root under front cap,
+MSH_126,Hair_SideR,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_126_Hair_SideR.png,1661,519,169,600,126,normal,ON,,side lock sway,Param_HairSideR,root under front cap,
+MSH_127,Hair_FrontL1,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_127_Hair_FrontL1.png,1376,549,112,254,127,normal,ON,,bang strand sway,Param_Hair_FrontL1,root under cap,
+MSH_128,Hair_FrontL2,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_128_Hair_FrontL2.png,1295,549,101,307,128,normal,ON,,bang strand sway,Param_Hair_FrontL2,root under cap,
+MSH_129,Hair_FrontR1,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_129_Hair_FrontR1.png,1584,549,113,228,129,normal,ON,,bang strand sway,Param_Hair_FrontR1,root under cap,
+MSH_130,Hair_FrontR2,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_130_Hair_FrontR2.png,1683,549,97,337,130,normal,ON,,bang strand sway,Param_Hair_FrontR2,root under cap,
+MSH_131,Hair_FrontCenter,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_131_Hair_FrontCenter.png,1275,392,520,434,131,normal,ON,,bangs sway (center),Param_HairFront,,bang cap + center lock
+MSH_132,Hair_Accent_Smoke,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_132_Hair_Accent_Smoke.png,1524,276,217,167,132,normal,ON,,smoke strand (loose),Param_HairAccent,,"crown strand with smoke-curl tip (original, not the Pokémon crest)"
+MSH_133,Hair_Strand_Physics,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_133_Hair_Strand_Physics.png,1713,611,89,476,133,normal,ON,,long physics strand,Param_HairStrand,,loose strand across R cheek with smoky tip
+MSH_134,Hair_Highlight,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_134_Hair_Highlight.png,1310,481,444,117,134,screen,ON,,,Param_AngleX (0.5),,angel-ring highlight
+MSH_135,HairGlow_Tip01,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_135_HairGlow_Tip01.png,1202,1036,148,149,135,add,OFF,mode:od,,Param_Overdrive,,spectral hair-tip glow (overdrive)
+MSH_136,HairGlow_Tip02,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_136_HairGlow_Tip02.png,1680,1005,160,150,136,add,OFF,mode:od,,Param_Overdrive,,spectral hair-tip glow (overdrive)
+MSH_137,HairGlow_Tip03,12_FRONT_HAIR,parts/12_FRONT_HAIR/MSH_137_HairGlow_Tip03.png,1586,285,172,150,137,add,OFF,mode:od,,Param_Overdrive,,spectral hair-tip glow (overdrive)
+MSH_138,HoodUp_Front,13_HOOD_UP,parts/13_HOOD_UP/MSH_138_HoodUp_Front.png,1069,244,934,1038,138,normal,OFF,hood:up,hood bounce,Param_Hood,,raised hood rim framing face (face/eyes/bangs stay visible)
+MSH_139,HoodUp_Peak_L,13_HOOD_UP,parts/13_HOOD_UP/MSH_139_HoodUp_Peak_L.png,1093,183,205,263,139,normal,OFF,hood:up,peak flop,Param_HoodPeakL,,soft swirl-stitched hood peak
+MSH_140,HoodUp_Peak_R,13_HOOD_UP,parts/13_HOOD_UP/MSH_140_HoodUp_Peak_R.png,1142,182,837,264,140,normal,OFF,hood:up,peak flop,Param_HoodPeakR,,soft swirl-stitched hood peak
+MSH_141,ShadowHandL,14_SHADOW,parts/14_SHADOW/MSH_141_ShadowHandL.png,505,2144,467,562,141,normal,OFF,mode:combat|fx:shadowhands,hover + follow,Param_ShadowHandL,,living-shadow hand (combat)
+MSH_142,ShadowFingerL,14_SHADOW,parts/14_SHADOW/MSH_142_ShadowFingerL.png,508,2110,424,298,142,normal,OFF,mode:combat|fx:shadowhands,claw flex,Param_ShadowFingerL,,glowing claw tips
+MSH_143,ShadowHandR,14_SHADOW,parts/14_SHADOW/MSH_143_ShadowHandR.png,2101,2144,465,562,143,normal,OFF,mode:combat|fx:shadowhands,hover + follow,Param_ShadowHandR,,living-shadow hand (combat)
+MSH_144,ShadowFingerR,14_SHADOW,parts/14_SHADOW/MSH_144_ShadowFingerR.png,2140,2110,425,298,144,normal,OFF,mode:combat|fx:shadowhands,claw flex,Param_ShadowFingerR,,glowing claw tips
+MSH_145,Fragments01,14_SHADOW,parts/14_SHADOW/MSH_145_Fragments01.png,939,1512,1296,1251,145,normal,OFF,mode:od,orbit,Param_Fragments,,
+MSH_146,Fragments02,14_SHADOW,parts/14_SHADOW/MSH_146_Fragments02.png,896,2830,1173,867,146,normal,OFF,mode:od,orbit (counter),Param_Fragments,,
+MSH_147,CombatAuraLocal,14_SHADOW,parts/14_SHADOW/MSH_147_CombatAuraLocal.png,820,2017,1432,666,147,add,OFF,mode:combat,,Param_Combat,,local aura around hands/forearms only (no full-body white aura)
+MSH_148,Mist_Front,14_SHADOW,parts/14_SHADOW/MSH_148_Mist_Front.png,743,3962,1539,505,148,normal,OFF,mode:od|fx:mist,mist drift,Param_Mist,,
+MSH_149,CombatEyeGlowL,15_FRONT_FX,parts/15_FRONT_FX/MSH_149_CombatEyeGlowL.png,1320,688,243,221,149,add,OFF,mode:combat|fx:eyeglow,,Param_EyeGlow,,
+MSH_150,CombatEyeGlowR,15_FRONT_FX,parts/15_FRONT_FX/MSH_150_CombatEyeGlowR.png,1509,688,243,221,150,add,OFF,mode:combat|fx:eyeglow,,Param_EyeGlow,,
+MSH_151,Particles01,15_FRONT_FX,parts/15_FRONT_FX/MSH_151_Particles01.png,838,1205,1446,1872,151,add,OFF,mode:combat,float up,Param_Particles,,
+MSH_152,Particles02,15_FRONT_FX,parts/15_FRONT_FX/MSH_152_Particles02.png,876,328,1313,3873,152,add,OFF,mode:od,float up (fast),Param_Particles,,
+MSH_153,CharmCore_Glow,15_FRONT_FX,parts/15_FRONT_FX/MSH_153_CharmCore_Glow.png,1289,2175,212,201,153,add,OFF,mode:combat,,Param_Combat,,charm/core activation
+MSH_154,SeamGlow,15_FRONT_FX,parts/15_FRONT_FX/MSH_154_SeamGlow.png,1188,1157,696,938,154,add,OFF,mode:shadow,,Param_Seam,,jacket seam lines light up
+MSH_155,Glitch01,15_FRONT_FX,parts/15_FRONT_FX/MSH_155_Glitch01.png,1117,699,743,2058,155,screen,OFF,mode:od|fx:glitch,,Param_Glitch,,subtle scan-slice glitch
+MSH_156,Glitch02,15_FRONT_FX,parts/15_FRONT_FX/MSH_156_Glitch02.png,1132,1209,896,2191,156,screen,OFF,mode:od|fx:glitch,,Param_Glitch,,subtle scan-slice glitch
+MSH_157,Mark_Embarrass,16_EXPRESSIONS,parts/16_EXPRESSIONS/MSH_157_Mark_Embarrass.png,1357,595,108,70,157,normal,OFF,fx:embarrass,,Param_Embarrass,,
+MSH_158,Mark_Sweat,16_EXPRESSIONS,parts/16_EXPRESSIONS/MSH_158_Mark_Sweat.png,1778,596,64,126,158,normal,OFF,fx:sweat,,Param_Sweat,,
+MSH_159,Mark_Anger,16_EXPRESSIONS,parts/16_EXPRESSIONS/MSH_159_Mark_Anger.png,1732,473,96,94,159,normal,OFF,fx:anger,,Param_Anger,,
+MSH_160,Mark_Zzz,16_EXPRESSIONS,parts/16_EXPRESSIONS/MSH_160_Mark_Zzz.png,1814,373,202,228,160,normal,OFF,fx:sleep,,Param_Sleep,,
+MSH_161,Mark_Confused,16_EXPRESSIONS,parts/16_EXPRESSIONS/MSH_161_Mark_Confused.png,1216,393,707,218,161,normal,OFF,fx:confused,,Param_Confused,,
+MSH_162,Mark_Shock,16_EXPRESSIONS,parts/16_EXPRESSIONS/MSH_162_Mark_Shock.png,1106,290,860,307,162,normal,OFF,fx:shock,,Param_Surprise,,
+MSH_163,Mark_Gloom,16_EXPRESSIONS,parts/16_EXPRESSIONS/MSH_163_Mark_Gloom.png,1394,534,272,112,163,multiply,OFF,fx:gloom,,Param_Gloom,,gloom lines on forehead
+MSH_164,Mark_Sparkle,16_EXPRESSIONS,parts/16_EXPRESSIONS/MSH_164_Mark_Sparkle.png,1193,524,704,397,164,normal,OFF,fx:sparkle,,Param_Happy,,
+MSH_165,OverdriveLocalGlow,17_OVERDRIVE,parts/17_OVERDRIVE/MSH_165_OverdriveLocalGlow.png,1144,651,784,298,165,add,OFF,mode:od,,Param_Overdrive,,local eye/halo glow band (not full body)
+MSH_166,Overdrive_Flame_Front,17_OVERDRIVE,parts/17_OVERDRIVE/MSH_166_Overdrive_Flame_Front.png,954,1995,1164,593,166,add,OFF,mode:od,flame flicker,Param_Overdrive,,green shadow flame licking up from the hands

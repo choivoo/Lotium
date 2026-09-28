@@ -1,0 +1,337 @@
+{
+ "checks": [
+  {
+   "check": "empty layers = 0",
+   "result": "PASS",
+   "detail": "0 []"
+  },
+  {
+   "check": "fake transparent layers = 0",
+   "result": "PASS",
+   "detail": "0 []"
+  },
+  {
+   "check": "exact duplicate layers = 0",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "unexpected canvas offsets = 0",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "wrong-size parts = 0",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "manifest missing file = 0",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "PSD reopen errors = 0",
+   "result": "PASS",
+   "detail": "None"
+  },
+  {
+   "check": "canvas size",
+   "result": "PASS",
+   "detail": "(3072, 4608)"
+  },
+  {
+   "check": "group order",
+   "result": "PASS",
+   "detail": "['00_GUIDE', '01_BACK_FX', '02_SHADOW_POOL', '03_BACK_HAIR', '04_HOOD_BACK', '05_BODY', '06_CLOTHES', '07_ARMS', '08_FACE', '09_EYES', '10_BROWS', '11_MOUTH', '12_FRONT_HAIR', '13_HOOD_UP', '14_SHADOW', '15_FRONT_FX', '16_EXPRESSIONS', '17_OVERDRIVE']"
+  },
+  {
+   "check": "layer count matches manifest",
+   "result": "PASS",
+   "detail": "166 vs 166"
+  },
+  {
+   "check": "reopened layer name/group/Z-order/blend/visibility/offset/pixels",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "reopened PSD composite == Fullbody Master",
+   "result": "PASS",
+   "detail": "mean abs diff 0.004/255, p99.9 1.0"
+  },
+  {
+   "check": "restored parts have real hidden area",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "hidden-area restoration count",
+   "result": "PASS",
+   "detail": "40 restored parts"
+  },
+  {
+   "check": "face/body sharpness parity (native-res parts, no upscale)",
+   "result": "PASS",
+   "detail": "body/face edge crispness 1.06"
+  },
+  {
+   "check": "anti-alias edges (no white halo)",
+   "result": "PASS",
+   "detail": "[]"
+  }
+ ],
+ "warn": [],
+ "fail": [],
+ "summary": "PASS 16 / WARN 0 / FAIL 0",
+ "layers": 166,
+ "groups": 18,
+ "hidden_layers": 86,
+ "add_screen": 17,
+ "multiply": 4,
+ "restored_parts": 40,
+ "restore_stats": {
+  "Hair_FrontR2": {
+   "restore": "root under cap",
+   "solid_px": 20761,
+   "hidden_px": 12459,
+   "hidden_pct": 60.0
+  },
+  "Hair_FrontR1": {
+   "restore": "root under cap",
+   "solid_px": 15516,
+   "hidden_px": 10309,
+   "hidden_pct": 66.4
+  },
+  "Hair_FrontL2": {
+   "restore": "root under cap",
+   "solid_px": 20711,
+   "hidden_px": 10223,
+   "hidden_pct": 49.4
+  },
+  "Hair_FrontL1": {
+   "restore": "root under cap",
+   "solid_px": 19339,
+   "hidden_px": 9500,
+   "hidden_pct": 49.1
+  },
+  "Hair_SideR": {
+   "restore": "root under front cap",
+   "solid_px": 50407,
+   "hidden_px": 28779,
+   "hidden_pct": 57.1
+  },
+  "Hair_SideL": {
+   "restore": "root under front cap",
+   "solid_px": 48351,
+   "hidden_px": 19435,
+   "hidden_pct": 40.2
+  },
+  "EyeR_Iris": {
+   "restore": "full iris circle under lids",
+   "solid_px": 7348,
+   "hidden_px": 1867,
+   "hidden_pct": 25.4
+  },
+  "EyeR_Sclera": {
+   "restore": "full sclera under lids/lashes",
+   "solid_px": 9894,
+   "hidden_px": 7275,
+   "hidden_pct": 73.5
+  },
+  "EyeL_Iris": {
+   "restore": "full iris circle under lids",
+   "solid_px": 7348,
+   "hidden_px": 2495,
+   "hidden_pct": 34.0
+  },
+  "EyeL_Sclera": {
+   "restore": "full sclera under lids/lashes",
+   "solid_px": 9895,
+   "hidden_px": 7265,
+   "hidden_pct": 73.4
+  },
+  "Face_Base": {
+   "restore": "forehead + temples under bangs",
+   "solid_px": 219230,
+   "hidden_px": 152624,
+   "hidden_pct": 69.6
+  },
+  "Ear_R": {
+   "restore": "ear root under side hair",
+   "solid_px": 7408,
+   "hidden_px": 7408,
+   "hidden_pct": 100.0
+  },
+  "Ear_L": {
+   "restore": "ear root under side hair",
+   "solid_px": 7409,
+   "hidden_px": 7409,
+   "hidden_pct": 100.0
+  },
+  "HandR": {
+   "restore": "palm root under cuff",
+   "solid_px": 30001,
+   "hidden_px": 21870,
+   "hidden_pct": 72.9
+  },
+  "SleeveLowerR": {
+   "restore": "elbow overlap under upper sleeve",
+   "solid_px": 88716,
+   "hidden_px": 7217,
+   "hidden_pct": 8.1
+  },
+  "SleeveUpperR": {
+   "restore": "cap continues under collar",
+   "solid_px": 130101,
+   "hidden_px": 9122,
+   "hidden_pct": 7.0
+  },
+  "HandL": {
+   "restore": "palm root under cuff",
+   "solid_px": 29996,
+   "hidden_px": 21847,
+   "hidden_pct": 72.8
+  },
+  "SleeveLowerL": {
+   "restore": "elbow overlap under upper sleeve",
+   "solid_px": 88715,
+   "hidden_px": 7217,
+   "hidden_pct": 8.1
+  },
+  "SleeveUpperL": {
+   "restore": "cap continues under collar",
+   "solid_px": 130100,
+   "hidden_px": 9122,
+   "hidden_pct": 7.0
+  },
+  "JacketR": {
+   "restore": "panel continues under collar + sleeve",
+   "solid_px": 320149,
+   "hidden_px": 86980,
+   "hidden_pct": 27.2
+  },
+  "JacketL": {
+   "restore": "panel continues under collar + sleeve",
+   "solid_px": 320184,
+   "hidden_px": 86731,
+   "hidden_pct": 27.1
+  },
+  "InnerCollar": {
+   "restore": "collar back behind neck",
+   "solid_px": 25219,
+   "hidden_px": 9610,
+   "hidden_pct": 38.1
+  },
+  "Inner": {
+   "restore": "full shirt behind jacket panels",
+   "solid_px": 432782,
+   "hidden_px": 374230,
+   "hidden_pct": 86.5
+  },
+  "PantsR": {
+   "restore": "hip overlap + upper leg under jacket/belt",
+   "solid_px": 337605,
+   "hidden_px": 68132,
+   "hidden_pct": 20.2
+  },
+  "PantsL": {
+   "restore": "hip overlap + upper leg under jacket/belt",
+   "solid_px": 338916,
+   "hidden_px": 84569,
+   "hidden_pct": 25.0
+  },
+  "ShoeR": {
+   "restore": "ankle under pants hem",
+   "solid_px": 76468,
+   "hidden_px": 10070,
+   "hidden_pct": 13.2
+  },
+  "ShoeL": {
+   "restore": "ankle under pants hem",
+   "solid_px": 76593,
+   "hidden_px": 11246,
+   "hidden_pct": 14.7
+  },
+  "JacketBack": {
+   "restore": "inside/back of jacket behind torso",
+   "solid_px": 745621,
+   "hidden_px": 743392,
+   "hidden_pct": 99.7
+  },
+  "Forearm_R": {
+   "restore": "forearm inside sleeve + wrist under cuff",
+   "solid_px": 49130,
+   "hidden_px": 49129,
+   "hidden_pct": 100.0
+  },
+  "UpperArm_R": {
+   "restore": "upper arm inside sleeve",
+   "solid_px": 65540,
+   "hidden_px": 65540,
+   "hidden_pct": 100.0
+  },
+  "Shoulder_R": {
+   "restore": "shoulder joint under sleeve cap",
+   "solid_px": 35173,
+   "hidden_px": 35173,
+   "hidden_pct": 100.0
+  },
+  "Forearm_L": {
+   "restore": "forearm inside sleeve + wrist under cuff",
+   "solid_px": 49130,
+   "hidden_px": 49129,
+   "hidden_pct": 100.0
+  },
+  "UpperArm_L": {
+   "restore": "upper arm inside sleeve",
+   "solid_px": 65540,
+   "hidden_px": 65540,
+   "hidden_pct": 100.0
+  },
+  "Shoulder_L": {
+   "restore": "shoulder joint under sleeve cap",
+   "solid_px": 35186,
+   "hidden_px": 35186,
+   "hidden_pct": 100.0
+  },
+  "Torso": {
+   "restore": "whole torso under jacket + arms",
+   "solid_px": 483798,
+   "hidden_px": 481865,
+   "hidden_pct": 99.6
+  },
+  "Neck": {
+   "restore": "neck under hair, jaw and collar",
+   "solid_px": 33406,
+   "hidden_px": 32233,
+   "hidden_pct": 96.5
+  },
+  "HoodDown": {
+   "restore": "full fold behind neck/hair",
+   "solid_px": 134273,
+   "hidden_px": 107606,
+   "hidden_pct": 80.1
+  },
+  "Hair_BackR": {
+   "restore": "root under back main",
+   "solid_px": 38083,
+   "hidden_px": 15931,
+   "hidden_pct": 41.8
+  },
+  "Hair_BackL": {
+   "restore": "root under back main",
+   "solid_px": 36796,
+   "hidden_px": 14282,
+   "hidden_pct": 38.8
+  },
+  "Hair_BackMain": {
+   "restore": "full back-of-head mass behind face / hood",
+   "solid_px": 484039,
+   "hidden_px": 383594,
+   "hidden_pct": 79.2
+  }
+ },
+ "psd_bytes": 77640246,
+ "psd": "/home/user/Lotium/Marshadow_Dual_Virtual_Project/02_Human/psd/Marshadow_Human_Live2D_Master_v001.psd"
+}
