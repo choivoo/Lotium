@@ -1,0 +1,37 @@
+{
+ "Type": "Live2D Expression",
+ "FadeInTime": 0.25,
+ "FadeOutTime": 0.25,
+ "Parameters": [
+  {
+   "Id": "ParamBlushStrong",
+   "Value": 1,
+   "Blend": "Overwrite"
+  },
+  {
+   "Id": "ParamMouthShape",
+   "Value": -1,
+   "Blend": "Overwrite"
+  },
+  {
+   "Id": "ParamMouthOpenY",
+   "Value": 0.2,
+   "Blend": "Overwrite"
+  },
+  {
+   "Id": "ParamEmoteSweat",
+   "Value": 1,
+   "Blend": "Overwrite"
+  },
+  {
+   "Id": "ParamBrowLForm",
+   "Value": -0.6,
+   "Blend": "Overwrite"
+  },
+  {
+   "Id": "ParamBrowRForm",
+   "Value": -0.6,
+   "Blend": "Overwrite"
+  }
+ ]
+}

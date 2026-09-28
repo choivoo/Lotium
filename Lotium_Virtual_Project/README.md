@@ -13,7 +13,8 @@
 - [x] PHASE 6: Visual Masters + Character Design Lock (Codex image_generation) → `03_concepts/masters/`, `03_concepts/PHASE6_STATUS.md`
 - [x] PHASE 7: Live2D 파츠 149 PNG + `06_psd_parts/LTM_LIVE2D_MASTER_v003.psd` → `08_parts/`, `08_live2d_notes/`
 - [x] 웹 리그 (Galaxy Tab S6): `12_rig/web/index.html`
-- [ ] 다음: Cubism Editor에서 .moc3 리깅(PC 필요) (파라미터·물리·표정·토글 = `08_live2d_notes/toggles_hotkeys.md`, `expressions.md`, `layer_manifest_final.csv`의 parameter 열)
+- [~] Cubism 리깅: 명세·물리·표정·모델 JSON 완료 → `13_cubism/` (moc3 Export는 PC의 Cubism Editor 필요)
+- [ ] 다음: PC에서 `13_cubism/cubism_work_order.md` 실행 → moc3 Export (파라미터·물리·표정·토글 = `08_live2d_notes/toggles_hotkeys.md`, `expressions.md`, `layer_manifest_final.csv`의 parameter 열)
 
 ## 폴더
 | 폴더 | 용도 |
@@ -31,6 +32,8 @@
 | 09_versions | 버전 스냅샷·수정 요청 |
 | 10_checklists | 검수 체크리스트 |
 | 11_pipeline | 제작 파이프라인·작업 순서·폴더 구조 |
+| 12_rig | 갤탭 S6 웹 리그 |
+| 13_cubism | Cubism 리깅 명세 + VTube Studio용 JSON |
 
 ## 파일 네이밍
 `LTM_<단계>_<내용>_v<번호>.<확장자>` 예: `LTM_concept_front_v003.png`

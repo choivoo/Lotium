@@ -1,0 +1,448 @@
+{
+ "Version": 3,
+ "Parameters": [
+  {
+   "Id": "ParamAngleX",
+   "GroupId": "PG_Face",
+   "Name": "고개 좌우"
+  },
+  {
+   "Id": "ParamAngleY",
+   "GroupId": "PG_Face",
+   "Name": "고개 상하"
+  },
+  {
+   "Id": "ParamAngleZ",
+   "GroupId": "PG_Face",
+   "Name": "고개 기울기"
+  },
+  {
+   "Id": "ParamBodyAngleX",
+   "GroupId": "PG_Body",
+   "Name": "몸 좌우"
+  },
+  {
+   "Id": "ParamBodyAngleY",
+   "GroupId": "PG_Body",
+   "Name": "몸 앞뒤"
+  },
+  {
+   "Id": "ParamBodyAngleZ",
+   "GroupId": "PG_Body",
+   "Name": "몸 기울기"
+  },
+  {
+   "Id": "ParamEyeLOpen",
+   "GroupId": "PG_Eyes",
+   "Name": "왼눈 뜨기"
+  },
+  {
+   "Id": "ParamEyeLSmile",
+   "GroupId": "PG_Eyes",
+   "Name": "왼눈 웃음"
+  },
+  {
+   "Id": "ParamEyeROpen",
+   "GroupId": "PG_Eyes",
+   "Name": "오른눈 뜨기"
+  },
+  {
+   "Id": "ParamEyeRSmile",
+   "GroupId": "PG_Eyes",
+   "Name": "오른눈 웃음"
+  },
+  {
+   "Id": "ParamEyeBallX",
+   "GroupId": "PG_Eyes",
+   "Name": "눈동자 X"
+  },
+  {
+   "Id": "ParamEyeBallY",
+   "GroupId": "PG_Eyes",
+   "Name": "눈동자 Y"
+  },
+  {
+   "Id": "ParamEyeBallForm",
+   "GroupId": "PG_Eyes",
+   "Name": "동공 크기"
+  },
+  {
+   "Id": "ParamBrowLY",
+   "GroupId": "PG_Brows",
+   "Name": "L 눈썹 높이"
+  },
+  {
+   "Id": "ParamBrowLAngle",
+   "GroupId": "PG_Brows",
+   "Name": "L 눈썹 각도"
+  },
+  {
+   "Id": "ParamBrowLForm",
+   "GroupId": "PG_Brows",
+   "Name": "L 눈썹 모양"
+  },
+  {
+   "Id": "ParamBrowRY",
+   "GroupId": "PG_Brows",
+   "Name": "R 눈썹 높이"
+  },
+  {
+   "Id": "ParamBrowRAngle",
+   "GroupId": "PG_Brows",
+   "Name": "R 눈썹 각도"
+  },
+  {
+   "Id": "ParamBrowRForm",
+   "GroupId": "PG_Brows",
+   "Name": "R 눈썹 모양"
+  },
+  {
+   "Id": "ParamMouthForm",
+   "GroupId": "PG_Mouth",
+   "Name": "입 모양(-찡그림/+웃음)"
+  },
+  {
+   "Id": "ParamMouthOpenY",
+   "GroupId": "PG_Mouth",
+   "Name": "입 벌리기"
+  },
+  {
+   "Id": "ParamMouthShape",
+   "GroupId": "PG_Mouth",
+   "Name": "입 모음(A/I/U/E/O 보조)"
+  },
+  {
+   "Id": "ParamCheek",
+   "GroupId": "PG_Face",
+   "Name": "볼 홍조"
+  },
+  {
+   "Id": "ParamBreath",
+   "GroupId": "PG_Body",
+   "Name": "호흡"
+  },
+  {
+   "Id": "ParamHairFront",
+   "GroupId": "PG_Physics",
+   "Name": "앞머리 흔들림"
+  },
+  {
+   "Id": "ParamHairSide",
+   "GroupId": "PG_Physics",
+   "Name": "옆머리 흔들림"
+  },
+  {
+   "Id": "ParamHairBack",
+   "GroupId": "PG_Physics",
+   "Name": "뒷머리 흔들림"
+  },
+  {
+   "Id": "ParamAhoge",
+   "GroupId": "PG_Physics",
+   "Name": "아호게 흔들림"
+  },
+  {
+   "Id": "ParamDrawstring",
+   "GroupId": "PG_Physics",
+   "Name": "후드끈 흔들림"
+  },
+  {
+   "Id": "ParamHem",
+   "GroupId": "PG_Physics",
+   "Name": "밑단 흔들림"
+  },
+  {
+   "Id": "ParamSleeveR",
+   "GroupId": "PG_Physics",
+   "Name": "오른 소매 흔들림"
+  },
+  {
+   "Id": "ParamSleeveL",
+   "GroupId": "PG_Physics",
+   "Name": "왼 소매 흔들림"
+  },
+  {
+   "Id": "ParamStrap",
+   "GroupId": "PG_Physics",
+   "Name": "스트랩 흔들림"
+  },
+  {
+   "Id": "ParamCableSwingX",
+   "GroupId": "PG_Physics",
+   "Name": "케이블 X"
+  },
+  {
+   "Id": "ParamCableSwingY",
+   "GroupId": "PG_Physics",
+   "Name": "케이블 Y"
+  },
+  {
+   "Id": "ParamPipAntenna",
+   "GroupId": "PG_Physics",
+   "Name": "핍 안테나"
+  },
+  {
+   "Id": "ParamRingFloat",
+   "GroupId": "PG_Physics",
+   "Name": "정령 링 부유"
+  },
+  {
+   "Id": "ParamMicSwing",
+   "GroupId": "PG_Physics",
+   "Name": "마이크 흔들림"
+  },
+  {
+   "Id": "ParamArmRA",
+   "GroupId": "PG_Body",
+   "Name": "오른팔 각도"
+  },
+  {
+   "Id": "ParamArmLA",
+   "GroupId": "PG_Body",
+   "Name": "왼팔 각도"
+  },
+  {
+   "Id": "ParamPipX",
+   "GroupId": "PG_Accessory",
+   "Name": "핍 X"
+  },
+  {
+   "Id": "ParamPipY",
+   "GroupId": "PG_Accessory",
+   "Name": "핍 Y"
+  },
+  {
+   "Id": "ParamRingRotate",
+   "GroupId": "PG_Accessory",
+   "Name": "정령 링 회전"
+  },
+  {
+   "Id": "ParamCoreGlow",
+   "GroupId": "PG_FX",
+   "Name": "코어 발광"
+  },
+  {
+   "Id": "ParamElectricFX",
+   "GroupId": "PG_FX",
+   "Name": "전기광 강도(약·중·강)"
+  },
+  {
+   "Id": "ParamGlitch",
+   "GroupId": "PG_FX",
+   "Name": "글리치"
+  },
+  {
+   "Id": "ParamOverclock",
+   "GroupId": "PG_FX",
+   "Name": "오버클럭"
+  },
+  {
+   "Id": "ParamHeadset",
+   "GroupId": "PG_Toggle",
+   "Name": "헤드셋"
+  },
+  {
+   "Id": "ParamMic",
+   "GroupId": "PG_Toggle",
+   "Name": "마이크"
+  },
+  {
+   "Id": "ParamHood",
+   "GroupId": "PG_Toggle",
+   "Name": "후드"
+  },
+  {
+   "Id": "ParamUI",
+   "GroupId": "PG_Toggle",
+   "Name": "UI 패널"
+  },
+  {
+   "Id": "ParamMobile",
+   "GroupId": "PG_Toggle",
+   "Name": "모바일폼"
+  },
+  {
+   "Id": "ParamGame",
+   "GroupId": "PG_Toggle",
+   "Name": "게임폼"
+  },
+  {
+   "Id": "ParamLowBattery",
+   "GroupId": "PG_Toggle",
+   "Name": "배터리 부족"
+  },
+  {
+   "Id": "ParamPip",
+   "GroupId": "PG_Toggle",
+   "Name": "드론 핍"
+  },
+  {
+   "Id": "ParamRing",
+   "GroupId": "PG_Toggle",
+   "Name": "정령 링"
+  },
+  {
+   "Id": "ParamGlove",
+   "GroupId": "PG_Toggle",
+   "Name": "장갑"
+  },
+  {
+   "Id": "ParamFaceMark",
+   "GroupId": "PG_Toggle",
+   "Name": "얼굴 회로점"
+  },
+  {
+   "Id": "ParamEyeStar",
+   "GroupId": "PG_Toggle",
+   "Name": "눈 반짝"
+  },
+  {
+   "Id": "ParamTears",
+   "GroupId": "PG_Toggle",
+   "Name": "눈물"
+  },
+  {
+   "Id": "ParamBlushStrong",
+   "GroupId": "PG_Toggle",
+   "Name": "진한 홍조"
+  },
+  {
+   "Id": "ParamShadowDark",
+   "GroupId": "PG_Toggle",
+   "Name": "얼굴 그늘"
+  },
+  {
+   "Id": "ParamDeadpan",
+   "GroupId": "PG_Toggle",
+   "Name": "무표정 눈"
+  },
+  {
+   "Id": "ParamEmoteHeart",
+   "GroupId": "PG_Toggle",
+   "Name": "이모트 하트"
+  },
+  {
+   "Id": "ParamEmoteSweat",
+   "GroupId": "PG_Toggle",
+   "Name": "이모트 땀"
+  },
+  {
+   "Id": "ParamEmoteAnger",
+   "GroupId": "PG_Toggle",
+   "Name": "이모트 분노"
+  }
+ ],
+ "ParameterGroups": [
+  {
+   "Id": "PG_Face",
+   "GroupId": "",
+   "Name": "Face"
+  },
+  {
+   "Id": "PG_Body",
+   "GroupId": "",
+   "Name": "Body"
+  },
+  {
+   "Id": "PG_Eyes",
+   "GroupId": "",
+   "Name": "Eyes"
+  },
+  {
+   "Id": "PG_Brows",
+   "GroupId": "",
+   "Name": "Brows"
+  },
+  {
+   "Id": "PG_Mouth",
+   "GroupId": "",
+   "Name": "Mouth"
+  },
+  {
+   "Id": "PG_Physics",
+   "GroupId": "",
+   "Name": "Physics"
+  },
+  {
+   "Id": "PG_Accessory",
+   "GroupId": "",
+   "Name": "Accessory"
+  },
+  {
+   "Id": "PG_FX",
+   "GroupId": "",
+   "Name": "FX"
+  },
+  {
+   "Id": "PG_Toggle",
+   "GroupId": "",
+   "Name": "Toggle"
+  }
+ ],
+ "Parts": [
+  {
+   "Id": "Part_16_OVERCLOCK",
+   "Name": "16_OVERCLOCK"
+  },
+  {
+   "Id": "Part_15_TOGGLES",
+   "Name": "15_TOGGLES"
+  },
+  {
+   "Id": "Part_14_EXPRESSIONS",
+   "Name": "14_EXPRESSIONS"
+  },
+  {
+   "Id": "Part_13_FRONT_FX",
+   "Name": "13_FRONT_FX"
+  },
+  {
+   "Id": "Part_12_UI",
+   "Name": "12_UI"
+  },
+  {
+   "Id": "Part_11_PIP",
+   "Name": "11_PIP"
+  },
+  {
+   "Id": "Part_10_FRONT_HAIR",
+   "Name": "10_FRONT_HAIR"
+  },
+  {
+   "Id": "Part_09_HEADSET",
+   "Name": "09_HEADSET"
+  },
+  {
+   "Id": "Part_08_MOUTH",
+   "Name": "08_MOUTH"
+  },
+  {
+   "Id": "Part_07_BROWS",
+   "Name": "07_BROWS"
+  },
+  {
+   "Id": "Part_06_EYES",
+   "Name": "06_EYES"
+  },
+  {
+   "Id": "Part_05_FACE",
+   "Name": "05_FACE"
+  },
+  {
+   "Id": "Part_04_CLOTHES",
+   "Name": "04_CLOTHES"
+  },
+  {
+   "Id": "Part_03_BODY",
+   "Name": "03_BODY"
+  },
+  {
+   "Id": "Part_02_BACK_HAIR",
+   "Name": "02_BACK_HAIR"
+  },
+  {
+   "Id": "Part_01_BACK_FX",
+   "Name": "01_BACK_FX"
+  }
+ ]
+}

@@ -1,0 +1,123 @@
+{
+ "Version": 3,
+ "Meta": {
+  "Duration": 4.0,
+  "Fps": 30,
+  "Loop": true,
+  "AreBeziersRestricted": true,
+  "CurveCount": 7,
+  "TotalSegmentCount": 17,
+  "TotalPointCount": 24,
+  "UserDataCount": 0,
+  "TotalUserDataSize": 0
+ },
+ "Curves": [
+  {
+   "Target": "Parameter",
+   "Id": "ParamBreath",
+   "Segments": [
+    0,
+    0,
+    0,
+    2,
+    1,
+    0,
+    4,
+    0
+   ]
+  },
+  {
+   "Target": "Parameter",
+   "Id": "ParamBodyAngleX",
+   "Segments": [
+    0,
+    0,
+    0,
+    1,
+    1.5,
+    0,
+    3,
+    -1.5,
+    0,
+    4,
+    0
+   ]
+  },
+  {
+   "Target": "Parameter",
+   "Id": "ParamAngleZ",
+   "Segments": [
+    0,
+    0,
+    0,
+    1.5,
+    2,
+    0,
+    3.5,
+    -1,
+    0,
+    4,
+    0
+   ]
+  },
+  {
+   "Target": "Parameter",
+   "Id": "ParamPipY",
+   "Segments": [
+    0,
+    0,
+    0,
+    1,
+    0.6,
+    0,
+    3,
+    -0.6,
+    0,
+    4,
+    0
+   ]
+  },
+  {
+   "Target": "Parameter",
+   "Id": "ParamPipX",
+   "Segments": [
+    0,
+    0,
+    0,
+    2,
+    0.3,
+    0,
+    4,
+    0
+   ]
+  },
+  {
+   "Target": "Parameter",
+   "Id": "ParamRingRotate",
+   "Segments": [
+    0,
+    -0.2,
+    0,
+    2,
+    0.2,
+    0,
+    4,
+    -0.2
+   ]
+  },
+  {
+   "Target": "Parameter",
+   "Id": "ParamCoreGlow",
+   "Segments": [
+    0,
+    0.45,
+    0,
+    2,
+    0.6,
+    0,
+    4,
+    0.45
+   ]
+  }
+ ]
+}

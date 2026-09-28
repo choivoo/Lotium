@@ -1,0 +1,67 @@
+id,name,min,default,max,group,note
+ParamAngleX,고개 좌우,-30,0,30,Face,
+ParamAngleY,고개 상하,-30,0,30,Face,
+ParamAngleZ,고개 기울기,-30,0,30,Face,
+ParamBodyAngleX,몸 좌우,-10,0,10,Body,
+ParamBodyAngleY,몸 앞뒤,-10,0,10,Body,
+ParamBodyAngleZ,몸 기울기,-10,0,10,Body,
+ParamEyeLOpen,왼눈 뜨기,0,1,1,Eyes,
+ParamEyeLSmile,왼눈 웃음,0,0,1,Eyes,
+ParamEyeROpen,오른눈 뜨기,0,1,1,Eyes,
+ParamEyeRSmile,오른눈 웃음,0,0,1,Eyes,
+ParamEyeBallX,눈동자 X,-1,0,1,Eyes,
+ParamEyeBallY,눈동자 Y,-1,0,1,Eyes,
+ParamEyeBallForm,동공 크기,-1,0,1,Eyes,놀람 시 축소
+ParamBrowLY,L 눈썹 높이,-1,0,1,Brows,
+ParamBrowLAngle,L 눈썹 각도,-1,0,1,Brows,
+ParamBrowLForm,L 눈썹 모양,-1,0,1,Brows,
+ParamBrowRY,R 눈썹 높이,-1,0,1,Brows,
+ParamBrowRAngle,R 눈썹 각도,-1,0,1,Brows,
+ParamBrowRForm,R 눈썹 모양,-1,0,1,Brows,
+ParamMouthForm,입 모양(-찡그림/+웃음),-1,0,1,Mouth,
+ParamMouthOpenY,입 벌리기,0,0,1,Mouth,
+ParamMouthShape,입 모음(A/I/U/E/O 보조),-1,0,1,Mouth,"-1=U/O 오므림, +1=I/E 옆으로"
+ParamCheek,볼 홍조,0,0,1,Face,
+ParamBreath,호흡,0,0,1,Body,
+ParamHairFront,앞머리 흔들림,-1,0,1,Physics,
+ParamHairSide,옆머리 흔들림,-1,0,1,Physics,
+ParamHairBack,뒷머리 흔들림,-1,0,1,Physics,
+ParamAhoge,아호게 흔들림,-1,0,1,Physics,
+ParamDrawstring,후드끈 흔들림,-1,0,1,Physics,
+ParamHem,밑단 흔들림,-1,0,1,Physics,
+ParamSleeveR,오른 소매 흔들림,-1,0,1,Physics,
+ParamSleeveL,왼 소매 흔들림,-1,0,1,Physics,
+ParamStrap,스트랩 흔들림,-1,0,1,Physics,
+ParamCableSwingX,케이블 X,-1,0,1,Physics,
+ParamCableSwingY,케이블 Y,-1,0,1,Physics,
+ParamPipAntenna,핍 안테나,-1,0,1,Physics,
+ParamRingFloat,정령 링 부유,-1,0,1,Physics,
+ParamMicSwing,마이크 흔들림,-1,0,1,Physics,
+ParamArmRA,오른팔 각도,-1,0,1,Body,
+ParamArmLA,왼팔 각도,-1,0,1,Body,
+ParamPipX,핍 X,-1,0,1,Accessory,
+ParamPipY,핍 Y,-1,0,1,Accessory,
+ParamRingRotate,정령 링 회전,-1,0,1,Accessory,
+ParamCoreGlow,코어 발광,0,0.5,1,FX,
+ParamElectricFX,전기광 강도(약·중·강),0,0.5,1,FX,
+ParamGlitch,글리치,0,0,1,FX,
+ParamOverclock,오버클럭,0,0,1,FX,
+ParamHeadset,헤드셋,0,1,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamMic,마이크,0,1,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamHood,후드,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamUI,UI 패널,0,1,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamMobile,모바일폼,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamGame,게임폼,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamLowBattery,배터리 부족,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamPip,드론 핍,0,1,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamRing,정령 링,0,1,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamGlove,장갑,0,1,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamFaceMark,얼굴 회로점,0,1,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamEyeStar,눈 반짝,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamTears,눈물,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamBlushStrong,진한 홍조,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamShadowDark,얼굴 그늘,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamDeadpan,무표정 눈,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamEmoteHeart,이모트 하트,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamEmoteSweat,이모트 땀,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)
+ParamEmoteAnger,이모트 분노,0,0,1,Toggle,0/1 스위치 (파츠 불투명도 키폼 2개)

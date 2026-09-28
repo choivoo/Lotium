@@ -1,0 +1,94 @@
+{
+ "Version": 3,
+ "FileReferences": {
+  "Moc": "LTM_Lotium.moc3",
+  "Textures": [
+   "LTM_Lotium.4096/texture_00.png",
+   "LTM_Lotium.4096/texture_01.png"
+  ],
+  "Physics": "LTM_Lotium.physics3.json",
+  "DisplayInfo": "LTM_Lotium.cdi3.json",
+  "Expressions": [
+   {
+    "Name": "exp_neutral",
+    "File": "expressions/exp_neutral.exp3.json"
+   },
+   {
+    "Name": "exp_smile",
+    "File": "expressions/exp_smile.exp3.json"
+   },
+   {
+    "Name": "exp_bigsmile",
+    "File": "expressions/exp_bigsmile.exp3.json"
+   },
+   {
+    "Name": "exp_laugh",
+    "File": "expressions/exp_laugh.exp3.json"
+   },
+   {
+    "Name": "exp_mischievous",
+    "File": "expressions/exp_mischievous.exp3.json"
+   },
+   {
+    "Name": "exp_surprise",
+    "File": "expressions/exp_surprise.exp3.json"
+   },
+   {
+    "Name": "exp_embarrassed",
+    "File": "expressions/exp_embarrassed.exp3.json"
+   },
+   {
+    "Name": "exp_annoyed",
+    "File": "expressions/exp_annoyed.exp3.json"
+   },
+   {
+    "Name": "exp_angry",
+    "File": "expressions/exp_angry.exp3.json"
+   },
+   {
+    "Name": "exp_sad",
+    "File": "expressions/exp_sad.exp3.json"
+   },
+   {
+    "Name": "exp_cry",
+    "File": "expressions/exp_cry.exp3.json"
+   },
+   {
+    "Name": "exp_sparkle",
+    "File": "expressions/exp_sparkle.exp3.json"
+   },
+   {
+    "Name": "exp_glitch",
+    "File": "expressions/exp_glitch.exp3.json"
+   },
+   {
+    "Name": "exp_overclock",
+    "File": "expressions/exp_overclock.exp3.json"
+   }
+  ],
+  "Motions": {
+   "Idle": [
+    {
+     "File": "motions/idle.motion3.json"
+    }
+   ]
+  }
+ },
+ "Groups": [
+  {
+   "Target": "Parameter",
+   "Name": "EyeBlink",
+   "Ids": [
+    "ParamEyeLOpen",
+    "ParamEyeROpen"
+   ]
+  },
+  {
+   "Target": "Parameter",
+   "Name": "LipSync",
+   "Ids": [
+    "ParamMouthOpenY"
+   ]
+  }
+ ]
+}
