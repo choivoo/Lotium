@@ -1,0 +1,530 @@
+<meta charset="utf-8">
+<title>Lotium Rig Tab S6</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #10141c;
+    --panel: #171d28;
+    --panel-2: #1e2533;
+    --line: #2a3345;
+    --text: #e6ebf2;
+    --muted: #8d98ab;
+    --cyan: #3ff2ff;
+    --orange: #ff8a1f;
+    --cream: #f6efe2;
+    --warn: #ff4a3d;
+    --studio-a: #1b2230;
+    --studio-b: #0c0f15;
+    --display: "Chakra Petch", "IBM Plex Sans KR", system-ui, sans-serif;
+    --body: "IBM Plex Sans KR", system-ui, sans-serif;
+  }
+  html, body { height: 100%; }
+  body { background: var(--bg); color: var(--text); font-family: var(--body); font-size: 14px; }
+  .app { height: 100%; display: grid; grid-template-columns: 1fr 360px; gap: 0; }
+  .stage { position: relative; overflow: hidden; min-height: 0; touch-action: none;
+    background: radial-gradient(120% 90% at 50% 30%, var(--studio-a), var(--studio-b)); }
+  .stage[data-bg="green"] { background: #00b140; }
+  .stage[data-bg="blue"] { background: #0047bb; }
+  .stage[data-bg="white"] { background: #f2f3f5; }
+  .stage canvas { display: block; width: 100%; height: 100%; }
+  .hud { position: absolute; left: 16px; top: 12px; display: flex; gap: 8px; align-items: center;
+    font-family: var(--display); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); pointer-events: none; }
+  .hud b { color: var(--cyan); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .pill { padding: 3px 8px; border: 1px solid var(--line); border-radius: 999px; background: rgba(16,20,28,.7); }
+  .loading[hidden] { display: none; }
+  .loading { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); color: var(--muted); letter-spacing: .1em; }
+  .panel { background: var(--panel); border-left: 1px solid var(--line); overflow-y: auto; padding-block: 14px 24px; padding-inline: 16px; display: flex; flex-direction: column; gap: 18px; }
+  .brand { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .brand h1 { font-family: var(--display); font-size: 22px; font-weight: 700; margin: 0; letter-spacing: .02em; }
+  .brand h1 span { color: var(--orange); }
+  .brand small { color: var(--muted); font-size: 12px; }
+  section h2 { font-family: var(--display); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; display: flex; justify-content: space-between; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .grid.two { grid-template-columns: repeat(2, 1fr); }
+  button, .file { font: inherit; color: var(--text); background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px;
+    padding: 9px 8px; min-height: 44px; cursor: pointer; text-align: left; display: flex; flex-direction: column; gap: 2px; justify-content: center; }
+  button kbd { font-family: var(--display); font-size: 10px; color: var(--muted); letter-spacing: .06em; }
+  button:focus-visible, input:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+  button[aria-pressed="true"] { border-color: var(--cyan); background: #173039; box-shadow: inset 0 0 0 1px var(--cyan); }
+  button.oc[aria-pressed="true"] { border-color: var(--orange); background: #3a2412; box-shadow: inset 0 0 0 1px var(--orange); }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  .row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .row button { flex: 1 1 0; text-align: center; align-items: center; }
+  .slider { display: grid; grid-template-columns: 78px 1fr 40px; gap: 8px; align-items: center; margin-bottom: 6px; }
+  .slider label { color: var(--muted); font-size: 12px; }
+  .slider output { font-family: var(--display); font-variant-numeric: tabular-nums; font-size: 12px; text-align: right; }
+  input[type=range] { width: 100%; accent-color: var(--cyan); height: 28px; }
+  .note { color: var(--muted); font-size: 12px; line-height: 1.55; margin: 6px 0 0; }
+  .file input { width: 100%; color: var(--muted); font-size: 12px; }
+  @media (max-width: 900px) {
+    .app { grid-template-columns: 1fr; grid-template-rows: 62vh auto; height: auto; }
+    .panel { border-left: 0; border-top: 1px solid var(--line); }
+  }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+
+<div class="app">
+  <div class="stage" id="stage" data-bg="studio">
+    <div class="hud"><span class="pill">FPS <b id="fps">--</b></span><span class="pill" id="mode">터치 조작</span><span class="pill" id="exprName">기본</span></div>
+    <div class="loading" id="loading">파츠 149개 불러오는 중…</div>
+  </div>
+
+  <aside class="panel">
+    <div class="brand"><h1>LOTIUM <span>RIG</span></h1><small>Galaxy Tab S6 · 149 parts</small></div>
+
+    <section>
+      <h2>표정 <span>F1–F12</span></h2>
+      <div class="grid" id="exprGrid"></div>
+    </section>
+
+    <section>
+      <h2>방송 세트</h2>
+      <div class="grid two" id="setGrid"></div>
+    </section>
+
+    <section>
+      <h2>토글 <span>Ctrl+1–0</span></h2>
+      <div class="grid" id="toggleGrid"></div>
+    </section>
+
+    <section>
+      <h2>전기광</h2>
+      <div class="row" id="glowRow"></div>
+    </section>
+
+    <section>
+      <h2>파라미터</h2>
+      <div id="sliders"></div>
+      <p class="note">화면을 끌면 로티움이 그 방향을 봅니다. 손을 떼면 자연스러운 대기 모션으로 돌아갑니다.</p>
+    </section>
+
+    <section>
+      <h2>립싱크</h2>
+      <div class="grid two">
+        <button id="talkBtn" type="button">말하기 (누르고 있기)<kbd>Space</kbd></button>
+        <label class="file" for="audioIn">음성 파일로 립싱크<input id="audioIn" type="file" accept="audio/*"></label>
+      </div>
+      <audio id="audioEl" hidden></audio>
+    </section>
+
+    <section>
+      <h2>화면</h2>
+      <div class="row" id="frameRow"></div>
+      <div class="row" id="bgRow" style="margin-top:6px"></div>
+    </section>
+
+    <section>
+      <h2>카메라 트래킹</h2>
+      <button id="camBtn" type="button">전면 카메라로 얼굴 추적 시작</button>
+      <p class="note" id="camNote">Claude 아티팩트 화면에서는 카메라가 차단됩니다. 같은 폴더(12_rig/web)를 GitHub Pages 등 https 주소로 열면 갤탭 S6 크롬에서 전면 카메라 추적이 켜집니다.</p>
+    </section>
+  </aside>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.2/pixi.min.js"></script>
+<script>
+(async function () {
+  const stageEl = document.getElementById('stage');
+  const rig = await (await fetch('rig.json')).json();
+  const app = new PIXI.Application({ resizeTo: stageEl, backgroundAlpha: 0, antialias: true,
+    resolution: Math.min(window.devicePixelRatio || 1, 1.5), autoDensity: true, powerPreference: 'high-performance' });
+  stageEl.prepend(app.view);
+  const world = new PIXI.Container();
+  app.stage.addChild(world);
+
+  // ---------- load parts
+  const textures = await PIXI.Assets.load(rig.layers.map(l => l.f));
+  document.getElementById('loading').hidden = true;
+  const HP = rig.headPivot, WA = rig.waist, SR = rig.shoulderR, SL = rig.shoulderL;
+  const L = rig.layers.map(l => {
+    const s = new PIXI.Sprite(textures[l.f]);
+    if (l.add) s.blendMode = PIXI.BLEND_MODES.ADD;
+    const lp = l.ph ? l.ph.pivot : [l.x + l.w / 2, l.y + l.h / 2];
+    s.pivot.set(lp[0] - l.x, lp[1] - l.y);
+    world.addChild(s);
+    return { ...l, s, lp, ang: 0, vel: 0, eye: null, mouth: null };
+  });
+  const byName = n => L.find(l => l.n === n);
+  const has = (l, ...pre) => pre.some(p => l.n.startsWith(p));
+
+  // eye / mouth roles
+  const eyeC = {};
+  for (const side of ['R', 'L']) {
+    const w = byName(`Eye_${side}_White`);
+    eyeC[side] = [w.x + w.w / 2, w.y + w.h / 2];
+    for (const part of ['White', 'Iris', 'Pupil', 'Highlight', 'Lash_Upper', 'Line_Lower']) {
+      const l = byName(`Eye_${side}_${part}`);
+      l.eye = { side, part };
+      l.lp = eyeC[side];
+      l.s.pivot.set(l.lp[0] - l.x, l.lp[1] - l.y);
+      if (['Iris', 'Pupil', 'Highlight'].includes(part)) {
+        const m = new PIXI.Sprite(w.s.texture);
+        m.pivot.copyFrom(w.s.pivot);
+        world.addChild(m);
+        l.s.mask = m;
+        l.maskSprite = m;
+      }
+    }
+    byName(`Eye_${side}_Lid_Skin`).lidOf = side;
+    byName(`Eye_${side}_Closed_Line`).closedOf = side;
+    byName(`Eye_${side}_Closed_Smile`).smileOf = side;
+  }
+  const lu = byName('Mouth_Line_Upper');
+  const mouthTop = lu.y + lu.h / 2;
+  for (const part of ['Inside', 'Tongue', 'Teeth_Upper', 'Teeth_Lower', 'Line_Upper', 'Line_Lower']) {
+    const l = byName(`Mouth_${part}`);
+    l.mouth = part;
+    l.lp = [l.x + l.w / 2, mouthTop];
+    l.s.pivot.set(l.lp[0] - l.x, l.lp[1] - l.y);
+  }
+  const mouthVariants = ['Mouth_Closed_Smile', 'Mouth_Pout', 'Mouth_Grin_Mischief', 'Mouth_Wavy'];
+
+  // ---------- state
+  const P = { ax: 0, ay: 0, az: 0, eye: 1, eyeX: 0, eyeY: 0, mouth: 0, brow: 0 };
+  const T = { ...P };
+  const manual = { ax: null, ay: null, az: null, eye: null, mouth: null };
+  let dragging = false, talking = false, audioLevel = 0, tracking = null;
+  let glow = 0.7, blinkT = 0, nextBlink = 2.5;
+  const toggles = new Set(['headset', 'mic', 'ui', 'pip', 'ring', 'glove', 'mark']);
+  let expr = null, exprUntil = 0;
+
+  const TOG = {
+    headset: { label: '헤드셋', key: 'Ctrl+1', off: ['Headset_'], offShow: ['Hair_Headset_Press'] },
+    mic:     { label: '마이크', key: 'Ctrl+2', off: ['Headset_Mic'] },
+    hood:    { label: '후드', key: 'Ctrl+3', on: ['Hood_Up', 'Hair_Back_Hood'], onHide: ['Hood_Folded', 'Hair_Back_Base'] },
+    ui:      { label: 'UI 패널', key: 'Ctrl+4', off: ['UI_Panel_L_Battery', 'UI_Panel_R_Signal'] },
+    mobile:  { label: '모바일폼', key: 'Ctrl+5', on: ['UI_Mobile_Frame', 'Earpiece_Mobile'], onHide: ['Headset_'], onShow2: ['Hair_Headset_Press'] },
+    game:    { label: '게임폼', key: 'Ctrl+6', on: ['Visor_Game', 'UI_Game_HUD'] },
+    lowbat:  { label: '배터리 부족', key: 'Ctrl+7', on: ['UI_Panel_L_Battery_Low', 'UI_Signal_Low', 'LowBattery_Dim'], onHide: ['UI_Panel_L_Battery', 'UI_Panel_R_Signal'] },
+    pip:     { label: '드론 핍', key: 'Ctrl+8', off: ['Drone_', 'Pip_'] },
+    ring:    { label: '정령 링', key: 'Ctrl+9', off: ['Ring_Spirit_'] },
+    overclock: { label: '오버클럭', key: 'Ctrl+0', on: ['OC_', 'Drone_Trail_OC'], oc: true },
+    glitch:  { label: 'Glitch', key: 'G', on: ['FX_Glitch_'] },
+    glove:   { label: '장갑', key: '', off: ['Hand_R_Glove', 'Hand_L_Glove'] },
+    mark:    { label: '얼굴 회로점', key: '', off: ['Face_Mark_Circuit'] },
+    star:    { label: '눈 반짝', key: '', on: ['Eye_Star_Sparkle', 'FX_Sparkle_Front'] },
+  };
+  const EXPR = [
+    { id: 'base',   name: '기본',      key: 'F1' },
+    { id: 'smile',  name: '미소',      key: 'F2', show: ['Face_Blush_Strong'], mouthV: 'Mouth_Closed_Smile', eye: 0.8 },
+    { id: 'laugh',  name: '활짝 웃음', key: 'F3', smileEyes: 'RL', mouth: 0.75, show: ['Face_Blush_Strong'] },
+    { id: 'fluster',name: '당황',      key: 'F4', mouthV: 'Mouth_Wavy', show: ['Face_Blush_Strong', 'FX_Emote_Sweat'], eye: 1.1, brow: 0.6 },
+    { id: 'angry',  name: '화남',      key: 'F5', mouthV: 'Mouth_Pout', show: ['Face_Shadow_Dark', 'FX_Emote_Anger'], eye: 0.75, brow: -1 },
+    { id: 'teary',  name: '울먹',      key: 'F6', mouthV: 'Mouth_Wavy', show: ['Eye_Tears_Pool', 'Tear_Stream'], eye: 0.8, brow: 1 },
+    { id: 'glitch', name: 'Glitch',    key: 'F7', show: ['FX_Glitch_'], timed: 3 },
+    { id: 'oc',     name: '오버클럭',  key: 'F8', toggle: 'overclock' },
+    { id: 'shock',  name: '놀람',      key: 'F9', mouth: 0.6, eye: 1.15, brow: 0.3 },
+    { id: 'sulk',   name: '삐짐',      key: 'F10', mouthV: 'Mouth_Pout', show: ['Face_Blush'], eye: 0.55, brow: 0.4 },
+    { id: 'tease',  name: '장난기',    key: 'F11', smileEyes: 'R', mouthV: 'Mouth_Grin_Mischief', show: ['FX_Emote_Heart'] },
+    { id: 'sparkle',name: '방송 반짝', key: 'F12', show: ['Eye_Star_Sparkle', 'FX_Sparkle_Front'], mouth: 0.5 },
+    { id: 'deadpan',name: '어이없음',  key: 'Shift+F1', show: ['Eye_Flat_Deadpan'], mouthV: 'Mouth_Closed_Smile' },
+    { id: 'sad',    name: '슬픔',      key: 'Shift+F2', mouthV: 'Mouth_Wavy', eye: 0.6, brow: 1, show: ['Face_Shadow_Dark'] },
+  ];
+  const SETS = [
+    { name: '잡담 방송', on: ['headset', 'mic', 'ui', 'pip', 'ring', 'mark', 'glove'], glow: 0.7 },
+    { name: '게임 방송', on: ['headset', 'mic', 'game', 'pip', 'glove', 'mark'], glow: 1 },
+    { name: '감성 방송', on: ['hood', 'ring', 'glove', 'mark'], glow: 0.35 },
+    { name: '쇼츠', on: ['mobile', 'pip', 'star', 'glove', 'mark', 'ring'], glow: 1 },
+    { name: '방송 종료', on: ['lowbat', 'hood', 'glove', 'mark', 'ring'], glow: 0.35 },
+    { name: '이벤트', on: ['overclock', 'star', 'headset', 'mic', 'pip', 'ring', 'glove', 'mark'], glow: 1 },
+  ];
+
+  // ---------- UI
+  const exprGrid = document.getElementById('exprGrid');
+  const exprBtns = {};
+  for (const e of EXPR) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.id = 'expr-' + e.id;
+    b.innerHTML = `${e.name}<kbd>${e.key}</kbd>`;
+    b.onclick = () => setExpr(e);
+    exprGrid.appendChild(b); exprBtns[e.id] = b;
+  }
+  const toggleGrid = document.getElementById('toggleGrid');
+  const togBtns = {};
+  for (const [id, t] of Object.entries(TOG)) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.id = 'tog-' + id; if (t.oc) b.className = 'oc';
+    b.innerHTML = `${t.label}${t.key ? `<kbd>${t.key}</kbd>` : ''}`;
+    b.onclick = () => flip(id);
+    toggleGrid.appendChild(b); togBtns[id] = b;
+  }
+  const setGrid = document.getElementById('setGrid');
+  for (const st of SETS) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = st.name;
+    b.onclick = () => { toggles.clear(); st.on.forEach(x => toggles.add(x)); glow = st.glow; syncUI(); };
+    setGrid.appendChild(b);
+  }
+  const glowRow = document.getElementById('glowRow');
+  const glowBtns = [['약', 0.35], ['중', 0.7], ['강', 1]].map(([n, v]) => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = n;
+    b.onclick = () => { glow = v; syncUI(); }; glowRow.appendChild(b); return [b, v];
+  });
+  const SL_DEF = [['ax', '고개 좌우', -1, 1], ['ay', '고개 상하', -1, 1], ['az', '고개 기울기', -1, 1], ['eye', '눈 뜨기', 0, 1], ['mouth', '입 벌리기', 0, 1]];
+  const sliders = document.getElementById('sliders');
+  const slEls = {};
+  for (const [k, lab, mn, mx] of SL_DEF) {
+    const row = document.createElement('div'); row.className = 'slider';
+    row.innerHTML = `<label for="sl-${k}">${lab}</label><input id="sl-${k}" type="range" min="${mn}" max="${mx}" step="0.01" value="${k === 'eye' ? 1 : 0}"><output id="out-${k}">auto</output>`;
+    sliders.appendChild(row);
+    const inp = row.querySelector('input'), out = row.querySelector('output');
+    inp.addEventListener('input', () => { manual[k] = +inp.value; out.textContent = (+inp.value).toFixed(2); });
+    inp.addEventListener('dblclick', () => { manual[k] = null; out.textContent = 'auto'; });
+    slEls[k] = { inp, out };
+  }
+  const resetBtn = document.createElement('button');
+  resetBtn.type = 'button'; resetBtn.textContent = '파라미터 자동으로 되돌리기';
+  resetBtn.onclick = () => { for (const k in manual) { manual[k] = null; slEls[k].out.textContent = 'auto'; } };
+  sliders.appendChild(resetBtn);
+
+  let frame = 'full';
+  const frameRow = document.getElementById('frameRow');
+  const frameBtns = [['전신', 'full'], ['상반신', 'bust'], ['얼굴', 'face']].map(([n, v]) => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = n;
+    b.onclick = () => { frame = v; fit(); syncUI(); }; frameRow.appendChild(b); return [b, v];
+  });
+  const bgRow = document.getElementById('bgRow');
+  const bgBtns = [['스튜디오', 'studio'], ['그린백', 'green'], ['블루백', 'blue'], ['밝게', 'white']].map(([n, v]) => {
+    const b = document.createElement('button'); b.type = 'button'; b.textContent = n;
+    b.onclick = () => { stageEl.dataset.bg = v; syncUI(); }; bgRow.appendChild(b); return [b, v];
+  });
+
+  function flip(id) { toggles.has(id) ? toggles.delete(id) : toggles.add(id); syncUI(); }
+  function setExpr(e) {
+    if (e.toggle) { flip(e.toggle); return; }
+    expr = e.id === 'base' ? null : e;
+    exprUntil = e.timed ? performance.now() / 1000 + e.timed : 0;
+    syncUI();
+  }
+  function syncUI() {
+    for (const [id, b] of Object.entries(togBtns)) b.setAttribute('aria-pressed', toggles.has(id));
+    for (const e of EXPR) exprBtns[e.id].setAttribute('aria-pressed', e.toggle ? toggles.has(e.toggle) : (expr ? expr.id === e.id : e.id === 'base'));
+    glowBtns.forEach(([b, v]) => b.setAttribute('aria-pressed', glow === v));
+    frameBtns.forEach(([b, v]) => b.setAttribute('aria-pressed', frame === v));
+    bgBtns.forEach(([b, v]) => b.setAttribute('aria-pressed', stageEl.dataset.bg === v));
+    document.getElementById('exprName').textContent = expr ? expr.name : '기본';
+  }
+  syncUI();
+
+  // keyboard (Book Cover Keyboard 등)
+  window.addEventListener('keydown', ev => {
+    if (ev.target.tagName === 'INPUT') return;
+    const k = (ev.shiftKey ? 'Shift+' : '') + (ev.ctrlKey ? 'Ctrl+' : '') + (ev.key.length === 1 ? ev.key.toUpperCase() : ev.key);
+    const e = EXPR.find(x => x.key === k);
+    if (e) { ev.preventDefault(); setExpr(e); return; }
+    const t = Object.entries(TOG).find(([, x]) => x.key && x.key === k);
+    if (t) { ev.preventDefault(); flip(t[0]); return; }
+    if (ev.code === 'Space' && !ev.repeat) { talking = true; ev.preventDefault(); }
+  });
+  window.addEventListener('keyup', ev => { if (ev.code === 'Space') talking = false; });
+  const talkBtn = document.getElementById('talkBtn');
+  talkBtn.addEventListener('pointerdown', () => { talking = true; });
+  ['pointerup', 'pointerleave', 'pointercancel'].forEach(n => talkBtn.addEventListener(n, () => { talking = false; }));
+
+  // audio lip-sync
+  let analyser = null, abuf = null;
+  document.getElementById('audioIn').addEventListener('change', ev => {
+    const f = ev.target.files[0]; if (!f) return;
+    const el = document.getElementById('audioEl');
+    el.src = URL.createObjectURL(f);
+    if (!analyser) {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const src = ctx.createMediaElementSource(el);
+      analyser = ctx.createAnalyser(); analyser.fftSize = 1024;
+      src.connect(analyser); analyser.connect(ctx.destination);
+      abuf = new Float32Array(analyser.fftSize);
+    }
+    el.hidden = false; el.controls = true; el.play().catch(() => {});
+  });
+
+  // drag to look
+  let look = [0, 0];
+  stageEl.addEventListener('pointerdown', e => { dragging = true; stageEl.setPointerCapture(e.pointerId); onLook(e); wake(); });
+  stageEl.addEventListener('pointermove', e => { if (dragging) onLook(e); });
+  ['pointerup', 'pointercancel'].forEach(n => stageEl.addEventListener(n, () => { dragging = false; }));
+  function onLook(e) {
+    const r = stageEl.getBoundingClientRect();
+    const hx = world.x + HP[0] * world.scale.x, hy = world.y + (HP[1] - 120) * world.scale.y;
+    look = [Math.max(-1, Math.min(1, (e.clientX - r.left - hx) / (r.width * 0.35))), Math.max(-1, Math.min(1, (e.clientY - r.top - hy) / (r.height * 0.35)))];
+  }
+  let wl = null;
+  async function wake() { try { if (!wl && navigator.wakeLock) wl = await navigator.wakeLock.request('screen'); } catch (_) {} }
+
+  // framing
+  function fit() {
+    const w = app.renderer.screen.width, h = app.renderer.screen.height;
+    const box = frame === 'full' ? [0, 0, rig.W, rig.H] : frame === 'bust' ? [250, 40, 1290, 1200] : [520, 150, 1000, 620];
+    const s = Math.min(w / (box[2] - box[0]), h / (box[3] - box[1])) * 0.96;
+    world.scale.set(s);
+    world.x = w / 2 - (box[0] + box[2]) / 2 * s;
+    world.y = h / 2 - (box[1] + box[3]) / 2 * s;
+  }
+  fit();
+  new ResizeObserver(fit).observe(stageEl);
+
+  // camera tracking (works only when hosted outside the artifact viewer)
+  const camBtn = document.getElementById('camBtn');
+  camBtn.onclick = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user', width: 640, height: 480 } });
+      const video = document.createElement('video'); video.srcObject = stream; video.playsInline = true; video.muted = true; await video.play();
+      const vision = await import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs');
+      const fileset = await vision.FilesetResolver.forVisionTasks('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm');
+      const lm = await vision.FaceLandmarker.createFromOptions(fileset, {
+        baseOptions: { modelAssetPath: 'face_landmarker.task', delegate: 'GPU' }, runningMode: 'VIDEO',
+        outputFaceBlendshapes: true, outputFacialTransformationMatrixes: true, numFaces: 1 });
+      tracking = { video, lm, last: -1, res: null };
+      document.getElementById('mode').textContent = '카메라 추적';
+      camBtn.textContent = '카메라 추적 중'; camBtn.disabled = true;
+    } catch (err) {
+      document.getElementById('camNote').textContent = '카메라를 켤 수 없습니다(' + (err.name || 'blocked') + '). 이 화면에서는 터치·슬라이더로 조작하고, 추적은 https로 호스팅한 페이지에서 사용하세요.';
+      camBtn.disabled = true;
+    }
+  };
+  function readTracking() {
+    const tr = tracking; if (!tr || tr.video.readyState < 2) return null;
+    const now = performance.now();
+    if (tr.video.currentTime !== tr.last) { tr.last = tr.video.currentTime; tr.res = tr.lm.detectForVideo(tr.video, now); }
+    const r = tr.res; if (!r || !r.faceBlendshapes || !r.faceBlendshapes.length) return null;
+    const bs = {}; r.faceBlendshapes[0].categories.forEach(c => bs[c.categoryName] = c.score);
+    const m = r.facialTransformationMatrixes[0].data;
+    const yaw = Math.atan2(-m[8], Math.hypot(m[9], m[10])), pitch = Math.atan2(m[9], m[10]), roll = Math.atan2(m[4], m[0]);
+    return { ax: Math.max(-1, Math.min(1, -yaw / 0.5)), ay: Math.max(-1, Math.min(1, pitch / 0.4)), az: Math.max(-1, Math.min(1, roll / 0.4)),
+      eyeR: 1 - (bs.eyeBlinkLeft || 0) * 1.2, eyeL: 1 - (bs.eyeBlinkRight || 0) * 1.2, mouth: Math.min(1, (bs.jawOpen || 0) * 1.6) };
+  }
+
+  // ---------- frame loop
+  const AXK = 34, AYK = 18, HEAD_ROT = 0.16;
+  const glowSet = new Set(L.filter(l => l.add && /Glow|Ribbon/.test(l.n)).map(l => l.n));
+  let fpsAcc = 0, fpsN = 0, prevAx = 0, t = 0, eyeR = 1, eyeL = 1;
+  const rot = (v, a) => [v[0] * Math.cos(a) - v[1] * Math.sin(a), v[0] * Math.sin(a) + v[1] * Math.cos(a)];
+
+  app.ticker.add(() => {
+    const dt = Math.min(app.ticker.deltaMS / 1000, 0.05); t += dt;
+    fpsAcc += app.ticker.FPS; if (++fpsN === 20) { document.getElementById('fps').textContent = Math.round(fpsAcc / 20); fpsAcc = fpsN = 0; }
+    if (expr && exprUntil && t > 0 && performance.now() / 1000 > exprUntil) { expr = null; exprUntil = 0; syncUI(); }
+
+    // targets
+    const tr = readTracking();
+    if (tr) { T.ax = tr.ax; T.ay = tr.ay; T.az = tr.az; }
+    else if (dragging) { T.ax = look[0]; T.ay = look[1] * 0.8; T.az = -look[0] * 0.25; }
+    else { T.ax = 0.28 * Math.sin(t * 0.37) + 0.1 * Math.sin(t * 1.1); T.ay = 0.18 * Math.sin(t * 0.29 + 1); T.az = 0.12 * Math.sin(t * 0.23); }
+    for (const k of ['ax', 'ay', 'az']) if (manual[k] !== null) T[k] = manual[k];
+    T.eyeX = T.ax * 0.8; T.eyeY = T.ay * 0.6;
+    // blink
+    blinkT += dt; let blink = 1;
+    if (blinkT > nextBlink) { const p = (blinkT - nextBlink) / 0.16; blink = p < 1 ? Math.abs(1 - 2 * p) : 1; if (p >= 1) { blinkT = 0; nextBlink = 2 + Math.random() * 3.5; } }
+    const eBase = expr && expr.eye !== undefined ? expr.eye : 1;
+    let eR = (manual.eye !== null ? manual.eye : eBase) * blink, eL = eR;
+    if (tr) { eR = Math.min(eR, tr.eyeR * eBase); eL = Math.min(eL, tr.eyeL * eBase); }
+    // mouth
+    let m = expr && expr.mouth !== undefined ? expr.mouth : 0;
+    if (talking) m = Math.max(m, 0.25 + 0.55 * Math.abs(Math.sin(t * 13)) * (0.6 + 0.4 * Math.sin(t * 3.1)));
+    if (analyser) { analyser.getFloatTimeDomainData(abuf); let s = 0; for (const v of abuf) s += v * v; audioLevel = audioLevel * 0.6 + Math.sqrt(s / abuf.length) * 0.4; m = Math.max(m, Math.min(1, audioLevel * 7)); }
+    if (tr) m = Math.max(m, tr.mouth);
+    if (manual.mouth !== null) m = manual.mouth;
+    T.mouth = m; T.brow = expr && expr.brow !== undefined ? expr.brow : 0;
+
+    const k = Math.min(1, dt * 9);
+    for (const key of ['ax', 'ay', 'az', 'eyeX', 'eyeY', 'brow']) P[key] += (T[key] - P[key]) * k;
+    P.mouth += (T.mouth - P.mouth) * Math.min(1, dt * 18);
+    eyeR += (eR - eyeR) * Math.min(1, dt * 30); eyeL += (eL - eyeL) * Math.min(1, dt * 30);
+    for (const key of ['ax', 'ay', 'az']) if (manual[key] === null && slEls[key]) slEls[key].inp.value = P[key].toFixed(2);
+    const vel = (P.ax - prevAx) / Math.max(dt, 1e-3); prevAx = P.ax;
+
+    // body & head transforms
+    const breath = Math.sin(t * 1.9);
+    const bodyRot = P.az * 0.04, bodyShift = P.ax * 8;
+    const neck = [HP[0] - WA[0], HP[1] - WA[1]];
+    const nr = rot(neck, bodyRot);
+    const headP = [WA[0] + nr[0] + bodyShift, WA[1] + nr[1] - breath * 2.2];
+    const headRot = bodyRot + P.az * HEAD_ROT;
+
+    // visibility rules
+    const on = id => toggles.has(id);
+    const shown = [], hidden = [];
+    for (const [id, d] of Object.entries(TOG)) {
+      if (on(id)) { if (d.on) shown.push(...d.on); if (d.onHide) hidden.push(...d.onHide); if (d.onShow2) shown.push(...d.onShow2); }
+      else { if (d.off) hidden.push(...d.off); if (d.offShow) shown.push(...d.offShow); }
+    }
+    if (expr && expr.show) shown.push(...expr.show);
+    const mVariant = expr && expr.mouthV ? expr.mouthV : (P.mouth < 0.1 ? 'Mouth_Closed_Smile' : null);
+    const smileEyes = expr && expr.smileEyes ? expr.smileEyes : '';
+    const glitchOn = on('glitch') || (expr && expr.id === 'glitch');
+    const blinkCut = 0.22;
+
+    for (const l of L) {
+      const s = l.s;
+      let vis = (l.vis || shown.some(p => l.n.startsWith(p))) && !hidden.some(p => l.n.startsWith(p));
+      if (l.n.startsWith('FX_Glitch_') && glitchOn) vis = Math.random() > (l.n.includes('Block') ? 0.45 : 0.15);
+      let sy = 1, dx = 0, dy = 0, extraRot = 0;
+      if (l.eye) {
+        const o = l.eye.side === 'R' ? eyeR : eyeL;
+        if (o < blinkCut || smileEyes.includes(l.eye.side)) vis = false;
+        sy = Math.max(0.1, Math.min(1.15, o));
+        if (['Iris', 'Pupil', 'Highlight'].includes(l.eye.part)) { dx = P.eyeX * 7; dy = P.eyeY * 3.5; }
+        if (l.eye.part === 'Highlight') { dx *= 0.6; }
+      }
+      if (l.lidOf) { const o = l.lidOf === 'R' ? eyeR : eyeL; vis = (o < blinkCut) && !smileEyes.includes(l.lidOf) || smileEyes.includes(l.lidOf); }
+      if (l.closedOf) { const o = l.closedOf === 'R' ? eyeR : eyeL; vis = o < blinkCut && !smileEyes.includes(l.closedOf); }
+      if (l.smileOf) vis = smileEyes.includes(l.smileOf);
+      if (l.mouth) { vis = !mVariant; sy = 0.35 + 0.8 * P.mouth; if (l.mouth === 'Line_Upper' || l.mouth === 'Teeth_Upper') sy = 1; if (l.mouth === 'Line_Lower') { sy = 1; dy = (P.mouth - 1) * 16; } }
+      if (mouthVariants.includes(l.n)) vis = l.n === mVariant;
+      if (l.n.startsWith('Brow_')) { extraRot = (l.n.endsWith('_R') ? -1 : 1) * P.brow * 0.16; dy = -P.brow * 3; }
+      s.visible = vis;
+      if (!vis) { if (l.maskSprite) l.maskSprite.visible = false; continue; }
+
+      // physics (spring pendulum)
+      if (l.ph) {
+        const target = -vel * l.ph.amp * 0.35 + Math.sin(t * 1.3 + l.x * 0.01) * l.ph.amp * 0.12 - P.az * l.ph.amp * 0.6;
+        l.vel += (-(l.ang - target) * 70 - l.vel * 9) * dt; l.ang += l.vel * dt;
+        extraRot += l.ang;
+      }
+
+      let pos, r = 0;
+      const lp = l.lp;
+      if (l.node === 'head') {
+        const v = rot([lp[0] - HP[0], lp[1] - HP[1]], headRot);
+        pos = [headP[0] + v[0] + l.d * AXK * P.ax + dx, headP[1] + v[1] + l.d * AYK * P.ay + dy];
+        r = headRot;
+      } else if (l.node === 'pip') {
+        pos = [lp[0] + Math.sin(t * 0.9) * 10 + P.ax * 14, lp[1] + Math.sin(t * 1.7) * 9];
+        r = Math.sin(t * 1.2) * 0.05;
+      } else if (l.node === 'float') {
+        pos = [lp[0] + bodyShift * 0.5, lp[1] + Math.sin(t * 1.3 + lp[0]) * 6];
+      } else {
+        let v = rot([lp[0] - WA[0], lp[1] - WA[1]], bodyRot);
+        pos = [WA[0] + v[0] + bodyShift * (lp[1] < WA[1] ? 1 : 0.2), WA[1] + v[1]];
+        if (lp[1] < WA[1]) pos[1] -= breath * 2.2 * (WA[1] - lp[1]) / (WA[1] - HP[1]);
+        r = bodyRot;
+        if (l.node === 'armR' || l.node === 'armL') {
+          const sh = l.node === 'armR' ? SR : SL, sgn = l.node === 'armR' ? 1 : -1;
+          const a = sgn * (0.012 * Math.sin(t * 1.9) + 0.01) - bodyRot * 0.5;
+          const w = rot([pos[0] - sh[0], pos[1] - sh[1]], a);
+          pos = [sh[0] + w[0], sh[1] + w[1]]; r += a;
+        }
+        pos[0] += dx; pos[1] += dy;
+      }
+      s.position.set(pos[0], pos[1]);
+      s.rotation = r + extraRot;
+      s.scale.set(1, sy);
+      let alpha = 1;
+      if (glowSet.has(l.n)) alpha = glow;
+      if (l.n === 'Core_Glow' || l.n === 'OC_Core_Burst') alpha *= 0.75 + 0.25 * Math.sin(t * 3.2);
+      if (l.n.startsWith('OC_') || l.n === 'Drone_Trail_OC') alpha *= 0.8 + 0.2 * Math.sin(t * 7 + l.x);
+      s.alpha = alpha;
+      if (l.maskSprite) {
+        const w = byName(`Eye_${l.eye.side}_White`).s;
+        l.maskSprite.visible = true;
+        l.maskSprite.position.copyFrom(w.position); l.maskSprite.rotation = w.rotation; l.maskSprite.scale.copyFrom(w.scale);
+      }
+    }
+  });
+})().catch(err => {
+  const el = document.getElementById('loading');
+  el.hidden = false;
+  el.textContent = '리그를 불러오지 못했습니다: ' + err.message + ' — 페이지를 새로고침해 주세요.';
+});
+</script>

@@ -12,7 +12,8 @@
 - [x] 설계 문서(원 요청 9~13): 파이프라인 / 작업 순서 / 폴더 구조 / 체크리스트 → `11_pipeline/`, `10_checklists/`
 - [x] PHASE 6: Visual Masters + Character Design Lock (Codex image_generation) → `03_concepts/masters/`, `03_concepts/PHASE6_STATUS.md`
 - [x] PHASE 7: Live2D 파츠 149 PNG + `06_psd_parts/LTM_LIVE2D_MASTER_v001.psd` → `08_parts/`, `08_live2d_notes/`
-- [ ] **다음: Cubism Rigging** (파라미터·물리·표정·토글 = `08_live2d_notes/toggles_hotkeys.md`, `expressions.md`, `layer_manifest_final.csv`의 parameter 열)
+- [x] 웹 리그 (Galaxy Tab S6): `12_rig/web/index.html`
+- [ ] 다음: Cubism Editor에서 .moc3 리깅(PC 필요) (파라미터·물리·표정·토글 = `08_live2d_notes/toggles_hotkeys.md`, `expressions.md`, `layer_manifest_final.csv`의 parameter 열)
 
 ## 폴더
 | 폴더 | 용도 |
