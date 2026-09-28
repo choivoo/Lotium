@@ -6,7 +6,7 @@
   "file": "08_parts/effects/149_Ring_Spirit_Seg1.png",
   "x": 1094,
   "y": 212,
-  "w": 101,
+  "w": 100,
   "h": 167,
   "z": 149,
   "visible": true,
@@ -16,7 +16,7 @@
   "param": "ParamRingRotate",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 8802
+  "opaque_px": 8813
  },
  {
   "id": "148",
@@ -35,7 +35,7 @@
   "param": "ParamRingRotate",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 11385
+  "opaque_px": 11390
  },
  {
   "id": "147",
@@ -54,7 +54,7 @@
   "param": "ParamRingRotate",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 16245
+  "opaque_px": 16240
  },
  {
   "id": "146",
@@ -73,7 +73,7 @@
   "param": "ParamRingRotate",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 6840
+  "opaque_px": 6884
  },
  {
   "id": "145",
@@ -92,7 +92,7 @@
   "param": "Glow_Level",
   "hidden_restored": false,
   "source": "derived:ring",
-  "opaque_px": 42525
+  "opaque_px": 42547
  },
  {
   "id": "144",
@@ -130,7 +130,7 @@
   "param": "ParamHairBack",
   "hidden_restored": true,
   "source": "restored:FACE silhouette",
-  "opaque_px": 236369
+  "opaque_px": 192203
  },
  {
   "id": "142",
@@ -140,7 +140,7 @@
   "x": 1354,
   "y": 676,
   "w": 353,
-  "h": 130,
+  "h": 128,
   "z": 142,
   "visible": true,
   "blend": "normal",
@@ -149,7 +149,7 @@
   "param": "ParamHairBack",
   "hidden_restored": false,
   "source": "FACE",
-  "opaque_px": 15617
+  "opaque_px": 12113
  },
  {
   "id": "141",
@@ -168,7 +168,7 @@
   "param": "Tgl_Hood",
   "hidden_restored": true,
   "source": "restored:FACE silhouette",
-  "opaque_px": 216081
+  "opaque_px": 171915
  },
  {
   "id": "140",
@@ -225,17 +225,17 @@
   "param": "Tgl_Hood",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 71218
+  "opaque_px": 68919
  },
  {
   "id": "137",
   "name": "137_Neck_Back",
   "group": "03_BODY",
   "file": "08_parts/body/137_Neck_Back.png",
-  "x": 1418,
-  "y": 746,
-  "w": 227,
-  "h": 161,
+  "x": 1461,
+  "y": 727,
+  "w": 126,
+  "h": 168,
   "z": 137,
   "visible": true,
   "blend": "normal",
@@ -243,18 +243,18 @@
   "physics": false,
   "param": "ParamAngleZ",
   "hidden_restored": true,
-  "source": "restored",
-  "opaque_px": 34457
+  "source": "redrawn",
+  "opaque_px": 16949
  },
  {
   "id": "136",
   "name": "136_Neck",
   "group": "03_BODY",
   "file": "08_parts/body/136_Neck.png",
-  "x": 1406,
-  "y": 725,
-  "w": 254,
-  "h": 182,
+  "x": 1470,
+  "y": 728,
+  "w": 109,
+  "h": 166,
   "z": 136,
   "visible": true,
   "blend": "normal",
@@ -262,8 +262,8 @@
   "physics": false,
   "param": "ParamAngleX/Y/Z",
   "hidden_restored": true,
-  "source": "FULLBODY+restored",
-  "opaque_px": 35081
+  "source": "redrawn (clean neck + chin shadow)",
+  "opaque_px": 14045
  },
  {
   "id": "135",
@@ -282,7 +282,7 @@
   "param": "ParamBodyAngleX",
   "hidden_restored": true,
   "source": "restored",
-  "opaque_px": 130100
+  "opaque_px": 130105
  },
  {
   "id": "134",
@@ -320,17 +320,17 @@
   "param": "ParamBreath",
   "hidden_restored": true,
   "source": "FULLBODY+restored",
-  "opaque_px": 279167
+  "opaque_px": 283181
  },
  {
   "id": "132",
   "name": "132_Inner_Circuit_Glow",
   "group": "03_BODY",
   "file": "08_parts/effects/132_Inner_Circuit_Glow.png",
-  "x": 1475,
-  "y": 795,
-  "w": 87,
-  "h": 584,
+  "x": 1476,
+  "y": 796,
+  "w": 86,
+  "h": 583,
   "z": 132,
   "visible": true,
   "blend": "add",
@@ -339,7 +339,7 @@
   "param": "Glow_Level",
   "hidden_restored": false,
   "source": "derived:inner cyan",
-  "opaque_px": 10460
+  "opaque_px": 10438
  },
  {
   "id": "131",
@@ -358,7 +358,7 @@
   "param": "ParamBreath",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 35031
+  "opaque_px": 35055
  },
  {
   "id": "130",
@@ -367,8 +367,8 @@
   "file": "08_parts/accessories/130_Core_Face.png",
   "x": 1472,
   "y": 1073,
-  "w": 101,
-  "h": 137,
+  "w": 100,
+  "h": 136,
   "z": 130,
   "visible": true,
   "blend": "normal",
@@ -377,7 +377,7 @@
   "param": "ParamBreath",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 4908
+  "opaque_px": 4906
  },
  {
   "id": "129",
@@ -396,7 +396,7 @@
   "param": "Glow_Level",
   "hidden_restored": false,
   "source": "derived:core",
-  "opaque_px": 5137
+  "opaque_px": 5151
  },
  {
   "id": "128",
@@ -404,9 +404,9 @@
   "group": "03_BODY",
   "file": "08_parts/arms_hands/128_Arm_R_Under.png",
   "x": 659,
-  "y": 920,
-  "w": 638,
-  "h": 1463,
+  "y": 992,
+  "w": 635,
+  "h": 1390,
   "z": 128,
   "visible": true,
   "blend": "normal",
@@ -415,17 +415,17 @@
   "param": "ParamArmR",
   "hidden_restored": true,
   "source": "restored:inner sleeve+wrist",
-  "opaque_px": 212270
+  "opaque_px": 204562
  },
  {
   "id": "127",
   "name": "127_Arm_L_Under",
   "group": "03_BODY",
   "file": "08_parts/arms_hands/127_Arm_L_Under.png",
-  "x": 1784,
-  "y": 920,
-  "w": 608,
-  "h": 1469,
+  "x": 1787,
+  "y": 992,
+  "w": 605,
+  "h": 1396,
   "z": 127,
   "visible": true,
   "blend": "normal",
@@ -434,7 +434,7 @@
   "param": "ParamArmL",
   "hidden_restored": true,
   "source": "restored:inner sleeve+wrist",
-  "opaque_px": 210119
+  "opaque_px": 202411
  },
  {
   "id": "126",
@@ -453,16 +453,16 @@
   "param": "ParamArmR",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 8426
+  "opaque_px": 8416
  },
  {
   "id": "125",
   "name": "125_Sleeve_L_Inner",
   "group": "03_BODY",
   "file": "08_parts/clothes/125_Sleeve_L_Inner.png",
-  "x": 2081,
+  "x": 2082,
   "y": 2063,
-  "w": 377,
+  "w": 376,
   "h": 296,
   "z": 125,
   "visible": true,
@@ -472,17 +472,17 @@
   "param": "ParamArmL",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 8796
+  "opaque_px": 8769
  },
  {
   "id": "124",
   "name": "124_Hand_R",
   "group": "03_BODY",
   "file": "08_parts/arms_hands/124_Hand_R.png",
-  "x": 596,
+  "x": 597,
   "y": 2210,
-  "w": 233,
-  "h": 365,
+  "w": 232,
+  "h": 364,
   "z": 124,
   "visible": true,
   "blend": "normal",
@@ -501,7 +501,7 @@
   "x": 638,
   "y": 2210,
   "w": 170,
-  "h": 302,
+  "h": 301,
   "z": 123,
   "visible": true,
   "blend": "normal",
@@ -510,7 +510,7 @@
   "param": "Tgl_Glove",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 21796
+  "opaque_px": 21768
  },
  {
   "id": "122",
@@ -529,7 +529,7 @@
   "param": "ParamHandL",
   "hidden_restored": true,
   "source": "FULLBODY+restored skin under glove",
-  "opaque_px": 42305
+  "opaque_px": 42314
  },
  {
   "id": "121",
@@ -539,7 +539,7 @@
   "x": 2225,
   "y": 2222,
   "w": 170,
-  "h": 290,
+  "h": 289,
   "z": 121,
   "visible": true,
   "blend": "normal",
@@ -548,7 +548,7 @@
   "param": "Tgl_Glove",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 21172
+  "opaque_px": 21160
  },
  {
   "id": "120",
@@ -567,7 +567,7 @@
   "param": "ParamLegR",
   "hidden_restored": true,
   "source": "FULLBODY+restored",
-  "opaque_px": 595481
+  "opaque_px": 595472
  },
  {
   "id": "119",
@@ -586,7 +586,7 @@
   "param": "ParamLegL",
   "hidden_restored": true,
   "source": "FULLBODY+restored",
-  "opaque_px": 555751
+  "opaque_px": 555729
  },
  {
   "id": "118",
@@ -605,7 +605,7 @@
   "param": "ParamStrap",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 26682
+  "opaque_px": 26673
  },
  {
   "id": "117",
@@ -624,7 +624,7 @@
   "param": "ParamStrap",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 30011
+  "opaque_px": 30010
  },
  {
   "id": "116",
@@ -643,7 +643,7 @@
   "param": "",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 189542
+  "opaque_px": 189683
  },
  {
   "id": "115",
@@ -662,7 +662,7 @@
   "param": "",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 188424
+  "opaque_px": 188563
  },
  {
   "id": "114",
@@ -670,9 +670,9 @@
   "group": "03_BODY",
   "file": "08_parts/accessories/114_Cable_Tail_Seg1.png",
   "x": 1901,
-  "y": 2192,
-  "w": 164,
-  "h": 362,
+  "y": 2193,
+  "w": 163,
+  "h": 361,
   "z": 114,
   "visible": true,
   "blend": "normal",
@@ -681,7 +681,7 @@
   "param": "ParamCable",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 18194
+  "opaque_px": 18189
  },
  {
   "id": "113",
@@ -700,7 +700,7 @@
   "param": "ParamCable",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 21164
+  "opaque_px": 21158
  },
  {
   "id": "112",
@@ -719,7 +719,7 @@
   "param": "ParamCable",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 32999
+  "opaque_px": 33003
  },
  {
   "id": "111",
@@ -757,7 +757,7 @@
   "param": "ParamBodyAngleX",
   "hidden_restored": true,
   "source": "restored:jacket under sleeve",
-  "opaque_px": 171735
+  "opaque_px": 171721
  },
  {
   "id": "109",
@@ -776,7 +776,7 @@
   "param": "ParamBodyAngleX",
   "hidden_restored": true,
   "source": "restored:jacket under sleeve",
-  "opaque_px": 191102
+  "opaque_px": 191103
  },
  {
   "id": "108",
@@ -786,7 +786,7 @@
   "x": 1040,
   "y": 941,
   "w": 380,
-  "h": 1334,
+  "h": 1333,
   "z": 108,
   "visible": true,
   "blend": "normal",
@@ -795,7 +795,7 @@
   "param": "ParamBodyAngleX",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 279321
+  "opaque_px": 279335
  },
  {
   "id": "107",
@@ -803,9 +803,9 @@
   "group": "04_CLOTHES",
   "file": "08_parts/clothes/107_Jacket_Front_L.png",
   "x": 1640,
-  "y": 926,
+  "y": 927,
   "w": 392,
-  "h": 1349,
+  "h": 1348,
   "z": 107,
   "visible": true,
   "blend": "normal",
@@ -814,17 +814,17 @@
   "param": "ParamBodyAngleX",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 298841
+  "opaque_px": 298866
  },
  {
   "id": "106",
   "name": "106_Jacket_Hem_R",
   "group": "04_CLOTHES",
   "file": "08_parts/clothes/106_Jacket_Hem_R.png",
-  "x": 1031,
-  "y": 2159,
-  "w": 389,
-  "h": 245,
+  "x": 1032,
+  "y": 2160,
+  "w": 388,
+  "h": 243,
   "z": 106,
   "visible": true,
   "blend": "normal",
@@ -833,7 +833,7 @@
   "param": "ParamHem",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 51316
+  "opaque_px": 51295
  },
  {
   "id": "105",
@@ -841,9 +841,9 @@
   "group": "04_CLOTHES",
   "file": "08_parts/clothes/105_Jacket_Hem_L.png",
   "x": 1640,
-  "y": 2045,
+  "y": 2046,
   "w": 437,
-  "h": 359,
+  "h": 358,
   "z": 105,
   "visible": true,
   "blend": "normal",
@@ -852,7 +852,7 @@
   "param": "ParamHem",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 54465
+  "opaque_px": 54460
  },
  {
   "id": "104",
@@ -871,7 +871,7 @@
   "param": "ParamAngleX",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 47597
+  "opaque_px": 53270
  },
  {
   "id": "103",
@@ -881,7 +881,7 @@
   "x": 1131,
   "y": 816,
   "w": 778,
-  "h": 208,
+  "h": 207,
   "z": 103,
   "visible": true,
   "blend": "add",
@@ -890,7 +890,7 @@
   "param": "Glow_Level",
   "hidden_restored": false,
   "source": "derived:hood rim",
-  "opaque_px": 10084
+  "opaque_px": 10226
  },
  {
   "id": "102",
@@ -898,9 +898,9 @@
   "group": "04_CLOTHES",
   "file": "08_parts/clothes/102_Drawstring_R.png",
   "x": 1265,
-  "y": 995,
+  "y": 996,
   "w": 80,
-  "h": 593,
+  "h": 592,
   "z": 102,
   "visible": true,
   "blend": "normal",
@@ -909,7 +909,7 @@
   "param": "ParamDrawstring",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 30218
+  "opaque_px": 30228
  },
  {
   "id": "101",
@@ -917,9 +917,9 @@
   "group": "04_CLOTHES",
   "file": "08_parts/clothes/101_Drawstring_L.png",
   "x": 1679,
-  "y": 995,
+  "y": 996,
   "w": 83,
-  "h": 584,
+  "h": 583,
   "z": 101,
   "visible": true,
   "blend": "normal",
@@ -928,7 +928,7 @@
   "param": "ParamDrawstring",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 29384
+  "opaque_px": 29382
  },
  {
   "id": "100",
@@ -947,7 +947,7 @@
   "param": "ParamArmR",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 140074
+  "opaque_px": 140050
  },
  {
   "id": "099",
@@ -957,7 +957,7 @@
   "x": 602,
   "y": 1556,
   "w": 563,
-  "h": 671,
+  "h": 670,
   "z": 99,
   "visible": true,
   "blend": "normal",
@@ -966,7 +966,7 @@
   "param": "ParamArmR",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 194887
+  "opaque_px": 194923
  },
  {
   "id": "098",
@@ -975,7 +975,7 @@
   "file": "08_parts/clothes/098_Sleeve_R_Cuff.png",
   "x": 563,
   "y": 2060,
-  "w": 482,
+  "w": 481,
   "h": 347,
   "z": 98,
   "visible": true,
@@ -985,16 +985,16 @@
   "param": "ParamSleeveR",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 82109
+  "opaque_px": 82176
  },
  {
   "id": "097",
   "name": "097_Sleeve_R_Strap",
   "group": "04_CLOTHES",
   "file": "08_parts/clothes/097_Sleeve_R_Strap.png",
-  "x": 734,
+  "x": 735,
   "y": 1052,
-  "w": 404,
+  "w": 403,
   "h": 752,
   "z": 97,
   "visible": true,
@@ -1004,7 +1004,7 @@
   "param": "ParamSleeveR",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 45138
+  "opaque_px": 45158
  },
  {
   "id": "096",
@@ -1023,7 +1023,7 @@
   "param": "ParamArmL",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 105267
+  "opaque_px": 105238
  },
  {
   "id": "095",
@@ -1042,7 +1042,7 @@
   "param": "ParamArmL",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 164494
+  "opaque_px": 164532
  },
  {
   "id": "094",
@@ -1061,7 +1061,7 @@
   "param": "ParamSleeveL",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 92259
+  "opaque_px": 92325
  },
  {
   "id": "093",
@@ -1069,9 +1069,9 @@
   "group": "04_CLOTHES",
   "file": "08_parts/clothes/093_Sleeve_L_Strap.png",
   "x": 1928,
-  "y": 1169,
-  "w": 371,
-  "h": 740,
+  "y": 1170,
+  "w": 370,
+  "h": 739,
   "z": 93,
   "visible": true,
   "blend": "normal",
@@ -1080,7 +1080,7 @@
   "param": "ParamSleeveL",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 38611
+  "opaque_px": 38620
  },
  {
   "id": "092",
@@ -1090,7 +1090,7 @@
   "x": 547,
   "y": 2046,
   "w": 1939,
-  "h": 356,
+  "h": 355,
   "z": 92,
   "visible": true,
   "blend": "add",
@@ -1099,7 +1099,7 @@
   "param": "Glow_Level",
   "hidden_restored": false,
   "source": "derived:cuff rims",
-  "opaque_px": 40605
+  "opaque_px": 40723
  },
  {
   "id": "091",
@@ -1147,7 +1147,7 @@
   "x": 1334,
   "y": 451,
   "w": 383,
-  "h": 352,
+  "h": 344,
   "z": 89,
   "visible": true,
   "blend": "normal",
@@ -1156,7 +1156,7 @@
   "param": "ParamAngleX/Y",
   "hidden_restored": true,
   "source": "FACE+restored forehead/eye sockets/sides",
-  "opaque_px": 105013
+  "opaque_px": 101962
  },
  {
   "id": "088",
@@ -2040,7 +2040,7 @@
   "x": 1205,
   "y": 620,
   "w": 153,
-  "h": 195,
+  "h": 194,
   "z": 42,
   "visible": true,
   "blend": "normal",
@@ -2049,7 +2049,7 @@
   "param": "ParamHairSide",
   "hidden_restored": false,
   "source": "FACE",
-  "opaque_px": 4793
+  "opaque_px": 4252
  },
  {
   "id": "041",
@@ -2058,8 +2058,8 @@
   "file": "08_parts/hair/041_Hair_Side_L_Lower.png",
   "x": 1704,
   "y": 588,
-  "w": 119,
-  "h": 194,
+  "w": 108,
+  "h": 188,
   "z": 41,
   "visible": true,
   "blend": "normal",
@@ -2068,7 +2068,7 @@
   "param": "ParamHairSide",
   "hidden_restored": false,
   "source": "FACE",
-  "opaque_px": 3002
+  "opaque_px": 2442
  },
  {
   "id": "040",
@@ -2286,7 +2286,7 @@
   "file": "08_parts/pip/029_Pip_Hover_Ring.png",
   "x": 881,
   "y": 833,
-  "w": 152,
+  "w": 151,
   "h": 68,
   "z": 29,
   "visible": true,
@@ -2296,7 +2296,7 @@
   "param": "ParamDroneFloat",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 5149
+  "opaque_px": 5140
  },
  {
   "id": "028",
@@ -2315,7 +2315,7 @@
   "param": "ParamDroneFloat",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 78493
+  "opaque_px": 78498
  },
  {
   "id": "027",
@@ -2324,7 +2324,7 @@
   "file": "08_parts/pip/027_Drone_Antenna.png",
   "x": 710,
   "y": 425,
-  "w": 401,
+  "w": 400,
   "h": 209,
   "z": 27,
   "visible": true,
@@ -2334,7 +2334,7 @@
   "param": "ParamDroneAntenna",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 15468
+  "opaque_px": 15460
  },
  {
   "id": "026",
@@ -2353,7 +2353,7 @@
   "param": "ParamDroneEye",
   "hidden_restored": false,
   "source": "FULLBODY",
-  "opaque_px": 5390
+  "opaque_px": 5424
  },
  {
   "id": "025",
@@ -2362,7 +2362,7 @@
   "file": "08_parts/effects/025_Pip_Glow.png",
   "x": 843,
   "y": 613,
-  "w": 207,
+  "w": 206,
   "h": 308,
   "z": 25,
   "visible": true,
@@ -2372,7 +2372,7 @@
   "param": "Glow_Level",
   "hidden_restored": false,
   "source": "derived:pip",
-  "opaque_px": 7095
+  "opaque_px": 7146
  },
  {
   "id": "024",
@@ -2543,7 +2543,7 @@
   "param": "Tgl_Glitch",
   "hidden_restored": false,
   "source": "derived:RGB split of head",
-  "opaque_px": 14131
+  "opaque_px": 13661
  },
  {
   "id": "015",
@@ -2828,6 +2828,6 @@
   "param": "Tgl_Overclock",
   "hidden_restored": false,
   "source": "derived:body silhouette (thin)",
-  "opaque_px": 3908
+  "opaque_px": 2801
  }
 ]

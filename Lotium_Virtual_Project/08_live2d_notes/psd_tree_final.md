@@ -1,10 +1,10 @@
-# PSD Tree — LTM_LIVE2D_MASTER_v001.psd
+# PSD Tree — LTM_LIVE2D_MASTER_v002.psd
 
-캔버스 3072×4608 · 레이어 149개 · 그룹 16개 · 위(앞) → 아래(뒤) 순서.
-표기: `[H]` 기본 숨김(토글/표정 대체) · `[+]` Add(선형 닷지) · `[R]` hidden-area 복원 포함 · `[P]` 물리 · `[T]` 토글
+캔버스 3072×4608 · 레이어 149개 · 그룹 16개 · 위(앞) → 아래(뒤).
+표기: `[H]` 기본 숨김 · `[+]` Add · `[R]` 가려진 부분 복원/재작화 · `[P]` 물리 · `[T]` 토글
 
 ```
-LTM_LIVE2D_MASTER_v001.psd
+LTM_LIVE2D_MASTER_v002.psd
 ├─ 16_OVERCLOCK  (7)
 │   ├─ 001_OC_Body_Rimlight [H][+][T]
 │   ├─ 002_OC_Core_Burst [H][+][T]
@@ -171,21 +171,3 @@ LTM_LIVE2D_MASTER_v001.psd
 │   ├─ 148_Ring_Spirit_Seg2 [T]
 │   ├─ 149_Ring_Spirit_Seg1 [T]
 ```
-
-## 그룹별 레이어 수
-- 01_BACK_FX: 6
-- 02_BACK_HAIR: 3
-- 03_BODY: 30
-- 04_CLOTHES: 19
-- 05_FACE: 9
-- 06_EYES: 22
-- 07_BROWS: 2
-- 08_MOUTH: 10
-- 09_HEADSET: 6
-- 10_FRONT_HAIR: 13
-- 11_PIP: 6
-- 12_UI: 6
-- 13_FRONT_FX: 4
-- 14_EXPRESSIONS: 3
-- 15_TOGGLES: 3
-- 16_OVERCLOCK: 7

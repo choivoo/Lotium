@@ -458,7 +458,7 @@
    "hidden_restored": false,
    "source": "derived:pip",
    "file": "../08_parts/effects/025_Pip_Glow.png",
-   "w": 207,
+   "w": 206,
    "h": 308
   },
   {
@@ -494,7 +494,7 @@
    "hidden_restored": false,
    "source": "FULLBODY",
    "file": "../08_parts/pip/027_Drone_Antenna.png",
-   "w": 401,
+   "w": 400,
    "h": 209
   },
   {
@@ -530,7 +530,7 @@
    "hidden_restored": false,
    "source": "FULLBODY",
    "file": "../08_parts/pip/029_Pip_Hover_Ring.png",
-   "w": 152,
+   "w": 151,
    "h": 68
   },
   {
@@ -746,8 +746,8 @@
    "hidden_restored": false,
    "source": "FACE",
    "file": "../08_parts/hair/041_Hair_Side_L_Lower.png",
-   "w": 119,
-   "h": 194
+   "w": 108,
+   "h": 188
   },
   {
    "id": "042",
@@ -765,7 +765,7 @@
    "source": "FACE",
    "file": "../08_parts/hair/042_Hair_Side_R_Lower.png",
    "w": 153,
-   "h": 195
+   "h": 194
   },
   {
    "id": "043",
@@ -1611,7 +1611,7 @@
    "source": "FACE+restored forehead/eye sockets/sides",
    "file": "../08_parts/face/089_Face_Base.png",
    "w": 383,
-   "h": 352
+   "h": 344
   },
   {
    "id": "090",
@@ -1665,14 +1665,14 @@
    "source": "derived:cuff rims",
    "file": "../08_parts/effects/092_Sleeve_Cuff_Glow.png",
    "w": 1939,
-   "h": 356
+   "h": 355
   },
   {
    "id": "093",
    "name": "093_Sleeve_L_Strap",
    "group": "04_CLOTHES",
    "x": 1928,
-   "y": 1169,
+   "y": 1170,
    "z": 93,
    "visible": true,
    "blend": "normal",
@@ -1682,8 +1682,8 @@
    "hidden_restored": false,
    "source": "FULLBODY",
    "file": "../08_parts/clothes/093_Sleeve_L_Strap.png",
-   "w": 371,
-   "h": 740
+   "w": 370,
+   "h": 739
   },
   {
    "id": "094",
@@ -1743,7 +1743,7 @@
    "id": "097",
    "name": "097_Sleeve_R_Strap",
    "group": "04_CLOTHES",
-   "x": 734,
+   "x": 735,
    "y": 1052,
    "z": 97,
    "visible": true,
@@ -1754,7 +1754,7 @@
    "hidden_restored": false,
    "source": "FULLBODY",
    "file": "../08_parts/clothes/097_Sleeve_R_Strap.png",
-   "w": 404,
+   "w": 403,
    "h": 752
   },
   {
@@ -1772,7 +1772,7 @@
    "hidden_restored": false,
    "source": "FULLBODY",
    "file": "../08_parts/clothes/098_Sleeve_R_Cuff.png",
-   "w": 482,
+   "w": 481,
    "h": 347
   },
   {
@@ -1791,7 +1791,7 @@
    "source": "FULLBODY",
    "file": "../08_parts/arms_hands/099_Arm_R_Forearm.png",
    "w": 563,
-   "h": 671
+   "h": 670
   },
   {
    "id": "100",
@@ -1816,7 +1816,7 @@
    "name": "101_Drawstring_L",
    "group": "04_CLOTHES",
    "x": 1679,
-   "y": 995,
+   "y": 996,
    "z": 101,
    "visible": true,
    "blend": "normal",
@@ -1827,14 +1827,14 @@
    "source": "FULLBODY",
    "file": "../08_parts/clothes/101_Drawstring_L.png",
    "w": 83,
-   "h": 584
+   "h": 583
   },
   {
    "id": "102",
    "name": "102_Drawstring_R",
    "group": "04_CLOTHES",
    "x": 1265,
-   "y": 995,
+   "y": 996,
    "z": 102,
    "visible": true,
    "blend": "normal",
@@ -1845,7 +1845,7 @@
    "source": "FULLBODY",
    "file": "../08_parts/clothes/102_Drawstring_R.png",
    "w": 80,
-   "h": 593
+   "h": 592
   },
   {
    "id": "103",
@@ -1863,7 +1863,7 @@
    "source": "derived:hood rim",
    "file": "../08_parts/effects/103_Jacket_Hood_Rim_Glow.png",
    "w": 778,
-   "h": 208
+   "h": 207
   },
   {
    "id": "104",
@@ -1888,7 +1888,7 @@
    "name": "105_Jacket_Hem_L",
    "group": "04_CLOTHES",
    "x": 1640,
-   "y": 2045,
+   "y": 2046,
    "z": 105,
    "visible": true,
    "blend": "normal",
@@ -1899,14 +1899,14 @@
    "source": "FULLBODY",
    "file": "../08_parts/clothes/105_Jacket_Hem_L.png",
    "w": 437,
-   "h": 359
+   "h": 358
   },
   {
    "id": "106",
    "name": "106_Jacket_Hem_R",
    "group": "04_CLOTHES",
-   "x": 1031,
-   "y": 2159,
+   "x": 1032,
+   "y": 2160,
    "z": 106,
    "visible": true,
    "blend": "normal",
@@ -1916,15 +1916,15 @@
    "hidden_restored": false,
    "source": "FULLBODY",
    "file": "../08_parts/clothes/106_Jacket_Hem_R.png",
-   "w": 389,
-   "h": 245
+   "w": 388,
+   "h": 243
   },
   {
    "id": "107",
    "name": "107_Jacket_Front_L",
    "group": "04_CLOTHES",
    "x": 1640,
-   "y": 926,
+   "y": 927,
    "z": 107,
    "visible": true,
    "blend": "normal",
@@ -1935,7 +1935,7 @@
    "source": "FULLBODY",
    "file": "../08_parts/clothes/107_Jacket_Front_L.png",
    "w": 392,
-   "h": 1349
+   "h": 1348
   },
   {
    "id": "108",
@@ -1953,7 +1953,7 @@
    "source": "FULLBODY",
    "file": "../08_parts/clothes/108_Jacket_Front_R.png",
    "w": 380,
-   "h": 1334
+   "h": 1333
   },
   {
    "id": "109",
@@ -2050,7 +2050,7 @@
    "name": "114_Cable_Tail_Seg1",
    "group": "03_BODY",
    "x": 1901,
-   "y": 2192,
+   "y": 2193,
    "z": 114,
    "visible": true,
    "blend": "normal",
@@ -2060,8 +2060,8 @@
    "hidden_restored": false,
    "source": "FULLBODY",
    "file": "../08_parts/accessories/114_Cable_Tail_Seg1.png",
-   "w": 164,
-   "h": 362
+   "w": 163,
+   "h": 361
   },
   {
    "id": "115",
@@ -2187,7 +2187,7 @@
    "source": "FULLBODY",
    "file": "../08_parts/arms_hands/121_Hand_L_Glove.png",
    "w": 170,
-   "h": 290
+   "h": 289
   },
   {
    "id": "122",
@@ -2223,13 +2223,13 @@
    "source": "FULLBODY",
    "file": "../08_parts/arms_hands/123_Hand_R_Glove.png",
    "w": 170,
-   "h": 302
+   "h": 301
   },
   {
    "id": "124",
    "name": "124_Hand_R",
    "group": "03_BODY",
-   "x": 596,
+   "x": 597,
    "y": 2210,
    "z": 124,
    "visible": true,
@@ -2240,14 +2240,14 @@
    "hidden_restored": true,
    "source": "FULLBODY+restored skin under glove",
    "file": "../08_parts/arms_hands/124_Hand_R.png",
-   "w": 233,
-   "h": 365
+   "w": 232,
+   "h": 364
   },
   {
    "id": "125",
    "name": "125_Sleeve_L_Inner",
    "group": "03_BODY",
-   "x": 2081,
+   "x": 2082,
    "y": 2063,
    "z": 125,
    "visible": true,
@@ -2258,7 +2258,7 @@
    "hidden_restored": false,
    "source": "FULLBODY",
    "file": "../08_parts/clothes/125_Sleeve_L_Inner.png",
-   "w": 377,
+   "w": 376,
    "h": 296
   },
   {
@@ -2283,8 +2283,8 @@
    "id": "127",
    "name": "127_Arm_L_Under",
    "group": "03_BODY",
-   "x": 1784,
-   "y": 920,
+   "x": 1787,
+   "y": 992,
    "z": 127,
    "visible": true,
    "blend": "normal",
@@ -2294,15 +2294,15 @@
    "hidden_restored": true,
    "source": "restored:inner sleeve+wrist",
    "file": "../08_parts/arms_hands/127_Arm_L_Under.png",
-   "w": 608,
-   "h": 1469
+   "w": 605,
+   "h": 1396
   },
   {
    "id": "128",
    "name": "128_Arm_R_Under",
    "group": "03_BODY",
    "x": 659,
-   "y": 920,
+   "y": 992,
    "z": 128,
    "visible": true,
    "blend": "normal",
@@ -2312,8 +2312,8 @@
    "hidden_restored": true,
    "source": "restored:inner sleeve+wrist",
    "file": "../08_parts/arms_hands/128_Arm_R_Under.png",
-   "w": 638,
-   "h": 1463
+   "w": 635,
+   "h": 1390
   },
   {
    "id": "129",
@@ -2348,8 +2348,8 @@
    "hidden_restored": false,
    "source": "FULLBODY",
    "file": "../08_parts/accessories/130_Core_Face.png",
-   "w": 101,
-   "h": 137
+   "w": 100,
+   "h": 136
   },
   {
    "id": "131",
@@ -2373,8 +2373,8 @@
    "id": "132",
    "name": "132_Inner_Circuit_Glow",
    "group": "03_BODY",
-   "x": 1475,
-   "y": 795,
+   "x": 1476,
+   "y": 796,
    "z": 132,
    "visible": true,
    "blend": "add",
@@ -2384,8 +2384,8 @@
    "hidden_restored": false,
    "source": "derived:inner cyan",
    "file": "../08_parts/effects/132_Inner_Circuit_Glow.png",
-   "w": 87,
-   "h": 584
+   "w": 86,
+   "h": 583
   },
   {
    "id": "133",
@@ -2445,8 +2445,8 @@
    "id": "136",
    "name": "136_Neck",
    "group": "03_BODY",
-   "x": 1406,
-   "y": 725,
+   "x": 1470,
+   "y": 728,
    "z": 136,
    "visible": true,
    "blend": "normal",
@@ -2454,17 +2454,17 @@
    "physics": false,
    "param": "ParamAngleX/Y/Z",
    "hidden_restored": true,
-   "source": "FULLBODY+restored",
+   "source": "redrawn (clean neck + chin shadow)",
    "file": "../08_parts/body/136_Neck.png",
-   "w": 254,
-   "h": 182
+   "w": 109,
+   "h": 166
   },
   {
    "id": "137",
    "name": "137_Neck_Back",
    "group": "03_BODY",
-   "x": 1418,
-   "y": 746,
+   "x": 1461,
+   "y": 727,
    "z": 137,
    "visible": true,
    "blend": "normal",
@@ -2472,10 +2472,10 @@
    "physics": false,
    "param": "ParamAngleZ",
    "hidden_restored": true,
-   "source": "restored",
+   "source": "redrawn",
    "file": "../08_parts/body/137_Neck_Back.png",
-   "w": 227,
-   "h": 161
+   "w": 126,
+   "h": 168
   },
   {
    "id": "138",
@@ -2565,7 +2565,7 @@
    "source": "FACE",
    "file": "../08_parts/hair/142_Hair_Back_Lower.png",
    "w": 353,
-   "h": 130
+   "h": 128
   },
   {
    "id": "143",
@@ -2690,7 +2690,7 @@
    "hidden_restored": false,
    "source": "FULLBODY",
    "file": "../08_parts/effects/149_Ring_Spirit_Seg1.png",
-   "w": 101,
+   "w": 100,
    "h": 167
   }
  ]

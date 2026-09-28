@@ -23,11 +23,11 @@ layer_id,layer_name,group,file,x,y,width,height,z_order,visible_default,blend,to
 022,022_UI_Panel_L_Battery_Low,12_UI,08_parts/ui/022_UI_Panel_L_Battery_Low.png,2221,991,220,103,22,False,add,True,False,Tgl_LowBattery,False,ACCESSORY keyed
 023,023_UI_Panel_L_Battery,12_UI,08_parts/ui/023_UI_Panel_L_Battery.png,2221,991,230,103,23,True,add,True,False,Tgl_UI,False,ACCESSORY keyed
 024,024_Drone_Trail_OC,11_PIP,08_parts/overclock/024_Drone_Trail_OC.png,466,360,488,134,24,False,add,True,False,Tgl_Overclock,False,drawn
-025,025_Pip_Glow,11_PIP,08_parts/effects/025_Pip_Glow.png,843,613,207,308,25,True,add,True,False,Glow_Level,False,derived:pip
+025,025_Pip_Glow,11_PIP,08_parts/effects/025_Pip_Glow.png,843,613,206,308,25,True,add,True,False,Glow_Level,False,derived:pip
 026,026_Drone_Eye,11_PIP,08_parts/pip/026_Drone_Eye.png,860,629,173,116,26,True,normal,True,False,ParamDroneEye,False,FULLBODY
-027,027_Drone_Antenna,11_PIP,08_parts/pip/027_Drone_Antenna.png,710,425,401,209,27,True,normal,True,True,ParamDroneAntenna,False,FULLBODY
+027,027_Drone_Antenna,11_PIP,08_parts/pip/027_Drone_Antenna.png,710,425,400,209,27,True,normal,True,True,ParamDroneAntenna,False,FULLBODY
 028,028_Drone_Body,11_PIP,08_parts/pip/028_Drone_Body.png,710,425,413,416,28,True,normal,True,False,ParamDroneFloat,False,FULLBODY
-029,029_Pip_Hover_Ring,11_PIP,08_parts/pip/029_Pip_Hover_Ring.png,881,833,152,68,29,True,normal,True,False,ParamDroneFloat,False,FULLBODY
+029,029_Pip_Hover_Ring,11_PIP,08_parts/pip/029_Pip_Hover_Ring.png,881,833,151,68,29,True,normal,True,False,ParamDroneFloat,False,FULLBODY
 030,030_Hair_Headset_Press,10_FRONT_HAIR,08_parts/hair/030_Hair_Headset_Press.png,1276,271,250,271,30,False,normal,True,False,Tgl_Headset,True,restored:hair under band
 031,031_Hair_Inner_Glow,10_FRONT_HAIR,08_parts/effects/031_Hair_Inner_Glow.png,1206,374,614,451,31,True,add,True,False,Glow_Level,False,derived:hair cyan streak
 032,032_Hair_Front_Ahoge,10_FRONT_HAIR,08_parts/hair/032_Hair_Front_Ahoge.png,1414,198,176,83,32,True,normal,False,True,ParamAhoge,False,FACE
@@ -39,8 +39,8 @@ layer_id,layer_name,group,file,x,y,width,height,z_order,visible_default,blend,to
 038,038_Hair_Temple_R,10_FRONT_HAIR,08_parts/hair/038_Hair_Temple_R.png,1315,490,58,165,38,True,normal,False,True,ParamHairFront,False,FACE
 039,039_Hair_Side_L_Upper,10_FRONT_HAIR,08_parts/hair/039_Hair_Side_L_Upper.png,1693,326,145,267,39,True,normal,False,True,ParamHairSide,False,FACE
 040,040_Hair_Side_R_Upper,10_FRONT_HAIR,08_parts/hair/040_Hair_Side_R_Upper.png,1177,309,173,320,40,True,normal,False,True,ParamHairSide,False,FACE
-041,041_Hair_Side_L_Lower,10_FRONT_HAIR,08_parts/hair/041_Hair_Side_L_Lower.png,1704,588,119,194,41,True,normal,False,True,ParamHairSide,False,FACE
-042,042_Hair_Side_R_Lower,10_FRONT_HAIR,08_parts/hair/042_Hair_Side_R_Lower.png,1205,620,153,195,42,True,normal,False,True,ParamHairSide,False,FACE
+041,041_Hair_Side_L_Lower,10_FRONT_HAIR,08_parts/hair/041_Hair_Side_L_Lower.png,1704,588,108,188,41,True,normal,False,True,ParamHairSide,False,FACE
+042,042_Hair_Side_R_Lower,10_FRONT_HAIR,08_parts/hair/042_Hair_Side_R_Lower.png,1205,620,153,194,42,True,normal,False,True,ParamHairSide,False,FACE
 043,043_Hood_Up,09_HEADSET,08_parts/clothes/043_Hood_Up.png,1160,181,695,524,43,False,normal,True,False,Tgl_Hood,False,drawn from head silhouette
 044,044_Headset_Mic,09_HEADSET,08_parts/accessories/044_Headset_Mic.png,1591,646,107,104,44,True,normal,True,True,Tgl_Mic,False,FACE
 045,045_Headset_Cup_Glow,09_HEADSET,08_parts/effects/045_Headset_Cup_Glow.png,1243,530,526,174,45,True,add,True,False,Glow_Level,False,derived:earcup rings
@@ -87,64 +87,64 @@ layer_id,layer_name,group,file,x,y,width,height,z_order,visible_default,blend,to
 086,086_Face_Blush,05_FACE,08_parts/face/086_Face_Blush.png,1354,614,327,57,86,True,normal,False,False,ParamCheek,False,drawn
 087,087_Nose,05_FACE,08_parts/face/087_Nose.png,1482,614,58,56,87,True,normal,False,False,ParamAngleX,False,FACE
 088,088_Face_Shadow_Hair,05_FACE,08_parts/face/088_Face_Shadow_Hair.png,1353,462,321,331,88,True,normal,False,False,ParamHairFront,False,FACE
-089,089_Face_Base,05_FACE,08_parts/face/089_Face_Base.png,1334,451,383,352,89,True,normal,False,False,ParamAngleX/Y,True,FACE+restored forehead/eye sockets/sides
+089,089_Face_Base,05_FACE,08_parts/face/089_Face_Base.png,1334,451,383,344,89,True,normal,False,False,ParamAngleX/Y,True,FACE+restored forehead/eye sockets/sides
 090,090_Ear_L,05_FACE,08_parts/face/090_Ear_L.png,1695,566,41,80,90,True,normal,False,False,ParamAngleX,True,restored:drawn
 091,091_Ear_R,05_FACE,08_parts/face/091_Ear_R.png,1318,591,42,80,91,True,normal,False,False,ParamAngleX,True,restored:drawn
-092,092_Sleeve_Cuff_Glow,04_CLOTHES,08_parts/effects/092_Sleeve_Cuff_Glow.png,547,2046,1939,356,92,True,add,True,False,Glow_Level,False,derived:cuff rims
-093,093_Sleeve_L_Strap,04_CLOTHES,08_parts/clothes/093_Sleeve_L_Strap.png,1928,1169,371,740,93,True,normal,False,True,ParamSleeveL,False,FULLBODY
+092,092_Sleeve_Cuff_Glow,04_CLOTHES,08_parts/effects/092_Sleeve_Cuff_Glow.png,547,2046,1939,355,92,True,add,True,False,Glow_Level,False,derived:cuff rims
+093,093_Sleeve_L_Strap,04_CLOTHES,08_parts/clothes/093_Sleeve_L_Strap.png,1928,1170,370,739,93,True,normal,False,True,ParamSleeveL,False,FULLBODY
 094,094_Sleeve_L_Cuff,04_CLOTHES,08_parts/clothes/094_Sleeve_L_Cuff.png,2054,2060,416,347,94,True,normal,False,True,ParamSleeveL,False,FULLBODY
 095,095_Arm_L_Forearm,04_CLOTHES,08_parts/arms_hands/095_Arm_L_Forearm.png,1937,1556,494,827,95,True,normal,False,False,ParamArmL,False,FULLBODY
 096,096_Arm_L_Upper,04_CLOTHES,08_parts/arms_hands/096_Arm_L_Upper.png,1790,941,404,623,96,True,normal,False,False,ParamArmL,False,FULLBODY
-097,097_Sleeve_R_Strap,04_CLOTHES,08_parts/clothes/097_Sleeve_R_Strap.png,734,1052,404,752,97,True,normal,False,True,ParamSleeveR,False,FULLBODY
-098,098_Sleeve_R_Cuff,04_CLOTHES,08_parts/clothes/098_Sleeve_R_Cuff.png,563,2060,482,347,98,True,normal,False,True,ParamSleeveR,False,FULLBODY
-099,099_Arm_R_Forearm,04_CLOTHES,08_parts/arms_hands/099_Arm_R_Forearm.png,602,1556,563,671,99,True,normal,False,False,ParamArmR,False,FULLBODY
+097,097_Sleeve_R_Strap,04_CLOTHES,08_parts/clothes/097_Sleeve_R_Strap.png,735,1052,403,752,97,True,normal,False,True,ParamSleeveR,False,FULLBODY
+098,098_Sleeve_R_Cuff,04_CLOTHES,08_parts/clothes/098_Sleeve_R_Cuff.png,563,2060,481,347,98,True,normal,False,True,ParamSleeveR,False,FULLBODY
+099,099_Arm_R_Forearm,04_CLOTHES,08_parts/arms_hands/099_Arm_R_Forearm.png,602,1556,563,670,99,True,normal,False,False,ParamArmR,False,FULLBODY
 100,100_Arm_R_Upper,04_CLOTHES,08_parts/arms_hands/100_Arm_R_Upper.png,845,938,452,626,100,True,normal,False,False,ParamArmR,False,FULLBODY
-101,101_Drawstring_L,04_CLOTHES,08_parts/clothes/101_Drawstring_L.png,1679,995,83,584,101,True,normal,False,True,ParamDrawstring,False,FULLBODY
-102,102_Drawstring_R,04_CLOTHES,08_parts/clothes/102_Drawstring_R.png,1265,995,80,593,102,True,normal,False,True,ParamDrawstring,False,FULLBODY
-103,103_Jacket_Hood_Rim_Glow,04_CLOTHES,08_parts/effects/103_Jacket_Hood_Rim_Glow.png,1131,816,778,208,103,True,add,True,False,Glow_Level,False,derived:hood rim
+101,101_Drawstring_L,04_CLOTHES,08_parts/clothes/101_Drawstring_L.png,1679,996,83,583,101,True,normal,False,True,ParamDrawstring,False,FULLBODY
+102,102_Drawstring_R,04_CLOTHES,08_parts/clothes/102_Drawstring_R.png,1265,996,80,592,102,True,normal,False,True,ParamDrawstring,False,FULLBODY
+103,103_Jacket_Hood_Rim_Glow,04_CLOTHES,08_parts/effects/103_Jacket_Hood_Rim_Glow.png,1131,816,778,207,103,True,add,True,False,Glow_Level,False,derived:hood rim
 104,104_Jacket_Collar,04_CLOTHES,08_parts/clothes/104_Jacket_Collar.png,1256,896,578,227,104,True,normal,False,False,ParamAngleX,False,FULLBODY
-105,105_Jacket_Hem_L,04_CLOTHES,08_parts/clothes/105_Jacket_Hem_L.png,1640,2045,437,359,105,True,normal,False,True,ParamHem,False,FULLBODY
-106,106_Jacket_Hem_R,04_CLOTHES,08_parts/clothes/106_Jacket_Hem_R.png,1031,2159,389,245,106,True,normal,False,True,ParamHem,False,FULLBODY
-107,107_Jacket_Front_L,04_CLOTHES,08_parts/clothes/107_Jacket_Front_L.png,1640,926,392,1349,107,True,normal,False,False,ParamBodyAngleX,False,FULLBODY
-108,108_Jacket_Front_R,04_CLOTHES,08_parts/clothes/108_Jacket_Front_R.png,1040,941,380,1334,108,True,normal,False,False,ParamBodyAngleX,False,FULLBODY
+105,105_Jacket_Hem_L,04_CLOTHES,08_parts/clothes/105_Jacket_Hem_L.png,1640,2046,437,358,105,True,normal,False,True,ParamHem,False,FULLBODY
+106,106_Jacket_Hem_R,04_CLOTHES,08_parts/clothes/106_Jacket_Hem_R.png,1032,2160,388,243,106,True,normal,False,True,ParamHem,False,FULLBODY
+107,107_Jacket_Front_L,04_CLOTHES,08_parts/clothes/107_Jacket_Front_L.png,1640,927,392,1348,107,True,normal,False,False,ParamBodyAngleX,False,FULLBODY
+108,108_Jacket_Front_R,04_CLOTHES,08_parts/clothes/108_Jacket_Front_R.png,1040,941,380,1333,108,True,normal,False,False,ParamBodyAngleX,False,FULLBODY
 109,109_Jacket_Side_Under_Arm_L,04_CLOTHES,08_parts/clothes/109_Jacket_Side_Under_Arm_L.png,1793,950,404,1364,109,True,normal,False,False,ParamBodyAngleX,True,restored:jacket under sleeve
 110,110_Jacket_Side_Under_Arm_R,04_CLOTHES,08_parts/clothes/110_Jacket_Side_Under_Arm_R.png,896,950,398,1355,110,True,normal,False,False,ParamBodyAngleX,True,restored:jacket under sleeve
 111,111_Cable_Electric_Ribbon,03_BODY,08_parts/effects/111_Cable_Electric_Ribbon.png,1928,2220,344,875,111,True,add,True,False,Glow_Level,False,drawn
 112,112_Cable_Tail_Plug,03_BODY,08_parts/accessories/112_Cable_Tail_Plug.png,2210,3071,140,383,112,True,normal,False,True,ParamCable,False,FULLBODY
 113,113_Cable_Tail_Seg2,03_BODY,08_parts/accessories/113_Cable_Tail_Seg2.png,2015,2546,266,533,113,True,normal,False,True,ParamCable,False,FULLBODY
-114,114_Cable_Tail_Seg1,03_BODY,08_parts/accessories/114_Cable_Tail_Seg1.png,1901,2192,164,362,114,True,normal,False,True,ParamCable,False,FULLBODY
+114,114_Cable_Tail_Seg1,03_BODY,08_parts/accessories/114_Cable_Tail_Seg1.png,1901,2193,163,361,114,True,normal,False,True,ParamCable,False,FULLBODY
 115,115_Shoe_L,03_BODY,08_parts/legs/115_Shoe_L.png,1691,3845,473,638,115,True,normal,False,False,,False,FULLBODY
 116,116_Shoe_R,03_BODY,08_parts/legs/116_Shoe_R.png,863,3845,473,638,116,True,normal,False,False,,False,FULLBODY
 117,117_Pants_Strap_L,03_BODY,08_parts/legs/117_Pants_Strap_L.png,1715,2099,104,452,117,True,normal,False,True,ParamStrap,False,FULLBODY
 118,118_Pants_Strap_R,03_BODY,08_parts/legs/118_Pants_Strap_R.png,1040,2486,110,503,118,True,normal,False,True,ParamStrap,False,FULLBODY
 119,119_Pants_L,03_BODY,08_parts/legs/119_Pants_L.png,1562,1916,572,1937,119,True,normal,False,False,ParamLegL,True,FULLBODY+restored
 120,120_Pants_R,03_BODY,08_parts/legs/120_Pants_R.png,995,1916,575,1937,120,True,normal,False,False,ParamLegR,True,FULLBODY+restored
-121,121_Hand_L_Glove,03_BODY,08_parts/arms_hands/121_Hand_L_Glove.png,2225,2222,170,290,121,True,normal,True,False,Tgl_Glove,False,FULLBODY
+121,121_Hand_L_Glove,03_BODY,08_parts/arms_hands/121_Hand_L_Glove.png,2225,2222,170,289,121,True,normal,True,False,Tgl_Glove,False,FULLBODY
 122,122_Hand_L,03_BODY,08_parts/arms_hands/122_Hand_L.png,2210,2222,227,353,122,True,normal,False,False,ParamHandL,True,FULLBODY+restored skin under glove
-123,123_Hand_R_Glove,03_BODY,08_parts/arms_hands/123_Hand_R_Glove.png,638,2210,170,302,123,True,normal,True,False,Tgl_Glove,False,FULLBODY
-124,124_Hand_R,03_BODY,08_parts/arms_hands/124_Hand_R.png,596,2210,233,365,124,True,normal,False,False,ParamHandR,True,FULLBODY+restored skin under glove
-125,125_Sleeve_L_Inner,03_BODY,08_parts/clothes/125_Sleeve_L_Inner.png,2081,2063,377,296,125,True,normal,False,False,ParamArmL,False,FULLBODY
+123,123_Hand_R_Glove,03_BODY,08_parts/arms_hands/123_Hand_R_Glove.png,638,2210,170,301,123,True,normal,True,False,Tgl_Glove,False,FULLBODY
+124,124_Hand_R,03_BODY,08_parts/arms_hands/124_Hand_R.png,597,2210,232,364,124,True,normal,False,False,ParamHandR,True,FULLBODY+restored skin under glove
+125,125_Sleeve_L_Inner,03_BODY,08_parts/clothes/125_Sleeve_L_Inner.png,2082,2063,376,296,125,True,normal,False,False,ParamArmL,False,FULLBODY
 126,126_Sleeve_R_Inner,03_BODY,08_parts/clothes/126_Sleeve_R_Inner.png,578,2063,377,296,126,True,normal,False,False,ParamArmR,False,FULLBODY
-127,127_Arm_L_Under,03_BODY,08_parts/arms_hands/127_Arm_L_Under.png,1784,920,608,1469,127,True,normal,False,False,ParamArmL,True,restored:inner sleeve+wrist
-128,128_Arm_R_Under,03_BODY,08_parts/arms_hands/128_Arm_R_Under.png,659,920,638,1463,128,True,normal,False,False,ParamArmR,True,restored:inner sleeve+wrist
+127,127_Arm_L_Under,03_BODY,08_parts/arms_hands/127_Arm_L_Under.png,1787,992,605,1396,127,True,normal,False,False,ParamArmL,True,restored:inner sleeve+wrist
+128,128_Arm_R_Under,03_BODY,08_parts/arms_hands/128_Arm_R_Under.png,659,992,635,1390,128,True,normal,False,False,ParamArmR,True,restored:inner sleeve+wrist
 129,129_Core_Glow,03_BODY,08_parts/effects/129_Core_Glow.png,1432,1037,177,211,129,True,add,True,False,Glow_Level,False,derived:core
-130,130_Core_Face,03_BODY,08_parts/accessories/130_Core_Face.png,1472,1073,101,137,130,True,normal,False,False,ParamBreath,False,FULLBODY
+130,130_Core_Face,03_BODY,08_parts/accessories/130_Core_Face.png,1472,1073,100,136,130,True,normal,False,False,ParamBreath,False,FULLBODY
 131,131_Core_Case,03_BODY,08_parts/accessories/131_Core_Case.png,1415,1043,203,212,131,True,normal,False,False,ParamBreath,False,FULLBODY
-132,132_Inner_Circuit_Glow,03_BODY,08_parts/effects/132_Inner_Circuit_Glow.png,1475,795,87,584,132,True,add,True,False,Glow_Level,False,derived:inner cyan
+132,132_Inner_Circuit_Glow,03_BODY,08_parts/effects/132_Inner_Circuit_Glow.png,1476,796,86,583,132,True,add,True,False,Glow_Level,False,derived:inner cyan
 133,133_Inner_Body,03_BODY,08_parts/clothes/133_Inner_Body.png,1400,782,263,1235,133,True,normal,False,False,ParamBreath,True,FULLBODY+restored
 134,134_Torso_Restore,03_BODY,08_parts/body/134_Torso_Restore.png,1268,986,551,1091,134,True,normal,False,False,ParamBodyAngleX,True,restored
 135,135_Pants_Waist_Restore,03_BODY,08_parts/clothes/135_Pants_Waist_Restore.png,1250,1796,593,311,135,True,normal,False,False,ParamBodyAngleX,True,restored
-136,136_Neck,03_BODY,08_parts/body/136_Neck.png,1406,725,254,182,136,True,normal,False,False,ParamAngleX/Y/Z,True,FULLBODY+restored
-137,137_Neck_Back,03_BODY,08_parts/body/137_Neck_Back.png,1418,746,227,161,137,True,normal,False,False,ParamAngleZ,True,restored
+136,136_Neck,03_BODY,08_parts/body/136_Neck.png,1470,728,109,166,136,True,normal,False,False,ParamAngleX/Y/Z,True,redrawn (clean neck + chin shadow)
+137,137_Neck_Back,03_BODY,08_parts/body/137_Neck_Back.png,1461,727,126,168,137,True,normal,False,False,ParamAngleZ,True,redrawn
 138,138_Hood_Folded,03_BODY,08_parts/clothes/138_Hood_Folded.png,1112,782,845,188,138,True,normal,True,True,Tgl_Hood,False,FULLBODY
 139,139_Jacket_Back_Lining,03_BODY,08_parts/clothes/139_Jacket_Back_Lining.png,1256,851,569,1256,139,True,normal,False,False,ParamBodyAngleX,True,restored
 140,140_Cable_Port,03_BODY,08_parts/accessories/140_Cable_Port.png,1896,2100,109,145,140,True,normal,False,False,ParamCable,True,drawn
 141,141_Hair_Back_Hood,02_BACK_HAIR,08_parts/hair/141_Hair_Back_Hood.png,1197,322,618,477,141,False,normal,True,False,Tgl_Hood,True,restored:FACE silhouette
-142,142_Hair_Back_Lower,02_BACK_HAIR,08_parts/hair/142_Hair_Back_Lower.png,1354,676,353,130,142,True,normal,False,True,ParamHairBack,False,FACE
+142,142_Hair_Back_Lower,02_BACK_HAIR,08_parts/hair/142_Hair_Back_Lower.png,1354,676,353,128,142,True,normal,False,True,ParamHairBack,False,FACE
 143,143_Hair_Back_Base,02_BACK_HAIR,08_parts/hair/143_Hair_Back_Base.png,1197,202,618,597,143,True,normal,False,True,ParamHairBack,True,restored:FACE silhouette
 144,144_OC_Ring_Outer,01_BACK_FX,08_parts/overclock/144_OC_Ring_Outer.png,980,30,1106,271,144,False,add,True,False,Tgl_Overclock,False,drawn
 145,145_Ring_Spirit_Glow,01_BACK_FX,08_parts/effects/145_Ring_Spirit_Glow.png,1067,26,814,378,145,True,add,True,False,Glow_Level,False,derived:ring
 146,146_Ring_Spirit_Seg4,01_BACK_FX,08_parts/effects/146_Ring_Spirit_Seg4.png,1748,158,107,131,146,True,normal,True,False,ParamRingRotate,False,FULLBODY
 147,147_Ring_Spirit_Seg3,01_BACK_FX,08_parts/effects/147_Ring_Spirit_Seg3.png,1490,53,332,104,147,True,normal,True,False,ParamRingRotate,False,FULLBODY
 148,148_Ring_Spirit_Seg2,01_BACK_FX,08_parts/effects/148_Ring_Spirit_Seg2.png,1208,77,227,128,148,True,normal,True,False,ParamRingRotate,False,FULLBODY
-149,149_Ring_Spirit_Seg1,01_BACK_FX,08_parts/effects/149_Ring_Spirit_Seg1.png,1094,212,101,167,149,True,normal,True,False,ParamRingRotate,False,FULLBODY
+149,149_Ring_Spirit_Seg1,01_BACK_FX,08_parts/effects/149_Ring_Spirit_Seg1.png,1094,212,100,167,149,True,normal,True,False,ParamRingRotate,False,FULLBODY

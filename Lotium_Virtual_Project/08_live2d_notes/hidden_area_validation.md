@@ -8,7 +8,7 @@
 | 머리카락 뒤 얼굴 윤곽 | Face_Base | 타원 하단 14px 측면 확장(AngleX 대응) | PASS |
 | 귀 주변 | Ear_R / Ear_L | 이어컵·머리에 가려진 귀를 팔레트로 드로잉 | PASS |
 | 눈꺼풀 뒤 안구 | Eye_*_White / Eye_*_Iris | 흰자 개구부 확장, 홍채 윗부분은 아래쪽 미러로 복원 + 하이라이트/동공 인페인트 | PASS |
-| 목 뒤 | Neck / Neck_Back | 칼라 아래까지 목 연장 + 뒷목 음영 | PASS |
+| 목 뒤 | Neck / Neck_Back | **v002 재작화**: 턱 그림자·외곽선 포함 새 목, 칼라 아래까지 | PASS |
 | 재킷 뒤 몸통 | Torso_Restore / Inner_Body / Jacket_Back_Lining | 몸통·이너·재킷 안감 채움 | PASS |
 | 팔 뒤 몸통 | Jacket_Side_Under_Arm_R/L | 소매 아래 재킷 측면 채움 | PASS |
 | 소매 안 팔 | Arm_R_Under / Arm_L_Under | 어깨→손목 이너 소매 튜브 | PASS |
@@ -54,3 +54,8 @@
 ## 한계 (정직 기록)
 - 복원은 인페인트/팔레트 드로잉 기반: 평탄한 채움이라 큰 회전(±30° 이상)에서는 원화가 수작업 보정 권장.
 - 브로우는 마스터에서 앞머리에 가려져 있어 전체를 드로잉으로 복원함.
+
+## v002 (CR-001) 추가 재작화
+- `Neck`, `Neck_Back`: 전신 마스터 픽셀 대신 새로 그림 → 이중 턱 제거
+- `Inner_Body` 하이넥 상단, `Hood_Folded` 목 뒤 안감: 머리끝에 가려졌던 부분 재작화
+- `Face_Base`: 측면 확장은 볼 옆만(턱 아래 번짐 제거)

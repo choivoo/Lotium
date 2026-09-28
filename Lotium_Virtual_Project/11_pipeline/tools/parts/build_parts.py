@@ -141,6 +141,7 @@ def from_fb(mask, rgb1x=None):
     """mask at fullbody 1x -> canvas alpha; colors from upscaled fullbody (or given 1x rgb)."""
     mask = mask | (dil(mask, 1) & fgB)  # 1px internal overlap: no seams between adjacent parts
     a = cv2.resize(mask.astype(np.float32), (W, H), interpolation=cv2.INTER_LINEAR)
+    a = np.clip((cv2.GaussianBlur(a, (0, 0), 1.6) - 0.5) * 2.4 + 0.5, 0, 1)  # smooth 3x upscale stair-steps
     rgb = fbU if rgb1x is None else np.array(Image.fromarray(rgb1x).resize((W, H), Image.LANCZOS))
     return rgb, a
 
@@ -278,6 +279,9 @@ skin_med = np.median(fm[(labF == SKIN) & face_oval & ~features], axis=0).astype(
 hairlike = (labF == HAIR) | (labF == ORANGE_DARK)
 hair_lines = tdF & dil(hairlike, 3)
 pale_out = headF & ~face_oval & ((labF == CREAM) | (labF == SKIN)) & ~headset_all  # pale strands
+_ysF = np.mgrid[0:FMH, 0:FMW][0]
+pale_out &= _ysF < 835  # below this the face master shows the hood, not hair
+hair_lines &= (_ysF < 835) | dil(hairlike, 1)
 hair_px = headF & (hairlike | hair_lines | pale_out | ((labF == CYAN) & ~headset_all)) & ~(features & ~hairlike) & ~headset_all
 hair_px &= ~(mark_box & (labF == CYAN))
 ys, xs = np.mgrid[0:FMH, 0:FMW]
@@ -372,8 +376,22 @@ core_case = core_box & fgB & ~core_face & ~(labB == CREAM)
 inner_zone = poly(shapeB, [(468, 262), (552, 262), (552, 670), (468, 670)])
 inner = fgB & inner_zone & ~core_case & ~core_face & ((labB == DARK) | (labB == CYAN) | tdB) & ~dsR & ~dsL
 hood0 = fgB & box(shapeB, 372, 262, 662, 322) & ~inner_zone & ~sleeveR & ~sleeveL & ~(box(shapeB, 470, 240, 552, 280) & (labB == SKIN))
-hood = fill_holes(close(hood0 & (labB != HAIR), 6)) & box(shapeB, 372, 262, 662, 322) & ~inner_zone
-hood_rgb = inpaint(fb, hood & ~(hood0 & (labB != HAIR)), 5)
+_hsv = cv2.cvtColor(fb, cv2.COLOR_RGB2HSV)
+hood0 &= ~((_hsv[..., 1] > 60) & (_hsv[..., 0] >= 5) & (_hsv[..., 0] <= 35))  # drop hair-tip pixels (orange/yellow)
+hood_back = poly(shapeB, [(392, 322), (398, 296), (425, 274), (462, 262), (560, 262), (598, 274), (628, 294), (650, 322)])
+hood0 &= ~((labB == DARK) & ~tdB)  # inner black belongs to collar/torso, not the hood
+_neckrect = poly(shapeB, [(471, 266), (549, 266), (549, 330), (471, 330)])
+hood = fill_holes(close(hood0 | _neckrect, 12)) & box(shapeB, 372, 262, 662, 322) & ~inner_zone & ~_neckrect
+hood_rgb = inpaint(fb, hood & ~hood0, 5)
+_new = hood & ~hood0
+hood_rgb[_new] = PAL["cream_sh"]  # redrawn hood lining behind the neck (flat, no smeared hair colours)
+_top = hood & (ys_b < 300)
+_hs = cv2.cvtColor(hood_rgb, cv2.COLOR_RGB2HSV)
+_pale = _top & ((_hs[..., 2] > 235) | ((_hs[..., 1] > 45) & (_hs[..., 0] < 40)))  # leftover hair highlights/specks
+hood_rgb[_pale] = PAL["cream_sh"]
+hood_rgb = np.where(_top[..., None], cv2.medianBlur(hood_rgb, 5), hood_rgb).astype(np.uint8)
+_edge = hood & ~ero(hood, 1) & (ys_b < 300) & _new
+hood_rgb[_edge] = (138, 127, 119)
 collar_poly = poly(shapeB, [(395, 300), (472, 300), (472, 372), (420, 372)]) | \
     poly(shapeB, [(548, 300), (630, 300), (608, 372), (548, 372)])
 collar = fgB & collar_poly & ~dsR & ~dsL & ~sleeveR & ~sleeveL & ~hood
@@ -440,8 +458,8 @@ cv2.polylines(armL_under, [np.int32([(618, 330), (668, 470), (726, 620), (778, 7
 sideR = poly(shapeB, [(430, 318), (385, 318), (350, 470), (318, 620), (300, 760), (345, 770)] + sleeve_bR[::-1][:0]) & ~jfR_poly
 sideL = poly(shapeB, [(598, 318), (645, 318), (680, 470), (712, 620), (730, 760), (685, 770)]) & ~jfL_poly
 # hidden-area restorations stay inside the master silhouette (covered in the default pose)
-armR_under = armR_under.astype(bool) & fgB
-armL_under = armL_under.astype(bool) & fgB
+armR_under = armR_under.astype(bool) & fgB & (ys_b >= 332)
+armL_under = armL_under.astype(bool) & fgB & (ys_b >= 332)
 torso &= fgB
 lining &= fgB
 sideR &= fgB
@@ -454,25 +472,57 @@ port_rgb, port_a = draw_canvas(lambda d: (
     d.rounded_rectangle((632 * S, 700 * S, 668 * S, 748 * S), radius=6 * S, fill=PAL["black"] + (255,),
                         outline=PAL["cyan"] + (255,), width=2 * S)))
 add("Cable_Port", "03_BODY", "accessories", port_rgb, port_a, param="ParamCable", hidden=True, src="drawn")
-lin_rgb = solid(shapeB, PAL["cream_sh"])
+lin_rgb = solid(shapeB, PAL["black_hi"])  # dark lining: invisible through seams
 r, a = from_fb(lining, lin_rgb)
 add("Jacket_Back_Lining", "03_BODY", "clothes", r, a, param="ParamBodyAngleX", hidden=True, src="restored")
 r, a = from_fb(hood, hood_rgb)
 add("Hood_Folded", "03_BODY", "clothes", r, a, physics=True, toggle=True, param="Tgl_Hood", src="FULLBODY")
-r, a = from_fb(neck_back, solid(shapeB, PAL["skin_sh"]))
-add("Neck_Back", "03_BODY", "body", r, a, param="ParamAngleZ", hidden=True, src="restored")
-neck_rgb = fb.copy()
-neck_rgb[neck_full & ~neck_vis] = PAL["skin_sh"]
-r, a = from_fb(neck_full, neck_rgb)
-add("Neck", "03_BODY", "body", r, a, param="ParamAngleX/Y/Z", hidden=True, src="FULLBODY+restored")
+def _neck(back):
+    def f(d, s):
+        w = 14 if back else 0
+        pts = [(572 - w, 780), (672 + w, 780), (682 + w, 900), (694 + w, 1010), (552 - w, 1010), (563 - w, 900)]
+        if back:
+            d.polygon([(x * s, y * s) for x, y in pts], fill=PAL["skin_sh"] + (255,))
+            return
+        # vertical gradient: shadowed under the chin, lighter toward the collar
+        for k in range(46):
+            y0 = 780 + k * 5
+            c = tuple(int(PAL["skin_sh"][i] + (PAL["skin"][i] - PAL["skin_sh"][i]) * min(1, k / 18)) for i in range(3))
+            d.rectangle((540 * s, y0 * s, 710 * s, (y0 + 5) * s), fill=c + (255,))
+        mask = Image.new("L", d.im.size, 0)
+        ImageDraw.Draw(mask).polygon([(x * s, y * s) for x, y in pts], fill=255)
+        d.bitmap((0, 0), Image.eval(mask, lambda v: 255 - v), fill=(0, 0, 0, 0))
+        # chin cast shadow (soft V under the jaw)
+        d.polygon([(574 * s, 780 * s), (670 * s, 780 * s), (622 * s, 846 * s)], fill=PAL["skin_sh"] + (255,))
+        for side in ([(572, 780), (563, 900), (552, 1010)], [(672, 780), (682, 900), (694, 1010)]):
+            d.line([(x * s, y * s) for x, y in side], fill=(201, 143, 122, 255), width=3 * s, joint="curve")
+    return f
+
+
+def _neck_layer(back):
+    im = Image.new("RGBA", (FMW * 4, FMH * 4 + 800), (0, 0, 0, 0))
+    _neck(back)(ImageDraw.Draw(im), 4)
+    arr = np.array(im.resize((FMW, FMH + 200), Image.LANCZOS))
+    rgb, a = arr[..., :3].copy(), arr[..., 3] / 255.0
+    rgbC = cv2.warpAffine(rgb, AFF, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+    aC = cv2.warpAffine(a.astype(np.float32), AFF, (W, H), flags=cv2.INTER_LINEAR)
+    return rgbC, aC
+
+
+r, a = _neck_layer(True)
+add("Neck_Back", "03_BODY", "body", r, a, param="ParamAngleZ", hidden=True, src="redrawn")
+r, a = _neck_layer(False)
+add("Neck", "03_BODY", "body", r, a, param="ParamAngleX/Y/Z", hidden=True, src="redrawn (clean neck + chin shadow)")
 r, a = from_fb(waist, solid(shapeB, PAL["black"]))
 add("Pants_Waist_Restore", "03_BODY", "clothes", r, a, param="ParamBodyAngleX", hidden=True, src="restored")
 torso_rgb = solid(shapeB, PAL["black"])
 torso_rgb[:, :, :] = (np.array(PAL["black"]) * 0.8 + np.array(PAL["black_hi"]) * 0.2).astype(np.uint8)
 r, a = from_fb(torso, torso_rgb)
 add("Torso_Restore", "03_BODY", "body", r, a, param="ParamBodyAngleX", hidden=True, src="restored")
-inner_full = fill_holes(close(inner, 6)) & inner_zone
-inner_rgb = inpaint(fb, inner_full & ~inner, 5)
+inner_full = (fill_holes(close(inner, 6)) & inner_zone) | poly(shapeB, [(471, 266), (549, 266), (549, 330), (471, 330)])  # high neck redrawn where hair tips covered it
+inner_rgb = fb.copy()
+inner_rgb[inner_full & ~inner] = (28, 28, 34)  # redrawn black high-neck where hair covered it
+inner_rgb = np.where((inner_full & ~inner)[..., None], cv2.GaussianBlur(inner_rgb, (0, 0), 2), inner_rgb).astype(np.uint8)
 r, a = from_fb(inner_full, inner_rgb)
 add("Inner_Body", "03_BODY", "clothes", r, a, param="ParamBreath", hidden=True, src="FULLBODY+restored")
 circuit = inner & cyanB
@@ -602,7 +652,7 @@ for side, cx, fl in (("R", 380, False), ("L", 898, True)):
 
 feat_tight = ellipse(shapeF, eyeR_c, (76, 36)) | ellipse(shapeF, eyeL_c, (76, 36)) | dil(poly(shapeF, mouth_poly), 5) | (mark_box & (labF == CYAN))
 skin_clean = (labF == SKIN) & face_oval & ~feat_tight
-face_full = face_oval | (dil(face_oval, 14) & (ys > 560))  # side extension for AngleX
+face_full = face_oval | (dil(face_oval, 14) & (ys > 560) & (ys < 760) & ((xs < 470) | (xs > 800)))  # cheek-side extension only
 tmp = fm.copy()
 tmp[~face_full] = skin_med
 hole = face_full & ~skin_clean
