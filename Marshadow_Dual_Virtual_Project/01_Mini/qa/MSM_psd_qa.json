@@ -1,0 +1,223 @@
+{
+ "checks": [
+  {
+   "check": "empty layers = 0",
+   "result": "PASS",
+   "detail": "0 []"
+  },
+  {
+   "check": "fake transparent layers = 0",
+   "result": "PASS",
+   "detail": "0 []"
+  },
+  {
+   "check": "exact duplicate layers = 0",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "unexpected canvas offsets = 0",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "wrong-size parts = 0",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "manifest missing file = 0",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "PSD reopen errors = 0",
+   "result": "PASS",
+   "detail": "None"
+  },
+  {
+   "check": "canvas size",
+   "result": "PASS",
+   "detail": "(3000, 3600)"
+  },
+  {
+   "check": "group order",
+   "result": "PASS",
+   "detail": "['00_GUIDE', '01_BACK_FX', '02_LOWER_SHADOW', '03_BODY', '04_ARMS', '05_SCARF', '06_HEAD', '07_FACE', '08_EYES', '09_MARKS', '10_MOUTH', '11_FRONT_FX', '12_COMBAT']"
+  },
+  {
+   "check": "layer count matches manifest",
+   "result": "PASS",
+   "detail": "109 vs 109"
+  },
+  {
+   "check": "reopened layer name/group/Z-order/blend/visibility/offset/pixels",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "reopened PSD composite == Fullbody Master",
+   "result": "PASS",
+   "detail": "mean abs diff 0.007/255, p99.9 1.0"
+  },
+  {
+   "check": "restored parts have real hidden area",
+   "result": "PASS",
+   "detail": "[]"
+  },
+  {
+   "check": "hidden-area restoration count",
+   "result": "PASS",
+   "detail": "21 restored parts"
+  },
+  {
+   "check": "face/body sharpness parity (native-res parts, no upscale)",
+   "result": "PASS",
+   "detail": "body/face edge energy 1.00"
+  },
+  {
+   "check": "anti-alias edges (no white halo)",
+   "result": "PASS",
+   "detail": "[]"
+  }
+ ],
+ "warn": [],
+ "fail": [],
+ "summary": "PASS 16 / WARN 0 / FAIL 0",
+ "layers": 109,
+ "groups": 13,
+ "hidden_layers": 62,
+ "add_screen": 18,
+ "multiply": 1,
+ "restored_parts": 21,
+ "restore_stats": {
+  "EyeR_Iris": {
+   "restore": "full oval under socket clip",
+   "solid_px": 25228,
+   "hidden_px": 6179,
+   "hidden_pct": 24.5
+  },
+  "EyeR_Socket": {
+   "restore": "full socket under lids",
+   "solid_px": 82383,
+   "hidden_px": 31675,
+   "hidden_pct": 38.4
+  },
+  "EyeL_Iris": {
+   "restore": "full oval under socket clip",
+   "solid_px": 25228,
+   "hidden_px": 6525,
+   "hidden_pct": 25.9
+  },
+  "EyeL_Socket": {
+   "restore": "full socket under lids",
+   "solid_px": 82316,
+   "hidden_px": 31711,
+   "hidden_pct": 38.5
+  },
+  "Head_Base": {
+   "restore": "chin continues under scarf; crown under crest",
+   "solid_px": 1314289,
+   "hidden_px": 425283,
+   "hidden_pct": 32.4
+  },
+  "Head_Lobe_R": {
+   "restore": "lobe base continues under head",
+   "solid_px": 148667,
+   "hidden_px": 71195,
+   "hidden_pct": 47.9
+  },
+  "Lobe_Tip_R": {
+   "restore": "tip root under lobe",
+   "solid_px": 19283,
+   "hidden_px": 4086,
+   "hidden_pct": 21.2
+  },
+  "Head_Lobe_L": {
+   "restore": "lobe base continues under head",
+   "solid_px": 148665,
+   "hidden_px": 71180,
+   "hidden_pct": 47.9
+  },
+  "Lobe_Tip_L": {
+   "restore": "tip root under lobe",
+   "solid_px": 19284,
+   "hidden_px": 4073,
+   "hidden_pct": 21.1
+  },
+  "Crest_Base": {
+   "restore": "root hidden inside head",
+   "solid_px": 93536,
+   "hidden_px": 37159,
+   "hidden_pct": 39.7
+  },
+  "Crest_Tip": {
+   "restore": "curl root continues under crest base",
+   "solid_px": 42551,
+   "hidden_px": 18238,
+   "hidden_pct": 42.9
+  },
+  "Scarf_Main": {
+   "restore": "covers chin, full ring drawn",
+   "solid_px": 198567,
+   "hidden_px": 63446,
+   "hidden_pct": 32.0
+  },
+  "Arm_R_Fore": {
+   "restore": "elbow overlap; wrist continues under hand",
+   "solid_px": 22369,
+   "hidden_px": 5963,
+   "hidden_pct": 26.7
+  },
+  "Arm_R_Upper": {
+   "restore": "shoulder hidden under chest/scarf",
+   "solid_px": 40550,
+   "hidden_px": 11629,
+   "hidden_pct": 28.7
+  },
+  "Arm_L_Fore": {
+   "restore": "elbow overlap; wrist continues under hand",
+   "solid_px": 22369,
+   "hidden_px": 5967,
+   "hidden_pct": 26.7
+  },
+  "Arm_L_Upper": {
+   "restore": "shoulder hidden under chest/scarf",
+   "solid_px": 40551,
+   "hidden_px": 11627,
+   "hidden_pct": 28.7
+  },
+  "Body_Chest": {
+   "restore": "chest top under scarf",
+   "solid_px": 256848,
+   "hidden_px": 116172,
+   "hidden_pct": 45.2
+  },
+  "Body_Lower": {
+   "restore": "belly top under chest band",
+   "solid_px": 241023,
+   "hidden_px": 70497,
+   "hidden_pct": 29.2
+  },
+  "Leg_R": {
+   "restore": "leg top hidden under lower body",
+   "solid_px": 112568,
+   "hidden_px": 47854,
+   "hidden_pct": 42.5
+  },
+  "Leg_L": {
+   "restore": "leg top hidden under lower body",
+   "solid_px": 112556,
+   "hidden_px": 47851,
+   "hidden_pct": 42.5
+  },
+  "Shadow_Tail_Tip": {
+   "restore": "overlap under tail base",
+   "solid_px": 8631,
+   "hidden_px": 2241,
+   "hidden_pct": 26.0
+  }
+ },
+ "psd_bytes": 62492354,
+ "psd": "/home/user/Lotium/Marshadow_Dual_Virtual_Project/01_Mini/psd/Marshadow_Mini_Live2D_Master_v001.psd"
+}

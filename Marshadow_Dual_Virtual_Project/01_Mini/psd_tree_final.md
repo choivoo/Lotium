@@ -1,0 +1,126 @@
+# PSD tree — Marshadow_Mini_Live2D_Master_v001.psd
+
+Canvas 3000×3600, RGBA 8-bit. Listed top → bottom (as in Photoshop).
+
+- 📁 **12_COMBAT** (8)
+  - `MSM_109` Rage_Mist  _(hidden, toggle=mode:rage)_
+  - `MSM_108` Fight_Aura_Pulse  _(hidden, add, toggle=mode:rage)_
+  - `MSM_107` Shadow_Hand_R_Glow  _(hidden, add, toggle=mode:fight|fx:combathands)_
+  - `MSM_106` Shadow_Hand_R  _(hidden, toggle=mode:fight|fx:combathands)_
+  - `MSM_105` Arm_R_Energy  _(hidden, add, toggle=mode:fight|fx:combathands)_
+  - `MSM_104` Shadow_Hand_L_Glow  _(hidden, add, toggle=mode:fight|fx:combathands)_
+  - `MSM_103` Shadow_Hand_L  _(hidden, toggle=mode:fight|fx:combathands)_
+  - `MSM_102` Arm_L_Energy  _(hidden, add, toggle=mode:fight|fx:combathands)_
+- 📁 **11_FRONT_FX** (8)
+  - `MSM_101` Outline_Glow_Fight  _(hidden, add, toggle=mode:fight)_
+  - `MSM_100` Particles_02  _(hidden, add, toggle=mode:fight)_
+  - `MSM_099` Particles_01  _(hidden, add, toggle=mode:fight)_
+  - `MSM_098` EyeR_Glow  _(hidden, add, toggle=mode:fight|fx:eyeglow)_
+  - `MSM_097` Lobe_Flame_R  _(hidden, add, toggle=mode:fight)_
+  - `MSM_096` EyeL_Glow  _(hidden, add, toggle=mode:fight|fx:eyeglow)_
+  - `MSM_095` Lobe_Flame_L  _(hidden, add, toggle=mode:fight)_
+  - `MSM_094` Crest_Flame_Fight  _(hidden, add, toggle=mode:fight)_
+- 📁 **10_MOUTH** (11)
+  - `MSM_093` Mouth_Fang  _(hidden, toggle=mouth:fang)_
+  - `MSM_092` Mouth_Wavy  _(hidden, toggle=mouth:wavy)_
+  - `MSM_091` Mouth_O  _(hidden, toggle=mouth:o)_
+  - `MSM_090` Mouth_Smirk  _(hidden, toggle=mouth:smirk)_
+  - `MSM_089` Mouth_Sad  _(hidden, toggle=mouth:sad)_
+  - `MSM_088` Mouth_Grit_Teeth  _(hidden, toggle=mouth:grit)_
+  - `MSM_087` Mouth_Open_Line  _(hidden, toggle=mouth:open)_
+  - `MSM_086` Mouth_Open_Tongue  _(hidden, toggle=mouth:open)_
+  - `MSM_085` Mouth_Open_Inner  _(hidden, toggle=mouth:open)_
+  - `MSM_084` Mouth_Smile  _(hidden, toggle=mouth:smile)_
+  - `MSM_083` Mouth_Neutral  _(toggle=mouth:neutral)_
+- 📁 **09_MARKS** (10)
+  - `MSM_082` Mark_Sparkle  _(hidden, toggle=fx:sparkle)_
+  - `MSM_081` Mark_Surprise  _(hidden, toggle=fx:surprise)_
+  - `MSM_080` Mark_Confused  _(hidden, toggle=fx:confused)_
+  - `MSM_079` Mark_Zzz  _(hidden, toggle=fx:sleep)_
+  - `MSM_078` Mark_Sweat  _(hidden, toggle=fx:sweat)_
+  - `MSM_077` Mark_Anger_Vein  _(hidden, toggle=fx:anger)_
+  - `MSM_076` Tear_R  _(hidden, toggle=fx:tear)_
+  - `MSM_075` Blush_R  _(hidden, toggle=fx:blush)_
+  - `MSM_074` Tear_L  _(hidden, toggle=fx:tear)_
+  - `MSM_073` Blush_L  _(hidden, toggle=fx:blush)_
+- 📁 **08_EYES** (28)
+  - `MSM_072` EyeR_Rage_Mark  _(hidden, toggle=mode:fight)_
+  - `MSM_071` EyeR_Lid_Sad  _(hidden, toggle=lid:sad)_
+  - `MSM_070` EyeR_Lid_Angry  _(hidden, toggle=lid:angry)_
+  - `MSM_069` EyeR_Happy  _(hidden, toggle=eye:happy)_
+  - `MSM_068` EyeR_Closed  _(hidden, toggle=eye:closed)_
+  - `MSM_067` EyeR_LowerLid
+  - `MSM_066` EyeR_UpperLid
+  - `MSM_065` EyeR_Iris_Small  _(hidden, toggle=eye:small)_
+  - `MSM_064` EyeR_Iris_Fight  _(hidden, toggle=mode:fight)_
+  - `MSM_063` EyeR_Highlight02
+  - `MSM_062` EyeR_Highlight01
+  - `MSM_061` EyeR_Core
+  - `MSM_060` EyeR_Iris
+  - `MSM_059` EyeR_Socket
+  - `MSM_058` EyeL_Rage_Mark  _(hidden, toggle=mode:fight)_
+  - `MSM_057` EyeL_Lid_Sad  _(hidden, toggle=lid:sad)_
+  - `MSM_056` EyeL_Lid_Angry  _(hidden, toggle=lid:angry)_
+  - `MSM_055` EyeL_Happy  _(hidden, toggle=eye:happy)_
+  - `MSM_054` EyeL_Closed  _(hidden, toggle=eye:closed)_
+  - `MSM_053` EyeL_LowerLid
+  - `MSM_052` EyeL_UpperLid
+  - `MSM_051` EyeL_Iris_Small  _(hidden, toggle=eye:small)_
+  - `MSM_050` EyeL_Iris_Fight  _(hidden, toggle=mode:fight)_
+  - `MSM_049` EyeL_Highlight02
+  - `MSM_048` EyeL_Highlight01
+  - `MSM_047` EyeL_Core
+  - `MSM_046` EyeL_Iris
+  - `MSM_045` EyeL_Socket
+- 📁 **07_FACE** (2)
+  - `MSM_044` Face_Band_Edge
+  - `MSM_043` Face_EyeBand
+- 📁 **06_HEAD** (10)
+  - `MSM_042` Head_Rim_Light  _(screen)_
+  - `MSM_041` Head_Base
+  - `MSM_040` Lobe_Swirl_R
+  - `MSM_039` Head_Lobe_R
+  - `MSM_038` Lobe_Tip_R
+  - `MSM_037` Lobe_Swirl_L
+  - `MSM_036` Head_Lobe_L
+  - `MSM_035` Lobe_Tip_L
+  - `MSM_034` Crest_Base
+  - `MSM_033` Crest_Tip
+- 📁 **05_SCARF** (4)
+  - `MSM_032` Scarf_Trail
+  - `MSM_031` Scarf_Tuft_R
+  - `MSM_030` Scarf_Tuft_L
+  - `MSM_029` Scarf_Main
+- 📁 **04_ARMS** (10)
+  - `MSM_028` Hand_R_Palm_Attack  _(hidden, toggle=pose:attack)_
+  - `MSM_027` Arm_R_Attack  _(hidden, toggle=pose:attack)_
+  - `MSM_026` Hand_R_Fist  _(hidden, toggle=mode:fight|pose:fist)_
+  - `MSM_025` Hand_R
+  - `MSM_024` Arm_R_Fore
+  - `MSM_023` Arm_R_Upper
+  - `MSM_022` Hand_L_Fist  _(hidden, toggle=mode:fight|pose:fist)_
+  - `MSM_021` Hand_L
+  - `MSM_020` Arm_L_Fore
+  - `MSM_019` Arm_L_Upper
+- 📁 **03_BODY** (7)
+  - `MSM_018` Body_Chest_Rim  _(screen)_
+  - `MSM_017` Body_Chest
+  - `MSM_016` Body_Lower
+  - `MSM_015` Foot_R
+  - `MSM_014` Leg_R
+  - `MSM_013` Foot_L
+  - `MSM_012` Leg_L
+- 📁 **02_LOWER_SHADOW** (5)
+  - `MSM_011` Tail_Flame_Fight  _(hidden, add, toggle=mode:fight)_
+  - `MSM_010` Shadow_Tail_Base
+  - `MSM_009` Shadow_Tail_Tip
+  - `MSM_008` Ground_Shadow_Fight  _(hidden, toggle=mode:fight)_
+  - `MSM_007` Ground_Shadow  _(multiply)_
+- 📁 **01_BACK_FX** (5)
+  - `MSM_006` Shadow_Clone_Echo  _(hidden, toggle=mode:fight)_
+  - `MSM_005` Shadow_Wisp_02  _(hidden, toggle=mode:fight)_
+  - `MSM_004` Shadow_Wisp_01  _(hidden, toggle=mode:fight)_
+  - `MSM_003` Fight_Ring_Back  _(hidden, add, toggle=mode:fight)_
+  - `MSM_002` Fight_Aura_Back  _(hidden, add, toggle=mode:fight)_
+- 📁 **00_GUIDE** (1)
+  - `MSM_001` Guide_Centerline_Pivots  _(hidden)_

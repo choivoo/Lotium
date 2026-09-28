@@ -1,0 +1,110 @@
+ID,Name,Group,PNG File,X,Y,Width,Height,Z-order,Blend mode,Default visibility,Toggle,Physics,Live2D parameter,Hidden restoration,Note
+MSM_001,Guide_Centerline_Pivots,00_GUIDE,parts/00_GUIDE/MSM_001_Guide_Centerline_Pivots.png,1219,145,562,3159,1,normal,OFF,,,,,"rig guide: center line + pivots, hidden"
+MSM_002,Fight_Aura_Back,01_BACK_FX,parts/01_BACK_FX/MSM_002_Fight_Aura_Back.png,379,140,2242,2656,2,add,OFF,mode:fight,aura pulse,Param_Fight / Param_AuraPulse,,"local green aura, not full-body white"
+MSM_003,Fight_Ring_Back,01_BACK_FX,parts/01_BACK_FX/MSM_003_Fight_Ring_Back.png,653,341,1747,1675,3,add,OFF,mode:fight,,Param_AuraPulse,,broken spectral ring behind head
+MSM_004,Shadow_Wisp_01,01_BACK_FX,parts/01_BACK_FX/MSM_004_Shadow_Wisp_01.png,700,418,223,404,4,normal,OFF,mode:fight,wisp float,Param_Wisp1,,living-shadow wisp
+MSM_005,Shadow_Wisp_02,01_BACK_FX,parts/01_BACK_FX/MSM_005_Shadow_Wisp_02.png,2107,612,191,346,5,normal,OFF,mode:fight,wisp float,Param_Wisp2,,living-shadow wisp
+MSM_006,Shadow_Clone_Echo,01_BACK_FX,parts/01_BACK_FX/MSM_006_Shadow_Clone_Echo.png,716,235,1705,2699,6,normal,OFF,mode:fight,lag follow (mimicry),Param_Fight / Param_EchoX,,living-shadow mimic echo
+MSM_007,Ground_Shadow,02_LOWER_SHADOW,parts/02_LOWER_SHADOW/MSM_007_Ground_Shadow.png,1003,2787,994,186,7,multiply,ON,,,Param_BodyX (follow),,contact shadow
+MSM_008,Ground_Shadow_Fight,02_LOWER_SHADOW,parts/02_LOWER_SHADOW/MSM_008_Ground_Shadow_Fight.png,779,2772,1562,222,8,normal,OFF,mode:fight,,Param_Fight,,enlarged living shadow pool
+MSM_009,Shadow_Tail_Tip,02_LOWER_SHADOW,parts/02_LOWER_SHADOW/MSM_009_Shadow_Tail_Tip.png,1893,2831,531,76,9,normal,ON,,tail wave 2,Param_Tail2,overlap under tail base,
+MSM_010,Shadow_Tail_Base,02_LOWER_SHADOW,parts/02_LOWER_SHADOW/MSM_010_Shadow_Tail_Base.png,1594,2829,453,79,10,normal,ON,,tail wave 1,Param_Tail1,,lower shadow tail root
+MSM_011,Tail_Flame_Fight,02_LOWER_SHADOW,parts/02_LOWER_SHADOW/MSM_011_Tail_Flame_Fight.png,2362,2596,125,290,11,add,OFF,mode:fight,flame flicker,Param_Fight,,
+MSM_012,Leg_L,03_BODY,parts/03_BODY/MSM_012_Leg_L.png,1276,2278,222,580,12,normal,ON,,,Param_LegL,leg top hidden under lower body,
+MSM_013,Foot_L,03_BODY,parts/03_BODY/MSM_013_Foot_L.png,1260,2778,250,114,13,normal,ON,,,Param_LegL,,
+MSM_014,Leg_R,03_BODY,parts/03_BODY/MSM_014_Leg_R.png,1502,2278,222,580,14,normal,ON,,,Param_LegR,leg top hidden under lower body,
+MSM_015,Foot_R,03_BODY,parts/03_BODY/MSM_015_Foot_R.png,1490,2778,250,114,15,normal,ON,,,Param_LegR,,
+MSM_016,Body_Lower,03_BODY,parts/03_BODY/MSM_016_Body_Lower.png,1183,2031,635,431,16,normal,ON,,,Param_BodyAngleX/Y,belly top under chest band,
+MSM_017,Body_Chest,03_BODY,parts/03_BODY/MSM_017_Body_Chest.png,1169,1741,662,436,17,normal,ON,,,"Param_BodyAngleX/Y, Param_Breath",chest top under scarf,
+MSM_018,Body_Chest_Rim,03_BODY,parts/03_BODY/MSM_018_Body_Chest_Rim.png,1211,1765,206,147,18,screen,ON,,,Param_Breath,,soft rim light
+MSM_019,Arm_L_Upper,04_ARMS,parts/04_ARMS/MSM_019_Arm_L_Upper.png,1050,1786,287,314,19,normal,ON,,arm sway,Param_ArmLA,shoulder hidden under chest/scarf,
+MSM_020,Arm_L_Fore,04_ARMS,parts/04_ARMS/MSM_020_Arm_L_Fore.png,999,2009,201,208,20,normal,ON,,arm sway 2,Param_ArmLB,elbow overlap; wrist continues under hand,
+MSM_021,Hand_L,04_ARMS,parts/04_ARMS/MSM_021_Hand_L.png,968,2141,200,201,21,normal,ON,,,Param_HandL,,
+MSM_022,Hand_L_Fist,04_ARMS,parts/04_ARMS/MSM_022_Hand_L_Fist.png,963,2141,214,198,22,normal,OFF,mode:fight|pose:fist,,Param_HandLFist,,clenched fist swap for fighting stance
+MSM_023,Arm_R_Upper,04_ARMS,parts/04_ARMS/MSM_023_Arm_R_Upper.png,1663,1786,287,314,23,normal,ON,,arm sway,Param_ArmRA,shoulder hidden under chest/scarf,
+MSM_024,Arm_R_Fore,04_ARMS,parts/04_ARMS/MSM_024_Arm_R_Fore.png,1800,2009,201,208,24,normal,ON,,arm sway 2,Param_ArmRB,elbow overlap; wrist continues under hand,
+MSM_025,Hand_R,04_ARMS,parts/04_ARMS/MSM_025_Hand_R.png,1832,2141,200,201,25,normal,ON,,,Param_HandR,,
+MSM_026,Hand_R_Fist,04_ARMS,parts/04_ARMS/MSM_026_Hand_R_Fist.png,1823,2141,214,198,26,normal,OFF,mode:fight|pose:fist,,Param_HandRFist,,clenched fist swap for fighting stance
+MSM_027,Arm_R_Attack,04_ARMS,parts/04_ARMS/MSM_027_Arm_R_Attack.png,1682,1624,338,296,27,normal,OFF,pose:attack,,Param_ArmRAttack,,alt raised arm for attack pose (swap with Arm_R_*)
+MSM_028,Hand_R_Palm_Attack,04_ARMS,parts/04_ARMS/MSM_028_Hand_R_Palm_Attack.png,1953,1512,251,265,28,normal,OFF,pose:attack,,Param_ArmRAttack,,
+MSM_029,Scarf_Main,05_SCARF,parts/05_SCARF/MSM_029_Scarf_Main.png,1039,1601,922,327,29,normal,ON,,scarf bounce,Param_Scarf,"covers chin, full ring drawn",
+MSM_030,Scarf_Tuft_L,05_SCARF,parts/05_SCARF/MSM_030_Scarf_Tuft_L.png,967,1732,193,136,30,normal,ON,,scarf tuft,Param_ScarfTuftL,,
+MSM_031,Scarf_Tuft_R,05_SCARF,parts/05_SCARF/MSM_031_Scarf_Tuft_R.png,1840,1732,193,136,31,normal,ON,,scarf tuft,Param_ScarfTuftR,,
+MSM_032,Scarf_Trail,05_SCARF,parts/05_SCARF/MSM_032_Scarf_Trail.png,1848,1661,423,167,32,normal,ON,,scarf trail (long),Param_ScarfTrail,,misty trailing end
+MSM_033,Crest_Tip,06_HEAD,parts/06_HEAD/MSM_033_Crest_Tip.png,1438,232,343,217,33,normal,ON,,crest sway 2,Param_Crest2,curl root continues under crest base,
+MSM_034,Crest_Base,06_HEAD,parts/06_HEAD/MSM_034_Crest_Base.png,1353,239,293,497,34,normal,ON,,crest sway 1,Param_Crest1,root hidden inside head,
+MSM_035,Lobe_Tip_L,06_HEAD,parts/06_HEAD/MSM_035_Lobe_Tip_L.png,685,494,152,262,35,normal,ON,,tip flick,Param_LobeTipL,tip root under lobe,
+MSM_036,Head_Lobe_L,06_HEAD,parts/06_HEAD/MSM_036_Head_Lobe_L.png,669,640,444,433,36,normal,ON,,lobe bounce,Param_LobeL,lobe base continues under head,
+MSM_037,Lobe_Swirl_L,06_HEAD,parts/06_HEAD/MSM_037_Lobe_Swirl_L.png,804,797,251,193,37,normal,ON,,,Param_LobeL,,swirl line
+MSM_038,Lobe_Tip_R,06_HEAD,parts/06_HEAD/MSM_038_Lobe_Tip_R.png,2163,494,152,262,38,normal,ON,,tip flick,Param_LobeTipR,tip root under lobe,
+MSM_039,Head_Lobe_R,06_HEAD,parts/06_HEAD/MSM_039_Head_Lobe_R.png,1888,640,442,433,39,normal,ON,,lobe bounce,Param_LobeR,lobe base continues under head,
+MSM_040,Lobe_Swirl_R,06_HEAD,parts/06_HEAD/MSM_040_Lobe_Swirl_R.png,1946,797,250,193,40,normal,ON,,,Param_LobeR,,swirl line
+MSM_041,Head_Base,06_HEAD,parts/06_HEAD/MSM_041_Head_Base.png,796,552,1408,1171,41,normal,ON,,,Param_AngleX/Y/Z,chin continues under scarf; crown under crest,
+MSM_042,Head_Rim_Light,06_HEAD,parts/06_HEAD/MSM_042_Head_Rim_Light.png,858,623,447,401,42,screen,ON,,,Param_AngleX,,screen rim light
+MSM_043,Face_EyeBand,07_FACE,parts/07_FACE/MSM_043_Face_EyeBand.png,802,1024,1396,359,43,normal,ON,,,Param_AngleX/Y,,dark mask band (clipped to head)
+MSM_044,Face_Band_Edge,07_FACE,parts/07_FACE/MSM_044_Face_Band_Edge.png,811,1017,1378,92,44,normal,ON,,,Param_AngleX/Y,,band soft top edge
+MSM_045,EyeL_Socket,08_EYES,parts/08_EYES/MSM_045_EyeL_Socket.png,1070,1050,376,285,45,normal,ON,,,Param_EyeOpenL,full socket under lids,
+MSM_046,EyeL_Iris,08_EYES,parts/08_EYES/MSM_046_EyeL_Iris.png,1213,1089,154,218,46,normal,ON,,,Param_EyeBallX/Y,full oval under socket clip,
+MSM_047,EyeL_Core,08_EYES,parts/08_EYES/MSM_047_EyeL_Core.png,1262,1134,64,124,47,normal,ON,,,Param_EyeBallX/Y,,
+MSM_048,EyeL_Highlight01,08_EYES,parts/08_EYES/MSM_048_EyeL_Highlight01.png,1239,1122,50,36,48,normal,ON,,,Param_EyeBallX/Y (0.5),,
+MSM_049,EyeL_Highlight02,08_EYES,parts/08_EYES/MSM_049_EyeL_Highlight02.png,1304,1249,24,22,49,normal,ON,,,Param_EyeBallX/Y (0.5),,
+MSM_050,EyeL_Iris_Fight,08_EYES,parts/08_EYES/MSM_050_EyeL_Iris_Fight.png,1211,1087,158,222,50,normal,OFF,mode:fight,,Param_Fight,,spectral green iris swap
+MSM_051,EyeL_Iris_Small,08_EYES,parts/08_EYES/MSM_051_EyeL_Iris_Small.png,1248,1138,84,120,51,normal,OFF,eye:small,,Param_EyeSurprise,,shrunken iris (surprise)
+MSM_052,EyeL_UpperLid,08_EYES,parts/08_EYES/MSM_052_EyeL_UpperLid.png,1077,1050,364,154,52,normal,ON,,,Param_EyeOpenL,,upper lid rim for blink deform
+MSM_053,EyeL_LowerLid,08_EYES,parts/08_EYES/MSM_053_EyeL_LowerLid.png,1129,1286,258,45,53,normal,ON,,,Param_EyeOpenL,,
+MSM_054,EyeL_Closed,08_EYES,parts/08_EYES/MSM_054_EyeL_Closed.png,1081,1206,358,65,54,normal,OFF,eye:closed,,Param_EyeOpenL=0,,closed eye line
+MSM_055,EyeL_Happy,08_EYES,parts/08_EYES/MSM_055_EyeL_Happy.png,1100,1155,321,121,55,normal,OFF,eye:happy,,Param_EyeSmileL,,^ smile-closed eye
+MSM_056,EyeL_Lid_Angry,08_EYES,parts/08_EYES/MSM_056_EyeL_Lid_Angry.png,1059,1028,414,214,56,normal,OFF,lid:angry,,Param_EyeFormL,,band-coloured lid cutting inner-top of socket
+MSM_057,EyeL_Lid_Sad,08_EYES,parts/08_EYES/MSM_057_EyeL_Lid_Sad.png,1049,1028,390,204,57,normal,OFF,lid:sad,,Param_EyeFormL,,band-coloured lid cutting outer-top of socket
+MSM_058,EyeL_Rage_Mark,08_EYES,parts/08_EYES/MSM_058_EyeL_Rage_Mark.png,1195,895,155,140,58,normal,OFF,mode:fight,,Param_Fight,,jagged spectral mark above eye (fighting)
+MSM_059,EyeR_Socket,08_EYES,parts/08_EYES/MSM_059_EyeR_Socket.png,1555,1050,375,286,59,normal,ON,,,Param_EyeOpenR,full socket under lids,
+MSM_060,EyeR_Iris,08_EYES,parts/08_EYES/MSM_060_EyeR_Iris.png,1633,1089,154,218,60,normal,ON,,,Param_EyeBallX/Y,full oval under socket clip,
+MSM_061,EyeR_Core,08_EYES,parts/08_EYES/MSM_061_EyeR_Core.png,1674,1134,64,124,61,normal,ON,,,Param_EyeBallX/Y,,
+MSM_062,EyeR_Highlight01,08_EYES,parts/08_EYES/MSM_062_EyeR_Highlight01.png,1665,1122,38,36,62,normal,ON,,,Param_EyeBallX/Y (0.5),,
+MSM_063,EyeR_Highlight02,08_EYES,parts/08_EYES/MSM_063_EyeR_Highlight02.png,1724,1251,24,18,63,normal,ON,,,Param_EyeBallX/Y (0.5),,
+MSM_064,EyeR_Iris_Fight,08_EYES,parts/08_EYES/MSM_064_EyeR_Iris_Fight.png,1631,1087,158,222,64,normal,OFF,mode:fight,,Param_Fight,,spectral green iris swap
+MSM_065,EyeR_Iris_Small,08_EYES,parts/08_EYES/MSM_065_EyeR_Iris_Small.png,1668,1138,84,120,65,normal,OFF,eye:small,,Param_EyeSurprise,,shrunken iris (surprise)
+MSM_066,EyeR_UpperLid,08_EYES,parts/08_EYES/MSM_066_EyeR_UpperLid.png,1560,1050,364,154,66,normal,ON,,,Param_EyeOpenR,,upper lid rim for blink deform
+MSM_067,EyeR_LowerLid,08_EYES,parts/08_EYES/MSM_067_EyeR_LowerLid.png,1614,1286,258,45,67,normal,ON,,,Param_EyeOpenR,,
+MSM_068,EyeR_Closed,08_EYES,parts/08_EYES/MSM_068_EyeR_Closed.png,1561,1206,358,65,68,normal,OFF,eye:closed,,Param_EyeOpenR=0,,closed eye line
+MSM_069,EyeR_Happy,08_EYES,parts/08_EYES/MSM_069_EyeR_Happy.png,1580,1155,321,121,69,normal,OFF,eye:happy,,Param_EyeSmileR,,^ smile-closed eye
+MSM_070,EyeR_Lid_Angry,08_EYES,parts/08_EYES/MSM_070_EyeR_Lid_Angry.png,1529,1028,414,214,70,normal,OFF,lid:angry,,Param_EyeFormR,,band-coloured lid cutting inner-top of socket
+MSM_071,EyeR_Lid_Sad,08_EYES,parts/08_EYES/MSM_071_EyeR_Lid_Sad.png,1562,1028,391,204,71,normal,OFF,lid:sad,,Param_EyeFormR,,band-coloured lid cutting outer-top of socket
+MSM_072,EyeR_Rage_Mark,08_EYES,parts/08_EYES/MSM_072_EyeR_Rage_Mark.png,1650,895,155,140,72,normal,OFF,mode:fight,,Param_Fight,,jagged spectral mark above eye (fighting)
+MSM_073,Blush_L,09_MARKS,parts/09_MARKS/MSM_073_Blush_L.png,1053,1388,130,60,73,normal,OFF,fx:blush,,Param_Cheek,,
+MSM_074,Tear_L,09_MARKS,parts/09_MARKS/MSM_074_Tear_L.png,1116,1315,68,180,74,normal,OFF,fx:tear,tear drip,Param_Tear,,
+MSM_075,Blush_R,09_MARKS,parts/09_MARKS/MSM_075_Blush_R.png,1818,1388,130,60,75,normal,OFF,fx:blush,,Param_Cheek,,
+MSM_076,Tear_R,09_MARKS,parts/09_MARKS/MSM_076_Tear_R.png,1816,1315,68,180,76,normal,OFF,fx:tear,tear drip,Param_Tear,,
+MSM_077,Mark_Anger_Vein,09_MARKS,parts/09_MARKS/MSM_077_Mark_Anger_Vein.png,1821,742,158,156,77,normal,OFF,fx:anger,,Param_Anger,,
+MSM_078,Mark_Sweat,09_MARKS,parts/09_MARKS/MSM_078_Mark_Sweat.png,2039,895,82,165,78,normal,OFF,fx:sweat,,Param_Sweat,,
+MSM_079,Mark_Zzz,09_MARKS,parts/09_MARKS/MSM_079_Mark_Zzz.png,1972,510,339,319,79,normal,OFF,fx:sleep,,Param_Sleep,,
+MSM_080,Mark_Confused,09_MARKS,parts/09_MARKS/MSM_080_Mark_Confused.png,1898,601,302,331,80,normal,OFF,fx:confused,,Param_Confused,,
+MSM_081,Mark_Surprise,09_MARKS,parts/09_MARKS/MSM_081_Mark_Surprise.png,683,450,1634,547,81,normal,OFF,fx:surprise,,Param_Surprise,,
+MSM_082,Mark_Sparkle,09_MARKS,parts/09_MARKS/MSM_082_Mark_Sparkle.png,839,760,1342,755,82,normal,OFF,fx:sparkle,,Param_Happy,,
+MSM_083,Mouth_Neutral,10_MOUTH,parts/10_MOUTH/MSM_083_Mouth_Neutral.png,1445,1459,111,37,83,normal,ON,mouth:neutral,,Param_MouthForm,,default small frown
+MSM_084,Mouth_Smile,10_MOUTH,parts/10_MOUTH/MSM_084_Mouth_Smile.png,1438,1459,125,40,84,normal,OFF,mouth:smile,,Param_MouthForm=+1,,
+MSM_085,Mouth_Open_Inner,10_MOUTH,parts/10_MOUTH/MSM_085_Mouth_Open_Inner.png,1426,1454,148,88,85,normal,OFF,mouth:open,,Param_MouthOpenY,,
+MSM_086,Mouth_Open_Tongue,10_MOUTH,parts/10_MOUTH/MSM_086_Mouth_Open_Tongue.png,1460,1500,80,42,86,normal,OFF,mouth:open,,Param_MouthOpenY,,
+MSM_087,Mouth_Open_Line,10_MOUTH,parts/10_MOUTH/MSM_087_Mouth_Open_Line.png,1422,1449,156,98,87,normal,OFF,mouth:open,,Param_MouthOpenY/Form,,
+MSM_088,Mouth_Grit_Teeth,10_MOUTH,parts/10_MOUTH/MSM_088_Mouth_Grit_Teeth.png,1418,1456,164,59,88,normal,OFF,mouth:grit,,Param_MouthForm=-1,,clenched fighting teeth
+MSM_089,Mouth_Sad,10_MOUTH,parts/10_MOUTH/MSM_089_Mouth_Sad.png,1438,1455,125,51,89,normal,OFF,mouth:sad,,Param_MouthForm=-1,,
+MSM_090,Mouth_Smirk,10_MOUTH,parts/10_MOUTH/MSM_090_Mouth_Smirk.png,1443,1449,125,45,90,normal,OFF,mouth:smirk,,Param_MouthForm (asym),,
+MSM_091,Mouth_O,10_MOUTH,parts/10_MOUTH/MSM_091_Mouth_O.png,1463,1443,74,90,91,normal,OFF,mouth:o,,Param_MouthOpenY,,
+MSM_092,Mouth_Wavy,10_MOUTH,parts/10_MOUTH/MSM_092_Mouth_Wavy.png,1423,1463,154,32,92,normal,OFF,mouth:wavy,,Param_MouthForm,,
+MSM_093,Mouth_Fang,10_MOUTH,parts/10_MOUTH/MSM_093_Mouth_Fang.png,1520,1458,33,37,93,normal,OFF,mouth:fang,,Param_MouthOpenY,,
+MSM_094,Crest_Flame_Fight,11_FRONT_FX,parts/11_FRONT_FX/MSM_094_Crest_Flame_Fight.png,1417,98,328,577,94,add,OFF,mode:fight,flame flicker,Param_Fight / Param_Flame,,
+MSM_095,Lobe_Flame_L,11_FRONT_FX,parts/11_FRONT_FX/MSM_095_Lobe_Flame_L.png,637,363,245,380,95,add,OFF,mode:fight,flame flicker,Param_Fight,,
+MSM_096,EyeL_Glow,11_FRONT_FX,parts/11_FRONT_FX/MSM_096_EyeL_Glow.png,970,941,574,502,96,add,OFF,mode:fight|fx:eyeglow,,Param_EyeGlow,,
+MSM_097,Lobe_Flame_R,11_FRONT_FX,parts/11_FRONT_FX/MSM_097_Lobe_Flame_R.png,2118,363,245,380,97,add,OFF,mode:fight,flame flicker,Param_Fight,,
+MSM_098,EyeR_Glow,11_FRONT_FX,parts/11_FRONT_FX/MSM_098_EyeR_Glow.png,1456,941,574,502,98,add,OFF,mode:fight|fx:eyeglow,,Param_EyeGlow,,
+MSM_099,Particles_01,11_FRONT_FX,parts/11_FRONT_FX/MSM_099_Particles_01.png,634,338,1714,974,99,add,OFF,mode:fight,float up,Param_Particles,,
+MSM_100,Particles_02,11_FRONT_FX,parts/11_FRONT_FX/MSM_100_Particles_02.png,687,1707,1671,1159,100,add,OFF,mode:fight,float up (offset),Param_Particles,,
+MSM_101,Outline_Glow_Fight,11_FRONT_FX,parts/11_FRONT_FX/MSM_101_Outline_Glow_Fight.png,599,163,1798,2794,101,add,OFF,mode:fight,,Param_Fight,,silhouette-derived spectral outline
+MSM_102,Arm_L_Energy,12_COMBAT,parts/12_COMBAT/MSM_102_Arm_L_Energy.png,863,2033,414,414,102,add,OFF,mode:fight|fx:combathands,swirl,Param_CombatHands,,
+MSM_103,Shadow_Hand_L,12_COMBAT,parts/12_COMBAT/MSM_103_Shadow_Hand_L.png,479,1691,402,505,103,normal,OFF,mode:fight|fx:combathands,float + follow hand,Param_ShadowHandL,,big living-shadow hand
+MSM_104,Shadow_Hand_L_Glow,12_COMBAT,parts/12_COMBAT/MSM_104_Shadow_Hand_L_Glow.png,415,1637,532,623,104,add,OFF,mode:fight|fx:combathands,,Param_ShadowHandL,,
+MSM_105,Arm_R_Energy,12_COMBAT,parts/12_COMBAT/MSM_105_Arm_R_Energy.png,1723,2033,414,414,105,add,OFF,mode:fight|fx:combathands,swirl,Param_CombatHands,,
+MSM_106,Shadow_Hand_R,12_COMBAT,parts/12_COMBAT/MSM_106_Shadow_Hand_R.png,2119,1691,403,504,106,normal,OFF,mode:fight|fx:combathands,float + follow hand,Param_ShadowHandR,,big living-shadow hand
+MSM_107,Shadow_Hand_R_Glow,12_COMBAT,parts/12_COMBAT/MSM_107_Shadow_Hand_R_Glow.png,2054,1637,531,623,107,add,OFF,mode:fight|fx:combathands,,Param_ShadowHandR,,
+MSM_108,Fight_Aura_Pulse,12_COMBAT,parts/12_COMBAT/MSM_108_Fight_Aura_Pulse.png,463,430,2074,2440,108,add,OFF,mode:rage,,Param_AuraPulse,,shadow rage pulse ring (local)
+MSM_109,Rage_Mist,12_COMBAT,parts/12_COMBAT/MSM_109_Rage_Mist.png,592,2552,1816,548,109,normal,OFF,mode:rage,,Param_Rage,,dark mist around feet
