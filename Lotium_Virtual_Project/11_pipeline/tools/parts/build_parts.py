@@ -37,8 +37,17 @@ fb_img = Image.open(M_DIR / "fullbody/LTM_FULLBODY_MASTER_v001.png").convert("RG
 fb = np.array(fb_img)
 fbU = np.array(fb_img.resize((W, H), Image.LANCZOS))
 labB = classify(fb)
+nj = np.array(Image.open(M_DIR / "fullbody/LTM_FULLBODY_NOJACKET_v001_aligned.png").convert("RGB"))
+labNJ = classify(nj)
+fgNJ = labNJ != BG
 fm = np.array(Image.open(M_DIR / "face/LTM_FACE_MASTER_v001.png").convert("RGB"))
 labF = classify(fm)
+# repaint of the face master without the headset (Codex edit, ECC-aligned to the face master)
+nh = np.array(Image.open(M_DIR / "face/LTM_FACE_NOHEADSET_v001_aligned.png").convert("RGB"))
+labN = classify(nh)
+# repaint without bangs/headset (clean forehead, brows, jaw) — ECC-aligned
+nb = np.array(Image.open(M_DIR / "face/LTM_FACE_NOBANGS_v001_aligned.png").convert("RGB"))
+labNB = classify(nb)
 FMH, FMW = fm.shape[:2]
 
 # affine face-master -> canvas (landmarks measured on both masters)
@@ -309,10 +318,12 @@ cyan_streak = (labF == CYAN) & hair_px
 hair_sil = fill_holes(close(hair_px | headset_all, 9)) & headF
 
 # back hair base (restored silhouette behind face)
-back_base = ero(hair_sil, 6) | (face_oval & ~ero(face_oval, 30))
+back_base = ero(hair_sil, 14) | (face_oval & ~ero(face_oval, 30))
 back_rgb = np.zeros_like(fm)
 grad = np.linspace(0, 1, FMH)[:, None, None]
 back_rgb[:] = (np.array(PAL["hair_sh"]) * (1 - grad) + np.array(PAL["hair_sh2"]) * grad).astype(np.uint8)
+_nhhair = (labN == HAIR) | (labN == ORANGE_DARK)
+back_rgb = np.where(_nhhair[..., None], (nh * 0.72).astype(np.uint8), back_rgb)  # painted hair texture, shaded as back layer
 r, a = from_fm(back_base, back_rgb)
 add("Hair_Back_Base", "02_BACK_HAIR", "hair", r, a, physics=True, param="ParamHairBack", hidden=True,
     src="restored:FACE silhouette")
@@ -372,26 +383,22 @@ dsR = fgB & box(shapeB, 423, 333, 447, 530) & (labB != CREAM)
 dsL = fgB & box(shapeB, 561, 333, 586, 530) & (labB != CREAM)
 core_box = box(shapeB, 474, 350, 537, 416)
 core_face = core_box & (labB == CYAN) & ellipse(shapeB, (505, 382), (24, 24))
-core_case = core_box & fgB & ~core_face & ~(labB == CREAM)
+_dia = (np.abs(xs_b - 505) + np.abs(ys_b - 382)) <= 34  # diamond footprint of the core
+core_case = core_box & _dia & fgB & ~core_face & ~(labB == CREAM)
 inner_zone = poly(shapeB, [(468, 262), (552, 262), (552, 670), (468, 670)])
 inner = fgB & inner_zone & ~core_case & ~core_face & ((labB == DARK) | (labB == CYAN) | tdB) & ~dsR & ~dsL
-hood0 = fgB & box(shapeB, 372, 262, 662, 322) & ~inner_zone & ~sleeveR & ~sleeveL & ~(box(shapeB, 470, 240, 552, 280) & (labB == SKIN))
-_hsv = cv2.cvtColor(fb, cv2.COLOR_RGB2HSV)
-hood0 &= ~((_hsv[..., 1] > 60) & (_hsv[..., 0] >= 5) & (_hsv[..., 0] <= 35))  # drop hair-tip pixels (orange/yellow)
-hood_back = poly(shapeB, [(392, 322), (398, 296), (425, 274), (462, 262), (560, 262), (598, 274), (628, 294), (650, 322)])
-hood0 &= ~((labB == DARK) & ~tdB)  # inner black belongs to collar/torso, not the hood
-_neckrect = poly(shapeB, [(471, 266), (549, 266), (549, 330), (471, 330)])
-hood = fill_holes(close(hood0 | _neckrect, 12)) & box(shapeB, 372, 262, 662, 322) & ~inner_zone & ~_neckrect
-hood_rgb = inpaint(fb, hood & ~hood0, 5)
-_new = hood & ~hood0
-hood_rgb[_new] = PAL["cream_sh"]  # redrawn hood lining behind the neck (flat, no smeared hair colours)
-_top = hood & (ys_b < 300)
-_hs = cv2.cvtColor(hood_rgb, cv2.COLOR_RGB2HSV)
-_pale = _top & ((_hs[..., 2] > 235) | ((_hs[..., 1] > 45) & (_hs[..., 0] < 40)))  # leftover hair highlights/specks
-hood_rgb[_pale] = PAL["cream_sh"]
-hood_rgb = np.where(_top[..., None], cv2.medianBlur(hood_rgb, 5), hood_rgb).astype(np.uint8)
-_edge = hood & ~ero(hood, 1) & (ys_b < 300) & _new
-hood_rgb[_edge] = (138, 127, 119)
+inner &= ~(tdB & ((xs_b < 478) | (xs_b > 542)))  # jacket front edge lines are not part of the shirt
+# hood + high neck from the headless repaint of the fullbody master (Codex edit, ECC-aligned)
+hl = np.array(Image.open(M_DIR / "fullbody/LTM_FULLBODY_HEADLESS_v001_aligned.png").convert("RGB"))
+labH = classify(hl)
+fgH = labH != BG
+_neckzone = poly(shapeB, [(466, 240), (556, 240), (556, 334), (466, 334)])
+hl_collar = fgH & _neckzone & (((labH == DARK) | (labH == CYAN)) | thin_dark(labH))
+hl_collar = fill_holes(close(hl_collar, 3)) & _neckzone
+hood = fgH & box(shapeB, 372, 240, 662, 322) & ~hl_collar & ~sleeveR & ~sleeveL
+hood = fill_holes(close(hood, 3)) & box(shapeB, 372, 240, 662, 322) & ~hl_collar
+hood_rgb = hl.copy()
+hl_neck = hl_collar & (ys_b < 334)  # painted top of the black high neck
 collar_poly = poly(shapeB, [(395, 300), (472, 300), (472, 372), (420, 372)]) | \
     poly(shapeB, [(548, 300), (630, 300), (608, 372), (548, 372)])
 collar = fgB & collar_poly & ~dsR & ~dsL & ~sleeveR & ~sleeveL & ~hood
@@ -441,9 +448,13 @@ def restore_hull(vis, extra_top=None):
     return full
 
 
-pantsR_full = restore_hull(pantsR_vis) & ~shoes
-pantsL_full = restore_hull(pantsL_vis) & ~shoes
+_pj = fgNJ & box(shapeB, 322, 640, 712, 840) & ~(labNJ == SKIN) & ~handR_box & ~handL_box  # pants top under the jacket hem (no-jacket repaint)
+pantsR_full = (restore_hull(pantsR_vis) | (_pj & (xs_b < 522))) & ~shoes
+pantsL_full = (restore_hull(pantsL_vis) | (_pj & (xs_b >= 522))) & ~shoes
 pants_rgb = inpaint(fb, (pantsR_full | pantsL_full) & ~(pantsR_vis | pantsL_vis), 7)
+pants_rgb[_pj & ~(pantsR_vis | pantsL_vis)] = nj[_pj & ~(pantsR_vis | pantsL_vis)]
+_lp = dil(pantsR_full | pantsL_full, 3) & (ys_b < 730) & (cv2.cvtColor(fb, cv2.COLOR_RGB2GRAY) > 150) & (labB != CYAN) & ~dil(labB == CYAN, 2) & fgNJ
+pants_rgb[_lp] = nj[_lp]  # jacket hem outline pixels -> painted pants top
 
 waist = poly(shapeB, [(430, 600), (600, 600), (612, 700), (418, 700)]) & ~(pantsR_vis | pantsL_vis)
 torso = poly(shapeB, [(440, 330), (590, 330), (604, 690), (424, 690)])
@@ -458,8 +469,18 @@ cv2.polylines(armL_under, [np.int32([(618, 330), (668, 470), (726, 620), (778, 7
 sideR = poly(shapeB, [(430, 318), (385, 318), (350, 470), (318, 620), (300, 760), (345, 770)] + sleeve_bR[::-1][:0]) & ~jfR_poly
 sideL = poly(shapeB, [(598, 318), (645, 318), (680, 470), (712, 620), (730, 760), (685, 770)]) & ~jfL_poly
 # hidden-area restorations stay inside the master silhouette (covered in the default pose)
-armR_under = armR_under.astype(bool) & fgB & (ys_b >= 332)
-armL_under = armL_under.astype(bool) & fgB & (ys_b >= 332)
+# painted restores: jacket removed (inner shirt, arms, waistband) and sleeveless vest (jacket sides) — ECC-aligned
+nj = np.array(Image.open(M_DIR / "fullbody/LTM_FULLBODY_NOJACKET_v001_aligned.png").convert("RGB"))
+ve = np.array(Image.open(M_DIR / "fullbody/LTM_FULLBODY_VEST_v001_aligned.png").convert("RGB"))
+labNJ, labVE = classify(nj), classify(ve)
+fgNJ, fgVE, tdVE = labNJ != BG, labVE != BG, thin_dark(labVE)
+_hands = handR_box | handL_box
+armR_under = fgNJ & box(shapeB, 150, 300, 418, 800) & ~_hands & fgB
+armL_under = fgNJ & box(shapeB, 606, 300, 880, 800) & ~_hands & fgB
+torso = fgNJ & box(shapeB, 392, 300, 634, 716) & ~_hands
+waist = fgNJ & box(shapeB, 410, 590, 620, 725) & ~(pantsR_vis | pantsL_vis)
+sideR = fgVE & sleeveR_poly & box(shapeB, 290, 300, 440, 790) & ~((labVE == DARK) & ~tdVE) & ~_hands
+sideL = fgVE & sleeveL_poly & box(shapeB, 588, 300, 740, 790) & ~((labVE == DARK) & ~tdVE) & ~_hands
 torso &= fgB
 lining &= fgB
 sideR &= fgB
@@ -469,10 +490,10 @@ waist &= fgB
 
 # ---- emit 03_BODY (back -> front)
 port_rgb, port_a = draw_canvas(lambda d: (
-    d.rounded_rectangle((632 * S, 700 * S, 668 * S, 748 * S), radius=6 * S, fill=PAL["black"] + (255,),
+    d.rounded_rectangle((596 * S, 690 * S, 626 * S, 730 * S), radius=6 * S, fill=PAL["black"] + (255,),
                         outline=PAL["cyan"] + (255,), width=2 * S)))
 add("Cable_Port", "03_BODY", "accessories", port_rgb, port_a, param="ParamCable", hidden=True, src="drawn")
-lin_rgb = solid(shapeB, PAL["black_hi"])  # dark lining: invisible through seams
+lin_rgb = solid(shapeB, (50, 47, 49))  # lining matches the shirt: seams stay invisible
 r, a = from_fb(lining, lin_rgb)
 add("Jacket_Back_Lining", "03_BODY", "clothes", r, a, param="ParamBodyAngleX", hidden=True, src="restored")
 r, a = from_fb(hood, hood_rgb)
@@ -513,16 +534,22 @@ r, a = _neck_layer(True)
 add("Neck_Back", "03_BODY", "body", r, a, param="ParamAngleZ", hidden=True, src="redrawn")
 r, a = _neck_layer(False)
 add("Neck", "03_BODY", "body", r, a, param="ParamAngleX/Y/Z", hidden=True, src="redrawn (clean neck + chin shadow)")
-r, a = from_fb(waist, solid(shapeB, PAL["black"]))
+r, a = from_fb(waist, nj)
 add("Pants_Waist_Restore", "03_BODY", "clothes", r, a, param="ParamBodyAngleX", hidden=True, src="restored")
 torso_rgb = solid(shapeB, PAL["black"])
 torso_rgb[:, :, :] = (np.array(PAL["black"]) * 0.8 + np.array(PAL["black_hi"]) * 0.2).astype(np.uint8)
-r, a = from_fb(torso, torso_rgb)
+r, a = from_fb(torso, nj)
 add("Torso_Restore", "03_BODY", "body", r, a, param="ParamBodyAngleX", hidden=True, src="restored")
-inner_full = (fill_holes(close(inner, 6)) & inner_zone) | poly(shapeB, [(471, 266), (549, 266), (549, 330), (471, 330)])  # high neck redrawn where hair tips covered it
+inner_full = (fill_holes(close(inner, 6)) & inner_zone & (ys_b >= 334) & (xs_b >= 476) & (xs_b <= 544) & (ys_b <= 655)) | hl_neck  # pure shirt only
 inner_rgb = fb.copy()
-inner_rgb[inner_full & ~inner] = (28, 28, 34)  # redrawn black high-neck where hair covered it
-inner_rgb = np.where((inner_full & ~inner)[..., None], cv2.GaussianBlur(inner_rgb, (0, 0), 2), inner_rgb).astype(np.uint8)
+inner_rgb[hl_neck] = hl[hl_neck]  # painted high-neck top (headless repaint)
+_gap = inner_full & ~inner & ~hl_neck
+inner_rgb[_gap] = (28, 28, 34)
+_lumB = cv2.cvtColor(fb, cv2.COLOR_RGB2GRAY)
+_light = dil(inner_full, 3) & (_lumB > 100) & (labB != CYAN) & ~hl_neck & ~dil(labB == CYAN, 2)
+inner_rgb[_light | _gap] = nj[_light | _gap]  # jacket edge highlights -> painted shirt
+_keep = dil(labB == CYAN, 1) | hl_neck | core_case | core_face
+inner_rgb = np.where((dil(inner_full, 3) & ~_keep)[..., None], nj, inner_rgb).astype(np.uint8)  # shirt = painted no-jacket shirt (matches Torso_Restore)
 r, a = from_fb(inner_full, inner_rgb)
 add("Inner_Body", "03_BODY", "clothes", r, a, param="ParamBreath", hidden=True, src="FULLBODY+restored")
 circuit = inner & cyanB
@@ -540,10 +567,9 @@ add("Core_Glow", "03_BODY", "effects", r, a, blend="add", toggle=True, param="Gl
     src="derived:core")
 for side, und in (("R", armR_under), ("L", armL_under)):
     m = und.astype(bool)
-    rgb = solid(shapeB, PAL["black"])
-    r, a = from_fb(m, rgb)
+    r, a = from_fb(m, nj)
     add(f"Arm_{side}_Under", "03_BODY", "arms_hands", r, a, param=f"ParamArm{side}", hidden=True,
-        src="restored:inner sleeve+wrist")
+        src="painted: no-jacket repaint (inner sleeve + wrist)")
 r, a = from_fb(sleeveInR)
 add("Sleeve_R_Inner", "03_BODY", "clothes", r, a, param="ParamArmR", src="FULLBODY")
 r, a = from_fb(sleeveInL)
@@ -551,7 +577,7 @@ add("Sleeve_L_Inner", "03_BODY", "clothes", r, a, param="ParamArmL", src="FULLBO
 for side, hm in (("R", handR), ("L", handL)):
     glove = hm & ((labB == DARK) | tdB)
     skin_part = hm & (labB == SKIN)
-    full = fill_holes(close(hm, 3))
+    full = fill_holes(close(hm, 3)) & (ys_b >= 752)  # cut at the wrist (sleeve/inner covers above)
     hrgb = fb.copy()
     hrgb[full & ~skin_part] = PAL["skin"]
     hrgb = inpaint(hrgb, full & ~skin_part & dil(skin_part, 4), 3)
@@ -599,9 +625,9 @@ add("Cable_Electric_Ribbon", "03_BODY", "effects", r, a, blend="add", toggle=Tru
 
 # ================================================================== 04_CLOTHES
 for side, poly_m, und in (("R", sideR, jfR_poly), ("L", sideL, jfL_poly)):
-    r, a = from_fb(poly_m, solid(shapeB, PAL["cream_sh"]))
+    r, a = from_fb(poly_m, ve)
     add(f"Jacket_Side_Under_Arm_{side}", "04_CLOTHES", "clothes", r, a, param="ParamBodyAngleX",
-        hidden=True, src="restored:jacket under sleeve")
+        hidden=True, src="painted: sleeveless-vest repaint (jacket side under sleeve)")
 for side, m in (("R", jacketR), ("L", jacketL)):
     r, a = from_fb(m)
     add(f"Jacket_Front_{side}", "04_CLOTHES", "clothes", r, a, param="ParamBodyAngleX", src="FULLBODY")
@@ -635,39 +661,57 @@ add("Sleeve_Cuff_Glow", "04_CLOTHES", "effects", r, a, blend="add", toggle=True,
     src="derived:cuff rims")
 
 # ================================================================== 05_FACE
-def _ear(cx, flip):
-    def f(d, s):
-        x0, y0, x1, y1 = (cx - 26) * s, 560 * s, (cx + 26) * s, 672 * s
-        d.ellipse((x0, y0, x1, y1), fill=PAL["skin"] + (255,), outline=PAL["line"] + (255,), width=3 * s)
-        ix = cx + (6 if flip else -6)
-        d.arc(((ix - 12) * s, 585 * s, (ix + 12) * s, 650 * s), 100 if flip else -80, 260 if flip else 80,
-              fill=PAL["skin_sh"] + (255,), width=4 * s)
-    return f
-
-
-for side, cx, fl in (("R", 380, False), ("L", 898, True)):
-    rgb, a = draw_fm(_ear(cx, fl))
-    r, a = fm_rgba_to_canvas(rgb, a)
-    add(f"Ear_{side}", "05_FACE", "face", r, a, param="ParamAngleX", hidden=True, src="restored:drawn")
+tdN = thin_dark(labN)
+for side, bx in (("R", box(shapeF, 225, 460, 428, 735)), ("L", box(shapeF, 830, 460, 1015, 735))):
+    ear = bx & ~face_oval & ((labN == SKIN) | (tdN & dil(labN == SKIN, 3)))
+    n_, cc_, st_, _ = cv2.connectedComponentsWithStats(ear.astype(np.uint8))
+    if n_ > 1:
+        ear = cc_ == (1 + np.argmax(st_[1:, 4]))
+    ear = fill_holes(close(ear, 3)) & bx
+    r, a = from_fm(ear, nh)
+    add(f"Ear_{side}", "05_FACE", "face", r, a, param="ParamAngleX", hidden=True,
+        src="painted: FACE no-headset repaint (hidden under earcup)")
 
 feat_tight = ellipse(shapeF, eyeR_c, (76, 36)) | ellipse(shapeF, eyeL_c, (76, 36)) | dil(poly(shapeF, mouth_poly), 5) | (mark_box & (labF == CYAN))
 skin_clean = (labF == SKIN) & face_oval & ~feat_tight
 face_full = face_oval | (dil(face_oval, 14) & (ys > 560) & (ys < 760) & ((xs < 470) | (xs > 800)))  # cheek-side extension only
-tmp = fm.copy()
-tmp[~face_full] = skin_med
-hole = face_full & ~skin_clean
-base_rgb = inpaint(tmp, hole, 9)
-vS = vF.copy()
-medv = int(np.median(vF[skin_clean]))
-shadow = skin_clean & (vF < medv - 16)
-base_rgb[shadow] = cv2.GaussianBlur(base_rgb, (0, 0), 6)[shadow]
-jaw_line = tdF & dil(face_oval, 4) & ~ero(face_oval, 5) & (ys > 640)
-base_rgb[jaw_line] = fm[jaw_line]
+# face base from the no-bangs repaint: real forehead, temples, jaw; features inpainted out of clean skin
+hsvNB = cv2.cvtColor(nb, cv2.COLOR_RGB2HSV)
+vNB, sNB = hsvNB[..., 2].astype(int), hsvNB[..., 1].astype(int)
+skinNB = ((labNB == SKIN) | ((labNB == CREAM) & (vNB > 200))) & (ys < 872) & dil(face_oval, 40)
+n_, cc_, st_, _ = cv2.connectedComponentsWithStats(skinNB.astype(np.uint8))
+face_reg = cc_ == cc_[700, 622]
+face_reg = fill_holes(close(face_reg, 4))
+feat_nb = (ellipse(shapeF, eyeR_c, (80, 40)) | ellipse(shapeF, eyeL_c, (80, 40)) | dil(poly(shapeF, mouth_poly), 7)
+           | (face_reg & ~(labNB == SKIN) & (ys > 440) & (ys < 530)) | dil(mark_box & (labNB == CYAN), 3) | nose_box)
+feat_nb &= face_reg
+base_rgb = inpaint(nb, feat_nb, 7)
+outline = tdF * 0 + (thin_dark(labNB) & dil(face_reg, 4) & ~ero(face_reg, 2) & (ys > 560))
+face_full = face_reg | (dil(face_reg, 10) & (ys > 560) & (ys < 760) & ((xs < 470) | (xs > 800)))  # side extension under hair
+base_rgb[face_full & ~face_reg] = skin_med if 'skin_med' in dir() else base_rgb[face_full & ~face_reg]
+_rim = face_full & ~ero(face_reg, 4) & (ys < 720) & ~outline.astype(bool)
+base_rgb[_rim] = skin_med  # hairline/temple rim: clean skin tone
+base_rgb = np.where(dil(_rim, 3)[..., None], cv2.GaussianBlur(base_rgb, (0, 0), 2), base_rgb).astype(np.uint8)
+hsv_b = cv2.cvtColor(base_rgb, cv2.COLOR_RGB2HSV)
+orange_left = face_full & (hsv_b[..., 1] > 85) & (hsv_b[..., 0] < 26) & ~outline.astype(bool)
+base_rgb = inpaint(base_rgb, dil(orange_left, 2) & face_full, 6)  # remove hair fringe from the face edge
+base_rgb[outline.astype(bool)] = nb[outline.astype(bool)]
+jaw_line = outline.astype(bool)
+skin_med = np.median(nb[face_reg & ~feat_nb], axis=0).astype(np.uint8)
+# hair cast shadow = where the master skin is darker than the no-bangs painting
+lumF = cv2.cvtColor(fm, cv2.COLOR_RGB2GRAY).astype(int)
+lumN = cv2.cvtColor(nb, cv2.COLOR_RGB2GRAY).astype(int)
+sh = ((lumN - lumF) > 10) & (labF == SKIN) & face_reg & (ys < 720)
+sh = cv2.GaussianBlur(cv2.morphologyEx(sh.astype(np.float32), cv2.MORPH_CLOSE, np.ones((9, 9), np.uint8)), (0, 0), 4)
+shadow = (sh > 0.3) & face_reg
+sh_rgb = np.zeros_like(fm)
+sh_rgb[:] = (np.array(skin_med, float) * 0.84 + np.array((150, 90, 110)) * 0.16).astype(np.uint8)
 r, a = from_fm(face_full | jaw_line, base_rgb)
 add("Face_Base", "05_FACE", "face", r, a, param="ParamAngleX/Y", hidden=True,
-    src="FACE+restored forehead/eye sockets/sides")
-r, a = from_fm(shadow)
-add("Face_Shadow_Hair", "05_FACE", "face", r, a, param="ParamHairFront", src="FACE")
+    src="FACE+restored clean skin (forehead/eye sockets/sides)")
+r, a = from_fm(shadow, sh_rgb)
+a = a * 0.55
+add("Hair_Front_Shadow", "10_FRONT_HAIR", "hair", r, a, param="ParamHairFront", src="FACE")
 nose = nose_box & (np.abs(fm.astype(int) - skin_med.astype(int)).sum(2) > 28) & ~hairlike
 r, a = from_fm(dil(nose, 1) & nose_box)
 add("Nose", "05_FACE", "face", r, a, param="ParamAngleX", src="FACE")
@@ -713,17 +757,28 @@ add("Face_Mark_Circuit", "05_FACE", "face", r, a, toggle=True, param="Tgl_FaceMa
 lash_col = PAL["line"]
 
 
+EYE = nb  # eye parts from the no-bangs repaint (no hair strands crossing the eyes)
+_hsvE = cv2.cvtColor(EYE, cv2.COLOR_RGB2HSV)
+vE, sE = _hsvE[..., 2].astype(int), _hsvE[..., 1].astype(int)
+labE = labNB
+hairE = (labNB == HAIR) | (labNB == ORANGE_DARK)
+
+
 def eye_layers(side, ec, ic, ebox):
     cx, cy = ec
     opening = ellipse(shapeF, ec, (70, 28))
     # white (restored full eyeball)
     ell = ellipse(shapeF, ec, (74, 32))
-    lash0 = ebox & (vF < 110) & (ys < cy - 4) & ~hairlike
-    low0 = ebox & (ys > cy + 14) & (vF < 205) & (labF != SKIN) & ~hairlike
-    whiteish = ebox & (sF < 70) & (vF > 185) & ell
+    lash0 = ebox & (vE < 110) & (ys < cy - 4) & ~hairE
+    low0 = ebox & (ys > cy + 14) & (vE < 205) & (labE != SKIN) & ~hairE
+    whiteish = ebox & (sE < 70) & (vE > 185) & ell
     irc0 = ellipse(shapeF, ic, (38, 38)) & ell
-    openm = fill_holes(close(lash0 | low0 | whiteish | (irc0 & ~hairlike & (labF != SKIN)), 6)) & ell
-    openm = openm & ~ero(lash0 | low0, 0) | (dil(openm, 3) & ell & (ys < cy))
+    # eye opening = non-skin area inside the eye region of the clean painting (holes filled, largest blob)
+    nonskin = ellipse(shapeF, ec, (82, 40)) & (labE != SKIN) & ~((labE == CREAM) & (vE > 238) & (sE < 12) & ~ell)
+    nonskin = fill_holes(close(nonskin, 5))
+    n_, cc_, st_, _ = cv2.connectedComponentsWithStats(nonskin.astype(np.uint8))
+    openm = cc_ == (1 + np.argmax(st_[1:, 4])) if n_ > 1 else nonskin
+    eye_open = openm.copy()
     wr = np.zeros_like(fm)
     wr[:] = (250, 247, 245)
     topfrac = np.clip((ys - (cy - 30)) / 26.0, 0, 1)[..., None]
@@ -733,21 +788,21 @@ def eye_layers(side, ec, ic, ebox):
         src="restored:drawn eyeball")
     # iris (restored circle): mirror hidden top from bottom, inpaint highlights/pupil
     irc = ellipse(shapeF, ic, (38, 38))
-    vis = irc & opening & ~((vF < 70) & (ys < ic[1] - 18))
-    hi = irc & (vF > 232) & (sF < 45)
-    pup = ellipse(shapeF, (ic[0], ic[1] + 2), (11, 24)) & (vF < 150)
-    ir = fm.copy()
+    vis = irc & opening & ~((vE < 70) & (ys < ic[1] - 18))
+    hi = irc & (vE > 232) & (sE < 45)
+    pup = ellipse(shapeF, (ic[0], ic[1] + 2), (11, 24)) & (vE < 150)
+    ir = EYE.copy()
     miss = irc & ~vis
     yy, xx = np.where(miss)
     my = np.clip(2 * ic[1] - yy, 0, FMH - 1)
-    ir[yy, xx] = fm[my, xx]
+    ir[yy, xx] = EYE[my, xx]
     ir = inpaint(ir, (hi | pup) & irc, 4)
     r, a = from_fm(irc, ir)
     add(f"Eye_{side}_Iris", "06_EYES", "eyes", r, a, param="ParamEyeBallX/Y", hidden=True,
         src="FACE+restored under lid")
-    r, a = from_fm(dil(pup, 1) & irc)
+    r, a = from_fm(dil(pup, 1) & irc, EYE)
     add(f"Eye_{side}_Pupil", "06_EYES", "eyes", r, a, param="ParamEyeBallX/Y", src="FACE")
-    r, a = from_fm(dil(hi, 1) & irc)
+    r, a = from_fm(dil(hi, 1) & irc, EYE)
     add(f"Eye_{side}_Highlight", "06_EYES", "eyes", r, a, param="ParamEyeBallX/Y", src="FACE")
 
     def _lid(d, s):
@@ -756,11 +811,11 @@ def eye_layers(side, ec, ic, ebox):
     r, a = fm_rgba_to_canvas(rgb, a)
     add(f"Eye_{side}_Lid_Skin", "06_EYES", "eyes", r, a, visible=False, param=f"ParamEye{side}Open",
         hidden=True, src="restored:drawn lid")
-    lash = ebox & (vF < 110) & (ys < cy - 4) & ~hairlike
-    r, a = from_fm(dil(lash, 1) & ebox & ~hairlike)
+    lash = (ebox & (vE < 110) & (ys < cy - 4) & ~hairE) | (eye_open & ~ero(eye_open, 4) & (ys < cy) & (vE < 150))
+    r, a = from_fm(dil(lash, 1) & ebox & ~hairE, EYE)
     add(f"Eye_{side}_Lash_Upper", "06_EYES", "eyes", r, a, param=f"ParamEye{side}Open", src="FACE")
-    low = ebox & (ys > cy + 14) & (vF < 205) & (labF != SKIN) & ~hairlike & ~irc
-    r, a = from_fm(dil(low, 1) & ebox & ~hairlike)
+    low = eye_open & ~ero(eye_open, 5) & (ys > cy + 6) & (vE < 225) & ~irc  # lower lid line along the opening edge
+    r, a = from_fm(dil(low, 1) & ebox & ~hairE, EYE)
     add(f"Eye_{side}_Line_Lower", "06_EYES", "eyes", r, a, param=f"ParamEye{side}Open", src="FACE")
 
     def _closed(d, s):
@@ -830,16 +885,14 @@ r, a = fm_rgba_to_canvas(rgb, a)
 add("Tear_Stream", "06_EYES", "expressions", r, a, visible=False, toggle=True, param="Exp", src="drawn")
 
 # ================================================================== 07_BROWS (restored, hidden under bangs)
-for side, pts in (("R", [(432, 503), (470, 494), (512, 490), (556, 492)]),
-                  ("L", [(690, 492), (734, 490), (776, 494), (814, 503)])):
-    def _brow(d, s, pts=pts):
-        for w_, k in ((9, 0), (7, 1), (5, 2)):
-            seg = pts[k:len(pts) - (2 - k) if k < 2 else len(pts)]
-            d.line([(x * s, y * s) for x, y in seg], fill=PAL["brow"] + (255,), width=w_ * s, joint="curve")
-    rgb, a = draw_fm(_brow)
-    r, a = fm_rgba_to_canvas(rgb, a)
+for side, bx in (("R", box(shapeF, 420, 455, 590, 530)), ("L", box(shapeF, 665, 455, 840, 530))):
+    brow = bx & ~(labNB == SKIN) & (vNB < 235) & (sNB > 60) & ~(labNB == BG)
+    n_, cc_, st_, _ = cv2.connectedComponentsWithStats(brow.astype(np.uint8))
+    if n_ > 1:
+        brow = cc_ == (1 + np.argmax(st_[1:, 4]))
+    r, a = from_fm(dil(brow, 1) & bx, nb)
     add(f"Brow_{side}", "07_BROWS", "brows", r, a, param=f"ParamBrow{side}Y/Angle", hidden=True,
-        src="restored:drawn (hidden by bangs in master)")
+        src="painted: FACE no-bangs repaint (hidden by bangs in master)")
 
 # ================================================================== 08_MOUTH
 mpoly = poly(shapeF, mouth_poly)
@@ -900,6 +953,11 @@ for nm, kind, vis_ in (("Mouth_Closed_Smile", "closed", False), ("Mouth_Pout", "
     add(nm, "08_MOUTH", "expressions", r, a, visible=vis_, toggle=True, param="ParamMouthForm/Exp", src="drawn")
 
 # ================================================================== 09_HEADSET
+under = dil(headset_all, 10) & (labN != BG) & ((labN == HAIR) | (labN == ORANGE_DARK) | (labN == CYAN) | (tdN & dil((labN == HAIR) | (labN == ORANGE_DARK), 3))) & ~face_oval
+r, a = from_fm(under, nh)
+add("Hair_Under_Headset", "09_HEADSET", "hair", r, a, physics=True, param="ParamHairSide", hidden=True,
+    src="painted: FACE no-headset repaint (hair where the headset sits)")
+
 band_full = dil(band, 1) & band_poly
 r, a = from_fm(band_full)
 add("Headset_Band", "09_HEADSET", "accessories", r, a, toggle=True, param="Tgl_Headset", src="FACE")
@@ -930,11 +988,6 @@ _, ca = from_fm(cyan_streak)
 r, a = glow(PAL["cyan"], ca, 5, 1.0)
 add("Hair_Inner_Glow", "10_FRONT_HAIR", "effects", r, a, blend="add", toggle=True, param="Glow_Level",
     src="derived:hair cyan streak")
-press = dil(band, 6) & hair_sil
-prgb = inpaint(fm, press, 7)
-r, a = from_fm(press, prgb)
-add("Hair_Headset_Press", "10_FRONT_HAIR", "hair", r, a, visible=False, toggle=True, param="Tgl_Headset",
-    hidden=True, src="restored:hair under band")
 
 # ================================================================== 11_PIP
 pip_zone = box(shapeB, 228, 128, 380, 282) & fgB & ~ring_all & ~(labB == CYAN) | (box(shapeB, 228, 128, 380, 282) & (labB == CYAN) & ~ring_all)
@@ -993,16 +1046,9 @@ for nm, bx, flt, pos, vis_, prm in ui_items:
     add(nm, "12_UI", "ui", r, a, visible=vis_, blend="add", toggle=True, param=prm, src="ACCESSORY keyed")
 
 
-def _hud(d):
-    x0, y0, x1, y1 = 330 * S, 150 * S, 700 * S, 250 * S
-    d.rounded_rectangle((x0, y0, x1, y1), radius=10 * S, outline=PAL["cyan"] + (200,), width=2 * S)
-    for k in range(6):
-        d.rectangle((x0 + (20 + 34 * k) * S, y1 - 30 * S, x0 + (44 + 34 * k) * S, y1 - 16 * S), fill=PAL["cyan"] + (170,))
-    d.line((x0 + 10 * S, y0 + 20 * S, x0 + 120 * S, y0 + 20 * S), fill=PAL["cyan"] + (200,), width=3 * S)
-
-
-r, a = draw_canvas(_hud)
-add("UI_Game_HUD", "12_UI", "ui", r, a, visible=False, blend="add", toggle=True, param="Tgl_Game", src="drawn")
+c, a = key_highpass(acc, (738, 760, 1125, 995), cyanf, gain=45)
+r, a = paste((H, W), c, a, 690 * S, 150 * S, scale=S * 0.42)
+add("UI_Game_HUD", "12_UI", "ui", r, a, visible=False, blend="add", toggle=True, param="Tgl_Game", src="ACCESSORY keyed")
 
 # ================================================================== composite helper for derived FX
 def composite(visible_only=True):
@@ -1101,18 +1147,20 @@ for nm, fn in (("FX_Emote_Heart", _heart), ("FX_Emote_Sweat", _sweat), ("FX_Emot
     add(nm, "14_EXPRESSIONS", "expressions", r, a, visible=False, toggle=True, param="Tgl_Emote", src="drawn")
 
 # ================================================================== 15_TOGGLES
-sil_head = cv2.warpAffine(hair_sil.astype(np.float32), AFF, (W, H)) > 0.5
-face_c = cv2.warpAffine((face_oval | zone["frontR"] | zone["frontC"] | zone["frontL"] | zone["center"]).astype(np.float32), AFF, (W, H)) > 0.5
-eye_y = int(195 * S)
-hood_up = dil(sil_head, 18) & ~dil(face_c, 14) & (np.mgrid[0:H, 0:W][0] < eye_y + 40 * S)
-hood_rgb = solid((H, W), PAL["cream"])
-edge = hood_up & ~ero(hood_up, 6)
-hood_rgb[edge] = PAL["cyan"]
 yy = np.mgrid[0:H, 0:W][0]
-shade = hood_up & (yy > 210 * S)
-hood_rgb[shade & ~edge] = PAL["cream_sh"]
-add("Hood_Up", "09_HEADSET", "clothes", hood_rgb, hood_up.astype(np.float32), visible=False, toggle=True,
-    param="Tgl_Hood", src="drawn from head silhouette")
+# hood up: painted hood fabric from the hood-up repaint of the face master (ECC-aligned)
+hu = np.array(Image.open(M_DIR / "face/LTM_FACE_HOODUP_v001_aligned.png").convert("RGB"))
+labHU = classify(hu)
+tdHU = thin_dark(labHU)
+fabric = ((labHU == CREAM) | (labHU == CYAN) | (tdHU & dil((labHU == CREAM) | (labHU == CYAN), 3)))
+fabric &= (ys < 880) & (labHU != BG)
+n_, cc_, st_, _ = cv2.connectedComponentsWithStats(fabric.astype(np.uint8))
+keep = [i for i in range(1, n_) if st_[i, 4] > 400]
+fabric = np.isin(cc_, keep)
+fabric = fill_holes(close(fabric, 3)) & (ys < 880) & ~face_oval
+r, a = from_fm(fabric, hu)
+add("Hood_Up", "15_TOGGLES", "clothes", r, a, visible=False, toggle=True, param="Tgl_Hood",
+    src="painted: FACE hood-up repaint")
 
 
 def _visor(d, s):

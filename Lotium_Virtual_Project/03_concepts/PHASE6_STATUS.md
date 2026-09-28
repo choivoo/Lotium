@@ -17,11 +17,11 @@
 | 산출물 | 위치 |
 |---|---|
 | 파츠 PNG 149 | `08_parts/<category>/NNN_Name.png` |
-| PSD | `06_psd_parts/LTM_LIVE2D_MASTER_v002.psd` (3072×4608, 16 그룹, 149 레이어) |
+| PSD | `06_psd_parts/LTM_LIVE2D_MASTER_v003.psd` (3072×4608, 16 그룹, 149 레이어) |
 | Manifests | `08_live2d_notes/layer_manifest_final.csv`, `parts_assembly_manifest.json`, `psd_tree_final.md` |
 | QA | `parts_qa.md`, `hidden_area_validation.md`, `qa_toggle_preview.png`, `parts_composite_preview.png` |
 | 도구 | `11_pipeline/tools/parts/build_parts.py`, `render_preview.py`, `11_pipeline/tools/assemble_psd.py` |
 
-재현: `python3 11_pipeline/tools/parts/build_parts.py` → manifest 생성(상태 문서 참조) → `python3 11_pipeline/tools/assemble_psd.py 08_live2d_notes/parts_assembly_manifest.json 06_psd_parts/LTM_LIVE2D_MASTER_v002.psd`
+재현: `python3 11_pipeline/tools/parts/build_parts.py` → manifest 생성(상태 문서 참조) → `python3 11_pipeline/tools/assemble_psd.py 08_live2d_notes/parts_assembly_manifest.json 06_psd_parts/LTM_LIVE2D_MASTER_v003.psd`
 
 ## 다음: Cubism Rigging

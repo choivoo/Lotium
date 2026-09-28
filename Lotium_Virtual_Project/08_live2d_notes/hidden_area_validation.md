@@ -59,3 +59,10 @@
 - `Neck`, `Neck_Back`: 전신 마스터 픽셀 대신 새로 그림 → 이중 턱 제거
 - `Inner_Body` 하이넥 상단, `Hood_Folded` 목 뒤 안감: 머리끝에 가려졌던 부분 재작화
 - `Face_Base`: 측면 확장은 볼 옆만(턱 아래 번짐 제거)
+
+## v003 (CR-002) — 복원을 실제 재작화로 교체
+- 이마·관자놀이·턱선·눈썹·눈 흰자/홍채: Face no-bangs repaint
+- 귀·헤드셋 아래 머리: Face no-headset repaint
+- 목 뒤 후드 안감·하이넥: Fullbody headless repaint
+- 재킷 아래 몸통·팔·허리: Fullbody no-jacket repaint / 소매 아래 재킷 옆판: vest repaint
+- 후드 착용: Face hood-up repaint

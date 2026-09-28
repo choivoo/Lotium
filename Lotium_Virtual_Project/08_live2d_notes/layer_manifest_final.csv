@@ -9,26 +9,26 @@ layer_id,layer_name,group,file,x,y,width,height,z_order,visible_default,blend,to
 008,008_LowBattery_Dim,15_TOGGLES,08_parts/effects/008_LowBattery_Dim.png,563,198,1907,4285,8,False,normal,True,False,Tgl_LowBattery,False,derived:body silhouette
 009,009_Earpiece_Mobile,15_TOGGLES,08_parts/accessories/009_Earpiece_Mobile.png,1704,586,33,44,9,False,normal,True,False,Tgl_Mobile,False,drawn
 010,010_Visor_Game,15_TOGGLES,08_parts/accessories/010_Visor_Game.png,1330,535,381,98,10,False,normal,True,False,Tgl_Game,False,drawn
-011,011_FX_Emote_Anger,14_EXPRESSIONS,08_parts/expressions/011_FX_Emote_Anger.png,1858,298,124,124,11,False,normal,True,False,Tgl_Emote,False,drawn
-012,012_FX_Emote_Sweat,14_EXPRESSIONS,08_parts/expressions/012_FX_Emote_Sweat.png,1878,372,85,127,12,False,normal,True,False,Tgl_Emote,False,drawn
-013,013_FX_Emote_Heart,14_EXPRESSIONS,08_parts/expressions/013_FX_Emote_Heart.png,1914,264,133,133,13,False,normal,True,False,Tgl_Emote,False,drawn
-014,014_FX_Glitch_Block_2,13_FRONT_FX,08_parts/effects/014_FX_Glitch_Block_2.png,1410,615,330,42,14,False,normal,True,False,Tgl_Glitch,False,derived:displaced slice
-015,015_FX_Glitch_Block_1,13_FRONT_FX,08_parts/effects/015_FX_Glitch_Block_1.png,1332,450,270,54,15,False,normal,True,False,Tgl_Glitch,False,derived:displaced slice
-016,016_FX_Glitch_Overlay,13_FRONT_FX,08_parts/effects/016_FX_Glitch_Overlay.png,1140,120,780,770,16,False,add,True,False,Tgl_Glitch,False,derived:RGB split of head
-017,017_FX_Sparkle_Front,13_FRONT_FX,08_parts/effects/017_FX_Sparkle_Front.png,1086,150,1003,679,17,False,add,True,False,Tgl_EyeStar,False,drawn
-018,018_UI_Game_HUD,12_UI,08_parts/ui/018_UI_Game_HUD.png,990,450,1111,301,18,False,add,True,False,Tgl_Game,False,drawn
-019,019_UI_Mobile_Frame,12_UI,08_parts/ui/019_UI_Mobile_Frame.png,2101,1261,579,351,19,False,add,True,False,Tgl_Mobile,False,ACCESSORY keyed
-020,020_UI_Signal_Low,12_UI,08_parts/ui/020_UI_Signal_Low.png,481,991,205,168,20,False,add,True,False,Tgl_LowBattery,False,ACCESSORY keyed
-021,021_UI_Panel_R_Signal,12_UI,08_parts/ui/021_UI_Panel_R_Signal.png,481,991,211,168,21,True,add,True,False,Tgl_UI,False,ACCESSORY keyed
-022,022_UI_Panel_L_Battery_Low,12_UI,08_parts/ui/022_UI_Panel_L_Battery_Low.png,2221,991,220,103,22,False,add,True,False,Tgl_LowBattery,False,ACCESSORY keyed
-023,023_UI_Panel_L_Battery,12_UI,08_parts/ui/023_UI_Panel_L_Battery.png,2221,991,230,103,23,True,add,True,False,Tgl_UI,False,ACCESSORY keyed
-024,024_Drone_Trail_OC,11_PIP,08_parts/overclock/024_Drone_Trail_OC.png,466,360,488,134,24,False,add,True,False,Tgl_Overclock,False,drawn
-025,025_Pip_Glow,11_PIP,08_parts/effects/025_Pip_Glow.png,843,613,206,308,25,True,add,True,False,Glow_Level,False,derived:pip
-026,026_Drone_Eye,11_PIP,08_parts/pip/026_Drone_Eye.png,860,629,173,116,26,True,normal,True,False,ParamDroneEye,False,FULLBODY
-027,027_Drone_Antenna,11_PIP,08_parts/pip/027_Drone_Antenna.png,710,425,400,209,27,True,normal,True,True,ParamDroneAntenna,False,FULLBODY
-028,028_Drone_Body,11_PIP,08_parts/pip/028_Drone_Body.png,710,425,413,416,28,True,normal,True,False,ParamDroneFloat,False,FULLBODY
-029,029_Pip_Hover_Ring,11_PIP,08_parts/pip/029_Pip_Hover_Ring.png,881,833,151,68,29,True,normal,True,False,ParamDroneFloat,False,FULLBODY
-030,030_Hair_Headset_Press,10_FRONT_HAIR,08_parts/hair/030_Hair_Headset_Press.png,1276,271,250,271,30,False,normal,True,False,Tgl_Headset,True,restored:hair under band
+011,011_Hood_Up,15_TOGGLES,08_parts/clothes/011_Hood_Up.png,1159,196,718,626,11,False,normal,True,False,Tgl_Hood,False,painted: FACE hood-up repaint
+012,012_FX_Emote_Anger,14_EXPRESSIONS,08_parts/expressions/012_FX_Emote_Anger.png,1858,298,124,124,12,False,normal,True,False,Tgl_Emote,False,drawn
+013,013_FX_Emote_Sweat,14_EXPRESSIONS,08_parts/expressions/013_FX_Emote_Sweat.png,1878,372,85,127,13,False,normal,True,False,Tgl_Emote,False,drawn
+014,014_FX_Emote_Heart,14_EXPRESSIONS,08_parts/expressions/014_FX_Emote_Heart.png,1914,264,133,133,14,False,normal,True,False,Tgl_Emote,False,drawn
+015,015_FX_Glitch_Block_2,13_FRONT_FX,08_parts/effects/015_FX_Glitch_Block_2.png,1410,615,330,42,15,False,normal,True,False,Tgl_Glitch,False,derived:displaced slice
+016,016_FX_Glitch_Block_1,13_FRONT_FX,08_parts/effects/016_FX_Glitch_Block_1.png,1332,450,270,54,16,False,normal,True,False,Tgl_Glitch,False,derived:displaced slice
+017,017_FX_Glitch_Overlay,13_FRONT_FX,08_parts/effects/017_FX_Glitch_Overlay.png,1140,120,780,770,17,False,add,True,False,Tgl_Glitch,False,derived:RGB split of head
+018,018_FX_Sparkle_Front,13_FRONT_FX,08_parts/effects/018_FX_Sparkle_Front.png,1086,150,1003,679,18,False,add,True,False,Tgl_EyeStar,False,drawn
+019,019_UI_Game_HUD,12_UI,08_parts/ui/019_UI_Game_HUD.png,2071,451,486,294,19,False,add,True,False,Tgl_Game,False,ACCESSORY keyed
+020,020_UI_Mobile_Frame,12_UI,08_parts/ui/020_UI_Mobile_Frame.png,2101,1261,579,351,20,False,add,True,False,Tgl_Mobile,False,ACCESSORY keyed
+021,021_UI_Signal_Low,12_UI,08_parts/ui/021_UI_Signal_Low.png,481,991,205,168,21,False,add,True,False,Tgl_LowBattery,False,ACCESSORY keyed
+022,022_UI_Panel_R_Signal,12_UI,08_parts/ui/022_UI_Panel_R_Signal.png,481,991,211,168,22,True,add,True,False,Tgl_UI,False,ACCESSORY keyed
+023,023_UI_Panel_L_Battery_Low,12_UI,08_parts/ui/023_UI_Panel_L_Battery_Low.png,2221,991,220,103,23,False,add,True,False,Tgl_LowBattery,False,ACCESSORY keyed
+024,024_UI_Panel_L_Battery,12_UI,08_parts/ui/024_UI_Panel_L_Battery.png,2221,991,230,103,24,True,add,True,False,Tgl_UI,False,ACCESSORY keyed
+025,025_Drone_Trail_OC,11_PIP,08_parts/overclock/025_Drone_Trail_OC.png,466,360,488,134,25,False,add,True,False,Tgl_Overclock,False,drawn
+026,026_Pip_Glow,11_PIP,08_parts/effects/026_Pip_Glow.png,843,613,206,308,26,True,add,True,False,Glow_Level,False,derived:pip
+027,027_Drone_Eye,11_PIP,08_parts/pip/027_Drone_Eye.png,860,629,173,116,27,True,normal,True,False,ParamDroneEye,False,FULLBODY
+028,028_Drone_Antenna,11_PIP,08_parts/pip/028_Drone_Antenna.png,710,425,400,209,28,True,normal,True,True,ParamDroneAntenna,False,FULLBODY
+029,029_Drone_Body,11_PIP,08_parts/pip/029_Drone_Body.png,710,425,413,416,29,True,normal,True,False,ParamDroneFloat,False,FULLBODY
+030,030_Pip_Hover_Ring,11_PIP,08_parts/pip/030_Pip_Hover_Ring.png,881,833,151,68,30,True,normal,True,False,ParamDroneFloat,False,FULLBODY
 031,031_Hair_Inner_Glow,10_FRONT_HAIR,08_parts/effects/031_Hair_Inner_Glow.png,1206,374,614,451,31,True,add,True,False,Glow_Level,False,derived:hair cyan streak
 032,032_Hair_Front_Ahoge,10_FRONT_HAIR,08_parts/hair/032_Hair_Front_Ahoge.png,1414,198,176,83,32,True,normal,False,True,ParamAhoge,False,FACE
 033,033_Hair_Front_Center_Strand,10_FRONT_HAIR,08_parts/hair/033_Hair_Front_Center_Strand.png,1483,515,59,111,33,True,normal,False,True,ParamHairFront,False,FACE
@@ -41,55 +41,55 @@ layer_id,layer_name,group,file,x,y,width,height,z_order,visible_default,blend,to
 040,040_Hair_Side_R_Upper,10_FRONT_HAIR,08_parts/hair/040_Hair_Side_R_Upper.png,1177,309,173,320,40,True,normal,False,True,ParamHairSide,False,FACE
 041,041_Hair_Side_L_Lower,10_FRONT_HAIR,08_parts/hair/041_Hair_Side_L_Lower.png,1704,588,108,188,41,True,normal,False,True,ParamHairSide,False,FACE
 042,042_Hair_Side_R_Lower,10_FRONT_HAIR,08_parts/hair/042_Hair_Side_R_Lower.png,1205,620,153,194,42,True,normal,False,True,ParamHairSide,False,FACE
-043,043_Hood_Up,09_HEADSET,08_parts/clothes/043_Hood_Up.png,1160,181,695,524,43,False,normal,True,False,Tgl_Hood,False,drawn from head silhouette
+043,043_Hair_Front_Shadow,10_FRONT_HAIR,08_parts/hair/043_Hair_Front_Shadow.png,1360,459,306,236,43,True,normal,False,False,ParamHairFront,False,FACE
 044,044_Headset_Mic,09_HEADSET,08_parts/accessories/044_Headset_Mic.png,1591,646,107,104,44,True,normal,True,True,Tgl_Mic,False,FACE
 045,045_Headset_Cup_Glow,09_HEADSET,08_parts/effects/045_Headset_Cup_Glow.png,1243,530,526,174,45,True,add,True,False,Glow_Level,False,derived:earcup rings
 046,046_Headset_Cup_L,09_HEADSET,08_parts/accessories/046_Headset_Cup_L.png,1692,528,71,155,46,True,normal,True,False,Tgl_Headset,True,FACE+restored under hair
 047,047_Headset_Cup_R,09_HEADSET,08_parts/accessories/047_Headset_Cup_R.png,1252,544,113,167,47,True,normal,True,False,Tgl_Headset,True,FACE+restored under hair
 048,048_Headset_Band,09_HEADSET,08_parts/accessories/048_Headset_Band.png,1280,274,242,264,48,True,normal,True,False,Tgl_Headset,False,FACE
-049,049_Mouth_Wavy,08_MOUTH,08_parts/expressions/049_Mouth_Wavy.png,1462,688,115,47,49,False,normal,True,False,ParamMouthForm/Exp,False,drawn
-050,050_Mouth_Grin_Mischief,08_MOUTH,08_parts/expressions/050_Mouth_Grin_Mischief.png,1462,688,115,47,50,False,normal,True,False,ParamMouthForm/Exp,False,drawn
-051,051_Mouth_Pout,08_MOUTH,08_parts/expressions/051_Mouth_Pout.png,1462,688,115,47,51,False,normal,True,False,ParamMouthForm/Exp,False,drawn
-052,052_Mouth_Closed_Smile,08_MOUTH,08_parts/expressions/052_Mouth_Closed_Smile.png,1462,688,115,47,52,False,normal,True,False,ParamMouthForm/Exp,False,drawn
-053,053_Mouth_Line_Lower,08_MOUTH,08_parts/mouth/053_Mouth_Line_Lower.png,1476,701,85,12,53,True,normal,False,False,ParamMouthOpenY,False,FACE
-054,054_Mouth_Line_Upper,08_MOUTH,08_parts/mouth/054_Mouth_Line_Upper.png,1470,694,98,15,54,True,normal,False,False,ParamMouthForm,False,FACE
-055,055_Mouth_Teeth_Upper,08_MOUTH,08_parts/mouth/055_Mouth_Teeth_Upper.png,1471,693,100,21,55,True,normal,False,False,ParamMouthOpenY,False,FACE
-056,056_Mouth_Teeth_Lower,08_MOUTH,08_parts/mouth/056_Mouth_Teeth_Lower.png,1491,707,58,15,56,True,normal,False,False,ParamMouthOpenY,True,restored:drawn
-057,057_Mouth_Tongue,08_MOUTH,08_parts/mouth/057_Mouth_Tongue.png,1481,707,78,19,57,True,normal,False,False,ParamMouthOpenY,False,FACE
-058,058_Mouth_Inside,08_MOUTH,08_parts/mouth/058_Mouth_Inside.png,1468,693,103,33,58,True,normal,False,False,ParamMouthOpenY,True,FACE+restored
-059,059_Brow_L,07_BROWS,08_parts/brows/059_Brow_L.png,1559,524,95,12,59,True,normal,False,False,ParamBrowLY/Angle,True,restored:drawn (hidden by bangs in master)
-060,060_Brow_R,07_BROWS,08_parts/brows/060_Brow_R.png,1372,534,93,22,60,True,normal,False,False,ParamBrowRY/Angle,True,restored:drawn (hidden by bangs in master)
-061,061_Tear_Stream,06_EYES,08_parts/expressions/061_Tear_Stream.png,1384,597,257,116,61,False,normal,True,False,Exp,False,drawn
-062,062_Eye_Tears_Pool,06_EYES,08_parts/expressions/062_Eye_Tears_Pool.png,1376,584,270,31,62,False,normal,True,False,Exp,False,drawn
-063,063_Eye_Flat_Deadpan,06_EYES,08_parts/expressions/063_Eye_Flat_Deadpan.png,1366,555,289,41,63,False,normal,True,False,Exp,False,drawn
-064,064_Eye_Star_Sparkle,06_EYES,08_parts/expressions/064_Eye_Star_Sparkle.png,1400,559,228,53,64,False,normal,True,False,Tgl_EyeStar,False,drawn
-065,065_Eye_L_Closed_Smile,06_EYES,08_parts/expressions/065_Eye_L_Closed_Smile.png,1561,569,83,23,65,False,normal,True,False,ParamEyeLSmile,False,drawn
-066,066_Eye_L_Closed_Line,06_EYES,08_parts/eyes/066_Eye_L_Closed_Line.png,1556,574,92,19,66,False,normal,False,False,ParamEyeLOpen,False,drawn
-067,067_Eye_L_Line_Lower,06_EYES,08_parts/eyes/067_Eye_L_Line_Lower.png,1627,586,26,15,67,True,normal,False,False,ParamEyeLOpen,False,FACE
-068,068_Eye_L_Lash_Upper,06_EYES,08_parts/eyes/068_Eye_L_Lash_Upper.png,1576,548,84,32,68,True,normal,False,False,ParamEyeLOpen,False,FACE
-069,069_Eye_L_Lid_Skin,06_EYES,08_parts/eyes/069_Eye_L_Lid_Skin.png,1546,553,113,52,69,False,normal,False,False,ParamEyeLOpen,True,restored:drawn lid
-070,070_Eye_L_Highlight,06_EYES,08_parts/eyes/070_Eye_L_Highlight.png,1576,561,56,47,70,True,normal,False,False,ParamEyeBallX/Y,False,FACE
-071,071_Eye_L_Pupil,06_EYES,08_parts/eyes/071_Eye_L_Pupil.png,1598,567,15,18,71,True,normal,False,False,ParamEyeBallX/Y,False,FACE
-072,072_Eye_L_Iris,06_EYES,08_parts/eyes/072_Eye_L_Iris.png,1576,553,59,55,72,True,normal,False,False,ParamEyeBallX/Y,True,FACE+restored under lid
-073,073_Eye_L_White,06_EYES,08_parts/eyes/073_Eye_L_White.png,1547,556,111,48,73,True,normal,False,False,ParamEyeLOpen,True,restored:drawn eyeball
-074,074_Eye_R_Closed_Smile,06_EYES,08_parts/expressions/074_Eye_R_Closed_Smile.png,1377,581,83,22,74,False,normal,True,False,ParamEyeRSmile,False,drawn
-075,075_Eye_R_Closed_Line,06_EYES,08_parts/eyes/075_Eye_R_Closed_Line.png,1372,586,93,18,75,False,normal,False,False,ParamEyeROpen,False,drawn
-076,076_Eye_R_Line_Lower,06_EYES,08_parts/eyes/076_Eye_R_Line_Lower.png,1360,602,49,21,76,True,normal,False,False,ParamEyeROpen,False,FACE
-077,077_Eye_R_Lash_Upper,06_EYES,08_parts/eyes/077_Eye_R_Lash_Upper.png,1358,562,99,30,77,True,normal,False,False,ParamEyeROpen,False,FACE
-078,078_Eye_R_Lid_Skin,06_EYES,08_parts/eyes/078_Eye_R_Lid_Skin.png,1362,565,114,52,78,False,normal,False,False,ParamEyeROpen,True,restored:drawn lid
-079,079_Eye_R_Highlight,06_EYES,08_parts/eyes/079_Eye_R_Highlight.png,1394,573,58,45,79,True,normal,False,False,ParamEyeBallX/Y,False,FACE
-080,080_Eye_R_Pupil,06_EYES,08_parts/eyes/080_Eye_R_Pupil.png,1418,574,13,23,80,True,normal,False,False,ParamEyeBallX/Y,False,FACE
-081,081_Eye_R_Iris,06_EYES,08_parts/eyes/081_Eye_R_Iris.png,1394,563,58,55,81,True,normal,False,False,ParamEyeBallX/Y,True,FACE+restored under lid
-082,082_Eye_R_White,06_EYES,08_parts/eyes/082_Eye_R_White.png,1368,568,106,47,82,True,normal,False,False,ParamEyeROpen,True,restored:drawn eyeball
-083,083_Face_Mark_Circuit,05_FACE,08_parts/face/083_Face_Mark_Circuit.png,1615,607,28,14,83,True,normal,True,False,Tgl_FaceMark,False,FACE
-084,084_Face_Shadow_Dark,05_FACE,08_parts/expressions/084_Face_Shadow_Dark.png,1344,473,362,157,84,False,normal,True,False,Exp,False,drawn
-085,085_Face_Blush_Strong,05_FACE,08_parts/expressions/085_Face_Blush_Strong.png,1354,614,327,57,85,False,normal,True,False,Exp,False,drawn
-086,086_Face_Blush,05_FACE,08_parts/face/086_Face_Blush.png,1354,614,327,57,86,True,normal,False,False,ParamCheek,False,drawn
-087,087_Nose,05_FACE,08_parts/face/087_Nose.png,1482,614,58,56,87,True,normal,False,False,ParamAngleX,False,FACE
-088,088_Face_Shadow_Hair,05_FACE,08_parts/face/088_Face_Shadow_Hair.png,1353,462,321,331,88,True,normal,False,False,ParamHairFront,False,FACE
-089,089_Face_Base,05_FACE,08_parts/face/089_Face_Base.png,1334,451,383,344,89,True,normal,False,False,ParamAngleX/Y,True,FACE+restored forehead/eye sockets/sides
-090,090_Ear_L,05_FACE,08_parts/face/090_Ear_L.png,1695,566,41,80,90,True,normal,False,False,ParamAngleX,True,restored:drawn
-091,091_Ear_R,05_FACE,08_parts/face/091_Ear_R.png,1318,591,42,80,91,True,normal,False,False,ParamAngleX,True,restored:drawn
+049,049_Hair_Under_Headset,09_HEADSET,08_parts/hair/049_Hair_Under_Headset.png,1244,268,527,489,49,True,normal,False,True,ParamHairSide,True,painted: FACE no-headset repaint (hair where the headset sits)
+050,050_Mouth_Wavy,08_MOUTH,08_parts/expressions/050_Mouth_Wavy.png,1462,688,115,47,50,False,normal,True,False,ParamMouthForm/Exp,False,drawn
+051,051_Mouth_Grin_Mischief,08_MOUTH,08_parts/expressions/051_Mouth_Grin_Mischief.png,1462,688,115,47,51,False,normal,True,False,ParamMouthForm/Exp,False,drawn
+052,052_Mouth_Pout,08_MOUTH,08_parts/expressions/052_Mouth_Pout.png,1462,688,115,47,52,False,normal,True,False,ParamMouthForm/Exp,False,drawn
+053,053_Mouth_Closed_Smile,08_MOUTH,08_parts/expressions/053_Mouth_Closed_Smile.png,1462,688,115,47,53,False,normal,True,False,ParamMouthForm/Exp,False,drawn
+054,054_Mouth_Line_Lower,08_MOUTH,08_parts/mouth/054_Mouth_Line_Lower.png,1476,701,85,12,54,True,normal,False,False,ParamMouthOpenY,False,FACE
+055,055_Mouth_Line_Upper,08_MOUTH,08_parts/mouth/055_Mouth_Line_Upper.png,1470,694,98,15,55,True,normal,False,False,ParamMouthForm,False,FACE
+056,056_Mouth_Teeth_Upper,08_MOUTH,08_parts/mouth/056_Mouth_Teeth_Upper.png,1471,693,100,21,56,True,normal,False,False,ParamMouthOpenY,False,FACE
+057,057_Mouth_Teeth_Lower,08_MOUTH,08_parts/mouth/057_Mouth_Teeth_Lower.png,1491,707,58,15,57,True,normal,False,False,ParamMouthOpenY,True,restored:drawn
+058,058_Mouth_Tongue,08_MOUTH,08_parts/mouth/058_Mouth_Tongue.png,1481,707,78,19,58,True,normal,False,False,ParamMouthOpenY,False,FACE
+059,059_Mouth_Inside,08_MOUTH,08_parts/mouth/059_Mouth_Inside.png,1468,693,103,33,59,True,normal,False,False,ParamMouthOpenY,True,FACE+restored
+060,060_Brow_L,07_BROWS,08_parts/brows/060_Brow_L.png,1552,510,116,24,60,True,normal,False,False,ParamBrowLY/Angle,True,painted: FACE no-bangs repaint (hidden by bangs in master)
+061,061_Brow_R,07_BROWS,08_parts/brows/061_Brow_R.png,1366,522,113,16,61,True,normal,False,False,ParamBrowRY/Angle,True,painted: FACE no-bangs repaint (hidden by bangs in master)
+062,062_Tear_Stream,06_EYES,08_parts/expressions/062_Tear_Stream.png,1384,597,257,116,62,False,normal,True,False,Exp,False,drawn
+063,063_Eye_Tears_Pool,06_EYES,08_parts/expressions/063_Eye_Tears_Pool.png,1376,584,270,31,63,False,normal,True,False,Exp,False,drawn
+064,064_Eye_Flat_Deadpan,06_EYES,08_parts/expressions/064_Eye_Flat_Deadpan.png,1366,555,289,41,64,False,normal,True,False,Exp,False,drawn
+065,065_Eye_Star_Sparkle,06_EYES,08_parts/expressions/065_Eye_Star_Sparkle.png,1400,559,228,53,65,False,normal,True,False,Tgl_EyeStar,False,drawn
+066,066_Eye_L_Closed_Smile,06_EYES,08_parts/expressions/066_Eye_L_Closed_Smile.png,1561,569,83,23,66,False,normal,True,False,ParamEyeLSmile,False,drawn
+067,067_Eye_L_Closed_Line,06_EYES,08_parts/eyes/067_Eye_L_Closed_Line.png,1556,574,92,19,67,False,normal,False,False,ParamEyeLOpen,False,drawn
+068,068_Eye_L_Line_Lower,06_EYES,08_parts/eyes/068_Eye_L_Line_Lower.png,1622,579,37,24,68,True,normal,False,False,ParamEyeLOpen,False,FACE
+069,069_Eye_L_Lash_Upper,06_EYES,08_parts/eyes/069_Eye_L_Lash_Upper.png,1570,548,93,32,69,True,normal,False,False,ParamEyeLOpen,False,FACE
+070,070_Eye_L_Lid_Skin,06_EYES,08_parts/eyes/070_Eye_L_Lid_Skin.png,1546,553,113,52,70,False,normal,False,False,ParamEyeLOpen,True,restored:drawn lid
+071,071_Eye_L_Highlight,06_EYES,08_parts/eyes/071_Eye_L_Highlight.png,1576,561,57,47,71,True,normal,False,False,ParamEyeBallX/Y,False,FACE
+072,072_Eye_L_Pupil,06_EYES,08_parts/eyes/072_Eye_L_Pupil.png,1600,565,13,20,72,True,normal,False,False,ParamEyeBallX/Y,False,FACE
+073,073_Eye_L_Iris,06_EYES,08_parts/eyes/073_Eye_L_Iris.png,1576,553,59,55,73,True,normal,False,False,ParamEyeBallX/Y,True,FACE+restored under lid
+074,074_Eye_L_White,06_EYES,08_parts/eyes/074_Eye_L_White.png,1560,551,104,53,74,True,normal,False,False,ParamEyeLOpen,True,restored:drawn eyeball
+075,075_Eye_R_Closed_Smile,06_EYES,08_parts/expressions/075_Eye_R_Closed_Smile.png,1377,581,83,22,75,False,normal,True,False,ParamEyeRSmile,False,drawn
+076,076_Eye_R_Closed_Line,06_EYES,08_parts/eyes/076_Eye_R_Closed_Line.png,1372,586,93,18,76,False,normal,False,False,ParamEyeROpen,False,drawn
+077,077_Eye_R_Line_Lower,06_EYES,08_parts/eyes/077_Eye_R_Line_Lower.png,1372,597,79,23,77,True,normal,False,False,ParamEyeROpen,False,FACE
+078,078_Eye_R_Lash_Upper,06_EYES,08_parts/eyes/078_Eye_R_Lash_Upper.png,1360,562,109,34,78,True,normal,False,False,ParamEyeROpen,False,FACE
+079,079_Eye_R_Lid_Skin,06_EYES,08_parts/eyes/079_Eye_R_Lid_Skin.png,1362,565,114,52,79,False,normal,False,False,ParamEyeROpen,True,restored:drawn lid
+080,080_Eye_R_Highlight,06_EYES,08_parts/eyes/080_Eye_R_Highlight.png,1394,573,58,45,80,True,normal,False,False,ParamEyeBallX/Y,False,FACE
+081,081_Eye_R_Pupil,06_EYES,08_parts/eyes/081_Eye_R_Pupil.png,1414,579,17,18,81,True,normal,False,False,ParamEyeBallX/Y,False,FACE
+082,082_Eye_R_Iris,06_EYES,08_parts/eyes/082_Eye_R_Iris.png,1394,563,58,55,82,True,normal,False,False,ParamEyeBallX/Y,True,FACE+restored under lid
+083,083_Eye_R_White,06_EYES,08_parts/eyes/083_Eye_R_White.png,1360,562,114,57,83,True,normal,False,False,ParamEyeROpen,True,restored:drawn eyeball
+084,084_Face_Mark_Circuit,05_FACE,08_parts/face/084_Face_Mark_Circuit.png,1615,607,28,14,84,True,normal,True,False,Tgl_FaceMark,False,FACE
+085,085_Face_Shadow_Dark,05_FACE,08_parts/expressions/085_Face_Shadow_Dark.png,1344,473,362,157,85,False,normal,True,False,Exp,False,drawn
+086,086_Face_Blush_Strong,05_FACE,08_parts/expressions/086_Face_Blush_Strong.png,1354,614,327,57,86,False,normal,True,False,Exp,False,drawn
+087,087_Face_Blush,05_FACE,08_parts/face/087_Face_Blush.png,1354,614,327,57,87,True,normal,False,False,ParamCheek,False,drawn
+088,088_Nose,05_FACE,08_parts/face/088_Nose.png,1482,614,58,56,88,True,normal,False,False,ParamAngleX,False,FACE
+089,089_Face_Base,05_FACE,08_parts/face/089_Face_Base.png,1348,424,338,370,89,True,normal,False,False,ParamAngleX/Y,True,FACE+restored clean skin (forehead/eye sockets/sides)
+090,090_Ear_L,05_FACE,08_parts/face/090_Ear_L.png,1683,573,62,91,90,True,normal,False,False,ParamAngleX,True,painted: FACE no-headset repaint (hidden under earcup)
+091,091_Ear_R,05_FACE,08_parts/face/091_Ear_R.png,1280,601,78,86,91,True,normal,False,False,ParamAngleX,True,painted: FACE no-headset repaint (hidden under earcup)
 092,092_Sleeve_Cuff_Glow,04_CLOTHES,08_parts/effects/092_Sleeve_Cuff_Glow.png,547,2046,1939,355,92,True,add,True,False,Glow_Level,False,derived:cuff rims
 093,093_Sleeve_L_Strap,04_CLOTHES,08_parts/clothes/093_Sleeve_L_Strap.png,1928,1170,370,739,93,True,normal,False,True,ParamSleeveL,False,FULLBODY
 094,094_Sleeve_L_Cuff,04_CLOTHES,08_parts/clothes/094_Sleeve_L_Cuff.png,2054,2060,416,347,94,True,normal,False,True,ParamSleeveL,False,FULLBODY
@@ -107,8 +107,8 @@ layer_id,layer_name,group,file,x,y,width,height,z_order,visible_default,blend,to
 106,106_Jacket_Hem_R,04_CLOTHES,08_parts/clothes/106_Jacket_Hem_R.png,1032,2160,388,243,106,True,normal,False,True,ParamHem,False,FULLBODY
 107,107_Jacket_Front_L,04_CLOTHES,08_parts/clothes/107_Jacket_Front_L.png,1640,927,392,1348,107,True,normal,False,False,ParamBodyAngleX,False,FULLBODY
 108,108_Jacket_Front_R,04_CLOTHES,08_parts/clothes/108_Jacket_Front_R.png,1040,941,380,1333,108,True,normal,False,False,ParamBodyAngleX,False,FULLBODY
-109,109_Jacket_Side_Under_Arm_L,04_CLOTHES,08_parts/clothes/109_Jacket_Side_Under_Arm_L.png,1793,950,404,1364,109,True,normal,False,False,ParamBodyAngleX,True,restored:jacket under sleeve
-110,110_Jacket_Side_Under_Arm_R,04_CLOTHES,08_parts/clothes/110_Jacket_Side_Under_Arm_R.png,896,950,398,1355,110,True,normal,False,False,ParamBodyAngleX,True,restored:jacket under sleeve
+109,109_Jacket_Side_Under_Arm_L,04_CLOTHES,08_parts/clothes/109_Jacket_Side_Under_Arm_L.png,1790,941,434,1222,109,True,normal,False,False,ParamBodyAngleX,True,painted: sleeveless-vest repaint (jacket side under sleeve)
+110,110_Jacket_Side_Under_Arm_R,04_CLOTHES,08_parts/clothes/110_Jacket_Side_Under_Arm_R.png,866,938,431,1343,110,True,normal,False,False,ParamBodyAngleX,True,painted: sleeveless-vest repaint (jacket side under sleeve)
 111,111_Cable_Electric_Ribbon,03_BODY,08_parts/effects/111_Cable_Electric_Ribbon.png,1928,2220,344,875,111,True,add,True,False,Glow_Level,False,drawn
 112,112_Cable_Tail_Plug,03_BODY,08_parts/accessories/112_Cable_Tail_Plug.png,2210,3071,140,383,112,True,normal,False,True,ParamCable,False,FULLBODY
 113,113_Cable_Tail_Seg2,03_BODY,08_parts/accessories/113_Cable_Tail_Seg2.png,2015,2546,266,533,113,True,normal,False,True,ParamCable,False,FULLBODY
@@ -117,31 +117,31 @@ layer_id,layer_name,group,file,x,y,width,height,z_order,visible_default,blend,to
 116,116_Shoe_R,03_BODY,08_parts/legs/116_Shoe_R.png,863,3845,473,638,116,True,normal,False,False,,False,FULLBODY
 117,117_Pants_Strap_L,03_BODY,08_parts/legs/117_Pants_Strap_L.png,1715,2099,104,452,117,True,normal,False,True,ParamStrap,False,FULLBODY
 118,118_Pants_Strap_R,03_BODY,08_parts/legs/118_Pants_Strap_R.png,1040,2486,110,503,118,True,normal,False,True,ParamStrap,False,FULLBODY
-119,119_Pants_L,03_BODY,08_parts/legs/119_Pants_L.png,1562,1916,572,1937,119,True,normal,False,False,ParamLegL,True,FULLBODY+restored
+119,119_Pants_L,03_BODY,08_parts/legs/119_Pants_L.png,1562,1916,578,1937,119,True,normal,False,False,ParamLegL,True,FULLBODY+restored
 120,120_Pants_R,03_BODY,08_parts/legs/120_Pants_R.png,995,1916,575,1937,120,True,normal,False,False,ParamLegR,True,FULLBODY+restored
 121,121_Hand_L_Glove,03_BODY,08_parts/arms_hands/121_Hand_L_Glove.png,2225,2222,170,289,121,True,normal,True,False,Tgl_Glove,False,FULLBODY
-122,122_Hand_L,03_BODY,08_parts/arms_hands/122_Hand_L.png,2210,2222,227,353,122,True,normal,False,False,ParamHandL,True,FULLBODY+restored skin under glove
+122,122_Hand_L,03_BODY,08_parts/arms_hands/122_Hand_L.png,2210,2252,227,323,122,True,normal,False,False,ParamHandL,True,FULLBODY+restored skin under glove
 123,123_Hand_R_Glove,03_BODY,08_parts/arms_hands/123_Hand_R_Glove.png,638,2210,170,301,123,True,normal,True,False,Tgl_Glove,False,FULLBODY
-124,124_Hand_R,03_BODY,08_parts/arms_hands/124_Hand_R.png,597,2210,232,364,124,True,normal,False,False,ParamHandR,True,FULLBODY+restored skin under glove
+124,124_Hand_R,03_BODY,08_parts/arms_hands/124_Hand_R.png,597,2252,232,322,124,True,normal,False,False,ParamHandR,True,FULLBODY+restored skin under glove
 125,125_Sleeve_L_Inner,03_BODY,08_parts/clothes/125_Sleeve_L_Inner.png,2082,2063,376,296,125,True,normal,False,False,ParamArmL,False,FULLBODY
 126,126_Sleeve_R_Inner,03_BODY,08_parts/clothes/126_Sleeve_R_Inner.png,578,2063,377,296,126,True,normal,False,False,ParamArmR,False,FULLBODY
-127,127_Arm_L_Under,03_BODY,08_parts/arms_hands/127_Arm_L_Under.png,1787,992,605,1396,127,True,normal,False,False,ParamArmL,True,restored:inner sleeve+wrist
-128,128_Arm_R_Under,03_BODY,08_parts/arms_hands/128_Arm_R_Under.png,659,992,635,1390,128,True,normal,False,False,ParamArmR,True,restored:inner sleeve+wrist
+127,127_Arm_L_Under,03_BODY,08_parts/arms_hands/127_Arm_L_Under.png,1814,945,526,1459,127,True,normal,False,False,ParamArmL,True,painted: no-jacket repaint (inner sleeve + wrist)
+128,128_Arm_R_Under,03_BODY,08_parts/arms_hands/128_Arm_R_Under.png,701,938,557,1466,128,True,normal,False,False,ParamArmR,True,painted: no-jacket repaint (inner sleeve + wrist)
 129,129_Core_Glow,03_BODY,08_parts/effects/129_Core_Glow.png,1432,1037,177,211,129,True,add,True,False,Glow_Level,False,derived:core
 130,130_Core_Face,03_BODY,08_parts/accessories/130_Core_Face.png,1472,1073,100,136,130,True,normal,False,False,ParamBreath,False,FULLBODY
 131,131_Core_Case,03_BODY,08_parts/accessories/131_Core_Case.png,1415,1043,203,212,131,True,normal,False,False,ParamBreath,False,FULLBODY
-132,132_Inner_Circuit_Glow,03_BODY,08_parts/effects/132_Inner_Circuit_Glow.png,1476,796,86,583,132,True,add,True,False,Glow_Level,False,derived:inner cyan
-133,133_Inner_Body,03_BODY,08_parts/clothes/133_Inner_Body.png,1400,782,263,1235,133,True,normal,False,False,ParamBreath,True,FULLBODY+restored
-134,134_Torso_Restore,03_BODY,08_parts/body/134_Torso_Restore.png,1268,986,551,1091,134,True,normal,False,False,ParamBodyAngleX,True,restored
-135,135_Pants_Waist_Restore,03_BODY,08_parts/clothes/135_Pants_Waist_Restore.png,1250,1796,593,311,135,True,normal,False,False,ParamBodyAngleX,True,restored
+132,132_Inner_Circuit_Glow,03_BODY,08_parts/effects/132_Inner_Circuit_Glow.png,1476,796,87,583,132,True,add,True,False,Glow_Level,False,derived:inner cyan
+133,133_Inner_Body,03_BODY,08_parts/clothes/133_Inner_Body.png,1394,800,281,1172,133,True,normal,False,False,ParamBreath,True,FULLBODY+restored
+134,134_Torso_Restore,03_BODY,08_parts/body/134_Torso_Restore.png,1172,896,734,1256,134,True,normal,False,False,ParamBodyAngleX,True,restored
+135,135_Pants_Waist_Restore,03_BODY,08_parts/clothes/135_Pants_Waist_Restore.png,1226,1766,638,413,135,True,normal,False,False,ParamBodyAngleX,True,restored
 136,136_Neck,03_BODY,08_parts/body/136_Neck.png,1470,728,109,166,136,True,normal,False,False,ParamAngleX/Y/Z,True,redrawn (clean neck + chin shadow)
 137,137_Neck_Back,03_BODY,08_parts/body/137_Neck_Back.png,1461,727,126,168,137,True,normal,False,False,ParamAngleZ,True,redrawn
-138,138_Hood_Folded,03_BODY,08_parts/clothes/138_Hood_Folded.png,1112,782,845,188,138,True,normal,True,True,Tgl_Hood,False,FULLBODY
+138,138_Hood_Folded,03_BODY,08_parts/clothes/138_Hood_Folded.png,1112,794,860,176,138,True,normal,True,True,Tgl_Hood,False,FULLBODY
 139,139_Jacket_Back_Lining,03_BODY,08_parts/clothes/139_Jacket_Back_Lining.png,1256,851,569,1256,139,True,normal,False,False,ParamBodyAngleX,True,restored
-140,140_Cable_Port,03_BODY,08_parts/accessories/140_Cable_Port.png,1896,2100,109,145,140,True,normal,False,False,ParamCable,True,drawn
-141,141_Hair_Back_Hood,02_BACK_HAIR,08_parts/hair/141_Hair_Back_Hood.png,1197,322,618,477,141,False,normal,True,False,Tgl_Hood,True,restored:FACE silhouette
+140,140_Cable_Port,03_BODY,08_parts/accessories/140_Cable_Port.png,1788,2070,91,121,140,True,normal,False,False,ParamCable,True,drawn
+141,141_Hair_Back_Hood,02_BACK_HAIR,08_parts/hair/141_Hair_Back_Hood.png,1215,323,583,470,141,False,normal,True,False,Tgl_Hood,True,restored:FACE silhouette
 142,142_Hair_Back_Lower,02_BACK_HAIR,08_parts/hair/142_Hair_Back_Lower.png,1354,676,353,128,142,True,normal,False,True,ParamHairBack,False,FACE
-143,143_Hair_Back_Base,02_BACK_HAIR,08_parts/hair/143_Hair_Back_Base.png,1197,202,618,597,143,True,normal,False,True,ParamHairBack,True,restored:FACE silhouette
+143,143_Hair_Back_Base,02_BACK_HAIR,08_parts/hair/143_Hair_Back_Base.png,1215,215,583,578,143,True,normal,False,True,ParamHairBack,True,restored:FACE silhouette
 144,144_OC_Ring_Outer,01_BACK_FX,08_parts/overclock/144_OC_Ring_Outer.png,980,30,1106,271,144,False,add,True,False,Tgl_Overclock,False,drawn
 145,145_Ring_Spirit_Glow,01_BACK_FX,08_parts/effects/145_Ring_Spirit_Glow.png,1067,26,814,378,145,True,add,True,False,Glow_Level,False,derived:ring
 146,146_Ring_Spirit_Seg4,01_BACK_FX,08_parts/effects/146_Ring_Spirit_Seg4.png,1748,158,107,131,146,True,normal,True,False,ParamRingRotate,False,FULLBODY

@@ -191,11 +191,11 @@
   let expr = null, exprUntil = 0;
 
   const TOG = {
-    headset: { label: '헤드셋', key: 'Ctrl+1', off: ['Headset_'], offShow: ['Hair_Headset_Press'] },
+    headset: { label: '헤드셋', key: 'Ctrl+1', off: ['Headset_'],  },
     mic:     { label: '마이크', key: 'Ctrl+2', off: ['Headset_Mic'] },
     hood:    { label: '후드', key: 'Ctrl+3', on: ['Hood_Up', 'Hair_Back_Hood'], onHide: ['Hood_Folded', 'Hair_Back_Base'] },
     ui:      { label: 'UI 패널', key: 'Ctrl+4', off: ['UI_Panel_L_Battery', 'UI_Panel_R_Signal'] },
-    mobile:  { label: '모바일폼', key: 'Ctrl+5', on: ['UI_Mobile_Frame', 'Earpiece_Mobile'], onHide: ['Headset_'], onShow2: ['Hair_Headset_Press'] },
+    mobile:  { label: '모바일폼', key: 'Ctrl+5', on: ['UI_Mobile_Frame', 'Earpiece_Mobile'], onHide: ['Headset_'] },
     game:    { label: '게임폼', key: 'Ctrl+6', on: ['Visor_Game', 'UI_Game_HUD'] },
     lowbat:  { label: '배터리 부족', key: 'Ctrl+7', on: ['UI_Panel_L_Battery_Low', 'UI_Signal_Low', 'LowBattery_Dim'], onHide: ['UI_Panel_L_Battery', 'UI_Panel_R_Signal'] },
     pip:     { label: '드론 핍', key: 'Ctrl+8', off: ['Drone_', 'Pip_'] },

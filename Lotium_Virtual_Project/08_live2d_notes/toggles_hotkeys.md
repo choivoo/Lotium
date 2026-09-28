@@ -61,7 +61,7 @@
 ## 4. PSD 레이어 매핑 (PHASE 7 최종, `layer_manifest_final.csv` 기준)
 | 토글 | 파라미터 | 실제 레이어 |
 |---|---|---|
-| 헤드셋 on/off | Tgl_Headset | Headset_Band, Headset_Cup_R/L, Headset_Cup_Glow (+off 시 Hair_Headset_Press 표시) |
+| 헤드셋 on/off | Tgl_Headset | Headset_Band, Headset_Cup_R/L, Headset_Cup_Glow (아래에 Hair_Under_Headset·Ear 재작화 파츠가 항상 있음) |
 | 마이크 on/off | Tgl_Mic | Headset_Mic |
 | 후드 on/off | Tgl_Hood | Hood_Up, Hair_Back_Hood ↔ Hood_Folded, Hair_Back_Base |
 | 전기광 약/중/강 | Glow_Level | Ring_Spirit_Glow, Inner_Circuit_Glow, Core_Glow, Jacket_Hood_Rim_Glow, Sleeve_Cuff_Glow, Headset_Cup_Glow, Hair_Inner_Glow, Pip_Glow, Cable_Electric_Ribbon (불투명도) |

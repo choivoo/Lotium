@@ -29,8 +29,8 @@ g = OrderedDict()
 for l in L:
     g.setdefault(l["group"], []).append(l)
 with open(N / "psd_tree_final.md", "w") as f:
-    f.write(f"# PSD Tree — LTM_LIVE2D_MASTER_v002.psd\n\n캔버스 3072×4608 · 레이어 {len(L)}개 · 그룹 {len(g)}개 · 위(앞) → 아래(뒤).\n"
-            "표기: `[H]` 기본 숨김 · `[+]` Add · `[R]` 가려진 부분 복원/재작화 · `[P]` 물리 · `[T]` 토글\n\n```\nLTM_LIVE2D_MASTER_v002.psd\n")
+    f.write(f"# PSD Tree — LTM_LIVE2D_MASTER_v003.psd\n\n캔버스 3072×4608 · 레이어 {len(L)}개 · 그룹 {len(g)}개 · 위(앞) → 아래(뒤).\n"
+            "표기: `[H]` 기본 숨김 · `[+]` Add · `[R]` 가려진 부분 복원/재작화 · `[P]` 물리 · `[T]` 토글\n\n```\nLTM_LIVE2D_MASTER_v003.psd\n")
     for grp in sorted(g, reverse=True):
         f.write(f"├─ {grp}  ({len(g[grp])})\n")
         for l in g[grp]:
